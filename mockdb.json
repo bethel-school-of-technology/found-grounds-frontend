@@ -1,0 +1,112 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "postid": 1,
+      "userId": 4,
+      "text": "I love Americanos",
+      "image_url": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
+      "deleted": 0,
+      "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
+      "timePosted": "23 mins"
+    },
+    {
+      "id": 2,
+      "postid": 2,
+      "userId": 2,
+      "text": "We travel the world in search of great coffee. In the process, we discover beans so special and rare that we can't wait to bring them home and share. - Starbucks",
+      "image_url": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
+      "deleted": 0,
+      "profilePicture_URL": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "timePosted": "Yesterday"
+    },
+    {
+      "text": "I love Robusta",
+      "postid": 5,
+      "image_url": "",
+      "profilePicture_URL": "https://media.istockphoto.com/photos/portrait-of-smiling-handsome-man-in-blue-tshirt-standing-with-crossed-picture-id1045886560?k=6&m=1045886560&s=612x612&w=0&h=hXrxai1QKrfdqWdORI4TZ-M0ceCVakt4o6532vHaS3I=",
+      "userId": 1,
+      "deleted": 0,
+      "id": 3
+    },
+    {
+      "text": "I can't wait to meet Jenny at Hebrews!",
+      "userId": "3",
+      "id": 4
+    }
+  ],
+  "accounts": [
+    {
+      "userId": 1,
+      "firstName": "John",
+      "lastName": "Smith",
+      "profilePicture_URL": "https://media.istockphoto.com/photos/portrait-of-smiling-handsome-man-in-blue-tshirt-standing-with-crossed-picture-id1045886560?k=6&m=1045886560&s=612x612&w=0&h=hXrxai1QKrfdqWdORI4TZ-M0ceCVakt4o6532vHaS3I=",
+      "city": "Phoenix",
+      "state": "Arizona",
+      "bio": "Espresso Fan",
+      "birthday": "April 15, 1973"
+    },
+    {
+      "userId": 2,
+      "firstName": "Kelly",
+      "lastName": "Doe",
+      "profilePicture_URL": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "city": "Tulsa",
+      "state": "Oklahoma",
+      "bio": "Instant Coffee Gal",
+      "birthday": "May 22, 1994"
+    },
+    {
+      "userId": 3,
+      "firstName": "Evan",
+      "lastName": "Delores",
+      "profilePicture_URL": "https://us.123rf.com/450wm/lanak/lanak1702/lanak170200035/71710084-young-handsome-smiling-man-isolated-against-white.jpg?ver=6",
+      "city": "Santa Fe",
+      "state": "New Mexico",
+      "bio": "Java Nut",
+      "birthday": "March 03, 1965"
+    },
+    {
+      "userId": 4,
+      "firstName": "Lisa",
+      "lastName": "Harrison",
+      "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
+      "city": "Seattle",
+      "state": "Washington",
+      "bio": "Coffee Coding",
+      "birthday": "Feb, 08, 1996"
+    }
+  ],
+  "comments": [
+    {
+      "text": "I love Americanos too!",
+      "postid": 1,
+      "userId": 2,
+      "commentid": 1,
+      "id": 1,
+      "deleted": false
+    },
+    {
+      "text": "The Americanos at Cafe Dé La Cruz are the best.",
+      "postid": 1,
+      "userId": 3,
+      "commentid": 1,
+      "id": 1,
+      "deleted": false
+    },
+    {
+      "text": "LOL!",
+      "postid": "1",
+      "userId": "4",
+      "deleted": false,
+      "id": 2
+    },
+    {
+      "text": "Do you work for Starbucks now Kelly?",
+      "postid": "2",
+      "userId": "4",
+      "deleted": false,
+      "id": 3
+    }
+  ]
+}
