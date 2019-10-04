@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Accounts } from '../models/accounts';
+import { Account } from '../../models/account';
 
 @Component({
   selector: 'app-signup',
@@ -7,7 +7,7 @@ import { Accounts } from '../models/accounts';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  model: Accounts = new Accounts();
+  model: Account = new Account();
   constructor() { }
 
   ngOnInit() {
