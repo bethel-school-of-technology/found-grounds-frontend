@@ -1,7 +1,6 @@
-export class Post {
+export class Photo {
     postid: number;
-    accountid: number;
-    text: string;
+    cafeId: number;
     image_url: string;
     deleted: boolean;
     id: number;

@@ -1,0 +1,16 @@
+<div class="w3-white w3-margin">
+        <div class="w3-container w3-padding found-grounds-brown">
+          <h3>Menu</h3>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+                <li *ngFor="let menu of menus" class="w3-padding-16">
+                  <img src={{menu.image_url}} alt="Image" class="w3-left w3-margin-right vertical-center" style="width:50px">
+                  <span class="w3-large">{{menu.name}}</span>
+                  <br>
+                  <span>{{menu.description}}</span>
+                </li>
+              </ul>
+
+      <hr>
+<!-- something about the bottom is awesome -->
+    

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './shared/components/signup/signup.component';
 import { FullprofilepageModule } from './modules/fullprofilepage/fullprofilepage.module'
+import { CafepageModule } from './modules/cafepage/cafepage.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FullprofilepageModule } from './modules/fullprofilepage/fullprofilepage
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FullprofilepageModule
+    FullprofilepageModule,
+    CafepageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

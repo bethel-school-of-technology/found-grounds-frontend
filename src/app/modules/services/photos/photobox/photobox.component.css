@@ -1,0 +1,23 @@
+.found-grounds-brown {
+    background-color: #613318;
+    color: white;
+}
+
+.photos {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+    align-items: center;
+  }
+  
+  .photos img {
+    display: flex;
+    background-color: #fff;
+    width: 20%;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
