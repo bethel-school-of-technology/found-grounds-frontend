@@ -4,9 +4,9 @@ import { DisplayCafepageComponent } from './display-cafepage/display-cafepage.co
 import { PostsModule } from '../fullprofilepage/posts/posts.module';
 import { DisplayCafeprofileComponent } from './display-cafeprofile/display-cafeprofile.component';
 import { AccountsModule } from '../services/accounts/accounts.module';
-import { ReviewsModule } from '../../modules/services/reviews/reviews.module';
-import { PhotosModule } from '../../modules/services/photos/photos.module';
-import { MenuModule } from '../../modules/services/menu/menu.module';
+import { ReviewsModule } from '../services/reviews/reviews.module';
+import { PhotosModule } from '../services/photos/photos.module';
+import { MenuModule } from '../services/menu/menu.module';
 
 @NgModule({
   declarations: [DisplayCafepageComponent, DisplayCafeprofileComponent],

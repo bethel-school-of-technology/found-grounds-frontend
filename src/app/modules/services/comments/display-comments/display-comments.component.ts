@@ -17,12 +17,8 @@ export class DisplayCommentsComponent implements OnInit {
   getComments(postid){
     this.http.get<Comment[]>(this.commentsRoute + "?postid=" + postid).subscribe(comments => {
       this.comments = comments;
-      console.log("Comment for Post " + this.postid + " is " + this.comments);
     })
   }
-
-  onClickComment() {
-    alert("Comment!")};
 
   ngOnInit() {
     this.getComments(this.postid);

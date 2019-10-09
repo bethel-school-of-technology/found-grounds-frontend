@@ -33,6 +33,11 @@
       "text": "I can't wait to meet Jenny at Hebrews!",
       "userId": "3",
       "id": 4
+    },
+    {
+      "text": "I love life!",
+      "userId": "2",
+      "id": 5
     }
   ],
   "accounts": [
@@ -111,17 +116,17 @@
   ],
   "cafes": [
     {
-    "cafeId": 1,
-    "bio": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-    "deleted": false,
-    "cafeName": "Mama Cika Cafe",
-    "cafeAddress": "Jl. Punawarman 5",
-    "cafeCity": "Jakarta",
-    "cafeState": "Indonesia",
-    "rating": 4.5,
-    "profilePicture_URL": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
-    "id": 1
-}
+      "cafeId": 1,
+      "bio": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
+      "deleted": false,
+      "cafeName": "Mama Cika Cafe",
+      "cafeAddress": "Jl. Punawarman 5",
+      "cafeCity": "Jakarta",
+      "cafeState": "Indonesia",
+      "rating": 4.5,
+      "profilePicture_URL": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
+      "id": 1
+    }
   ],
   "reviews": [
     {
@@ -131,7 +136,7 @@
       "reviewId": 1,
       "id": 1,
       "deleted": false,
-      "rating": 4.0
+      "rating": 4
     },
     {
       "text": "I love the ambience and especially their Dark Espresso",
@@ -140,7 +145,7 @@
       "reviewId": 1,
       "id": 1,
       "deleted": false,
-      "rating": 5.0
+      "rating": 5
     },
     {
       "text": "Machiattos with some shortbread here always hit the spot",
@@ -201,6 +206,44 @@
       "name": "Cold Brew Robusta",
       "id": 3,
       "deleted": false
+    }
+  ],
+  "likes": [
+    {
+      "postid": 1,
+      "userId": 1,
+      "like": true,
+      "id": 1
+    },
+    {
+      "postid": 1,
+      "userId": 2,
+      "like": true,
+      "id": 2
+    },
+    {
+      "postid": 2,
+      "userId": 1,
+      "like": true,
+      "id": 3
+    },
+    {
+      "userId": "4",
+      "postid": "1",
+      "like": true,
+      "id": 4
+    },
+    {
+      "userId": "4",
+      "postid": "2",
+      "like": true,
+      "id": 5
+    },
+    {
+      "userId": "4",
+      "postid": "3",
+      "like": true,
+      "id": 6
     }
   ]
 }

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './shared/components/signup/signup.component';
-import { FullprofilepageModule } from './modules/fullprofilepage/fullprofilepage.module'
+import { FullprofilepageModule } from './modules/fullprofilepage/fullprofilepage.module';
 import { CafepageModule } from './modules/cafepage/cafepage.module';
 
 @NgModule({
