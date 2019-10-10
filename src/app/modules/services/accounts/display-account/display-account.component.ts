@@ -16,8 +16,6 @@ export class DisplayAccountComponent implements OnInit {
   getAccount(userId){
     this.http.get<Account>(this.accountsRoute + "?userId=" + userId).subscribe(account => {
       this.account = account;
-      console.log("the moment of revealing..");
-      console.log(this.account);
     })
   }
   ngOnInit() {

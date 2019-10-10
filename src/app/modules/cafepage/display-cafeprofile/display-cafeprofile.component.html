@@ -1,0 +1,24 @@
+<div *ngFor="let caf of cafe" class="w3-container w3-card w3-round w3-white w3-padding left-align">
+    <div class="w3-row">
+                <div class="w3-col m3 w3-padding">
+                    <img src={{caf.profilePicture_URL}} class="w3-circle w3-left w3-margin-right" style="height:150px;width:150px" alt="Avatar"> 
+                </div>
+                <div class="w3-col m4 w3-margin-left">
+                    <h2>{{caf.cafeName}}</h2>
+                 <p>{{caf.cafeAddress}}<br>
+                 {{caf.cafeCity}}, {{caf.cafeState}}</p>
+                 <p class="w3-tag"><i class="fa fa-star"></i> {{caf.rating}} stars</p>
+                </div>
+                <div class="w3-col m4 w3-margin-left ">
+                    <h4>About Us</h4>
+                     <p>{{caf.bio}}<br>
+                        <br>
+                        <!-- icons to be replaced with links -->
+                        <i class="fa fa-facebook-official w3-hover-opacity w3"></i>
+                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                    </div>
+        </div>
+      </div>
+      <br>
+      

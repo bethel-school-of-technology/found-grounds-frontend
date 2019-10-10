@@ -6,9 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './shared/components/signup/signup.component';
 import { FullprofilepageModule } from './modules/fullprofilepage/fullprofilepage.module';
+
+import { CafepageModule } from './modules/cafepage/cafepage.module';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomeComponent } from './shared/components/home/home.component'
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { HomeComponent } from './shared/components/home/home.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FullprofilepageModule
+    FullprofilepageModule,
+    CafepageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

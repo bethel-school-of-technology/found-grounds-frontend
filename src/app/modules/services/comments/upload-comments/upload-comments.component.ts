@@ -14,7 +14,7 @@ export class UploadCommentsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   // Comments
-  commentsRoute = 'http://localhost:3000/comments';
+  private commentsRoute = 'http://localhost:3000/comments';
   public comment: Comment;
   isAdded: boolean = false;
   confirmationString: string = "New comment has been uploaded";
