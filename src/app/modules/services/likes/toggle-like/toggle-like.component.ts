@@ -21,6 +21,7 @@ export class ToggleLikeComponent implements OnInit {
 
   // currently unable to toggle, only like
   // button should look pressed when like is set to true
+  // 
   onClickLike(){
     this.like = {
       "userId": this.userId,

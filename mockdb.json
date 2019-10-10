@@ -38,6 +38,11 @@
       "text": "I love life!",
       "userId": "2",
       "id": 5
+    },
+    {
+      "text": "Hi!",
+      "userId": "4",
+      "id": 6
     }
   ],
   "accounts": [
@@ -187,25 +192,28 @@
       "cafeId": 1,
       "itemId": 1,
       "name": "Arabica Machiato",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG",
+      "image_url": "https://images.summitmedia-digital.com/spotph/images/2018/01/12/Arabica8.jpg",
       "id": 1,
-      "deleted": false
+      "deleted": false,
+      "description": "Earthy and creamy"
     },
     {
       "cafeId": 1,
       "itemId": 2,
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG",
+      "image_url": "https://images.japancentre.com/recipes/pics/16/main/matcha-latte.jpg?1469572822",
       "name": "Matcha Latte",
       "id": 2,
-      "deleted": false
+      "deleted": false,
+      "description": "Zen in a sip"
     },
     {
       "cafeId": 1,
       "itemId": 3,
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG",
+      "image_url": "https://cdn.shopify.com/s/files/1/1116/1002/products/Alvin_s-Cold-Brew-Coffee_grande.jpg?v=1470703355",
       "name": "Cold Brew Robusta",
       "id": 3,
-      "deleted": false
+      "deleted": false,
+      "description": "Fresh and crisp"
     }
   ],
   "likes": [

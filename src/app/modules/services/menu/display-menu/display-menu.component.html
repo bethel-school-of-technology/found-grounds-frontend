@@ -4,10 +4,19 @@
         </div>
         <ul class="w3-ul w3-hoverable w3-white">
                 <li *ngFor="let menu of menus" class="w3-padding-16">
-                  <img src={{menu.image_url}} alt="Image" class="w3-left w3-margin-right vertical-center" style="width:50px">
-                  <span class="w3-large">{{menu.name}}</span>
-                  <br>
-                  <span>{{menu.description}}</span>
+                  <div class="w3-row">
+                    <div class="w3-col s3 vertical-center">
+                      <img src={{menu.image_url}} alt="Image" class="w3-left w3-margin-right vertical-center" style="width:50px">
+                        </div>
+        <div class="w3-col s9">
+          <span class="w3-large">{{menu.name}}</span>
+          <br>
+          <span>{{menu.description}}</span>
+            </div>
+                   
+    </div>
+                
+                 
                 </li>
               </ul>
 
