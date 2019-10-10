@@ -41,7 +41,6 @@ export class UploadReviewComponent implements OnInit {
   getCafe(){
     this.http.get<Cafe>(this.cafesRoute + "?cafeId=" + this.cafeId).subscribe(cafe => {
       this.cafe = cafe;
-      console.log(cafe.cafeName);
     });
   }
 

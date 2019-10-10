@@ -23,5 +23,4 @@ export class DisplayProfileComponent implements OnInit {
     this.getAccount();
   }
 
-
 }
