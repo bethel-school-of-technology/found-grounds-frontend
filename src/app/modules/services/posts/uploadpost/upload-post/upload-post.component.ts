@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
-import { Post } from '../../../../shared/models/post';
+import { Post } from '../../../../../shared/models/post';
+import { Cafe } from '../../../../../shared/models/cafe';
 
 @Component({
   selector: 'app-upload-post',
@@ -36,6 +37,7 @@ export class UploadPostComponent implements OnInit {
       "image_url": this.image_url,
       // this simulates loggin in
       "userId": this.userId,
+      "cafeId": post.cafeId
     }
     this.http.post("http://localhost:3000/posts", this.post)
     .subscribe(res => (this.isAdded = true))
@@ -45,7 +47,16 @@ export class UploadPostComponent implements OnInit {
     ;
   }
 
+  private cafesRoute = 'http://localhost:3000/cafes';
+  public cafes: Cafe[];
+  getCafe(){
+    this.http.get<Cafe[]>(this.cafesRoute).subscribe(cafes => {
+      this.cafes = cafes;
+    });
+  }
+
   ngOnInit() {
+    this.getCafe();
   }
 
 }

@@ -1,0 +1,4 @@
+          <select id="cafeId" name="cafeId" class="form-control w3-right w3-padding" ngModel>
+            <option value="">Give the Café a Shout Out</option>
+            <option *ngFor="let cafe of cafes" value={{cafe.cafeId}}>{{cafe.cafeName}}</option>
+            </select>

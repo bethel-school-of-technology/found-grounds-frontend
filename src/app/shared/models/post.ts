@@ -5,4 +5,5 @@ export class Post {
     image_url: string;
     deleted: boolean;
     id: number;
+    cafeId: number;
 }

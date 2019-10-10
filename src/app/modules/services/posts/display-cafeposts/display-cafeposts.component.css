@@ -1,0 +1,22 @@
+.found-grounds-brown {
+    background-color: #613318;
+    color: white;
+}
+
+#feed {
+    justify-content: center;
+    justify-self: center;
+    margin: 0px auto
+}
+
+h2 {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.left-align {
+    text-align: left;
+}

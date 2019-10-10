@@ -1,5 +1,6 @@
 .coffeebutton {
     background-color: #B99C6B;
+    margin: 5px 0
 }
 
 input[type=text], select {
