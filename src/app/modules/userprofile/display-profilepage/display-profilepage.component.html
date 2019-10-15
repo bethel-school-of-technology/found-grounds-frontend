@@ -29,8 +29,12 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Blog entry -->
     <app-display-profilepage-profile username={{username}}></app-display-profilepage-profile>
       <!-- to be changed with cafeId -->
-      <!-- <app-display-cafeposts userId={{userId}} cafeId={{cafeId}}></app-display-cafeposts> -->
-    <!-- END BLOG ENTRIES -->
+      <div *ngFor="let accoun of account">
+        <app-display-profileposts profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-profileposts>
+      </div>
+     
+    
+      <!-- END BLOG ENTRIES -->
     </div>
 
     <!-- About/Information menu -->
@@ -39,7 +43,9 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Posts -->
 
       <!-- Inspiration -->
-      <!-- <app-photobox cafeId={{cafeId}}></app-photobox> -->
+      <div *ngFor="let accoun of account">
+      <app-display-usersphotos profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-usersphotos>
+    </div>
     <!-- END About/Intro Menu -->
     </div>
 
