@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { DisplayPageComponent } from './modules/fullprofilepage/display-page/display-page.component';
 import { DisplayCafepageComponent } from './modules/cafepage/display-cafepage/display-cafepage.component';
 import { DisplayAllcafesComponent} from './modules/cafepage/display-allcafes/display-allcafes.component';
+import { DisplayAllprofilesComponent } from './modules/userprofile/display-allprofiles/display-allprofiles.component';
+import { DisplayProfilepageComponent } from './modules/userprofile/display-profilepage/display-profilepage.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'
@@ -29,8 +31,16 @@ const routes: Routes = [
   },
   {
     path: 'cafes/:id',
-    component: DisplayCafepageComponent
-  }
+    component: DisplayCafepageComponent,
+  },
+  {
+    path: 'users',
+    component: DisplayAllprofilesComponent,
+  },
+  {
+    path: 'users/:username',
+    component: DisplayProfilepageComponent,
+  },
 ];
 
 @NgModule({
@@ -42,5 +52,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  HomeComponent, SignupComponent, DisplayPageComponent, DisplayCafepageComponent, DisplayAllcafesComponent
+  HomeComponent, SignupComponent, DisplayPageComponent, DisplayCafepageComponent, DisplayAllcafesComponent, DisplayAllprofilesComponent, DisplayProfilepageComponent
 ]
