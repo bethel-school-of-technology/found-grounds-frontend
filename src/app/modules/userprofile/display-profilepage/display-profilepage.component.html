@@ -45,6 +45,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Inspiration -->
       <div *ngFor="let accoun of account">
       <app-display-usersphotos profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-usersphotos>
+      <app-display-userscafes profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-userscafes>
     </div>
     <!-- END About/Intro Menu -->
     </div>

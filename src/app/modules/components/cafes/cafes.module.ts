@@ -7,12 +7,14 @@ import { MenuModule } from '../menu/menu.module';
 import { DisplayCafeprofileComponent } from './display-cafeprofile/display-cafeprofile.component';
 import { DisplayCafeNameComponent } from './display-cafe-name/display-cafe-name.component';
 import { SelectCafeDropdownComponent } from './select-cafe-dropdown/select-cafe-dropdown.component';
+import { DisplayUserscafesComponent } from './display-userscafes/display-userscafes.component';
+import { DisplayUserscafesInfoComponent } from './display-userscafes-info/display-userscafes-info.component';
 
 @NgModule({
-  declarations: [DisplayCafeprofileComponent, DisplayCafeNameComponent, SelectCafeDropdownComponent],
+  declarations: [DisplayCafeprofileComponent, DisplayCafeNameComponent, SelectCafeDropdownComponent, DisplayUserscafesComponent, DisplayUserscafesInfoComponent],
   imports: [
     CommonModule, AccountsModule, ReviewsModule, PhotosModule, MenuModule
   ],
-  exports: [DisplayCafeprofileComponent, DisplayCafeNameComponent,  SelectCafeDropdownComponent]
+  exports: [DisplayCafeprofileComponent, DisplayCafeNameComponent,  SelectCafeDropdownComponent, DisplayUserscafesComponent]
 })
 export class CafesModule { }
