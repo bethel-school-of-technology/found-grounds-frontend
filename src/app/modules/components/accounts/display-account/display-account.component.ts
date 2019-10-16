@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Account } from '../../../../shared/models/account';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-account',
@@ -12,7 +13,7 @@ export class DisplayAccountComponent implements OnInit {
   private accountsRoute = 'http://localhost:3000/accounts'; 
   public account: Account;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   getAccount(userId){
     this.http.get<Account>(this.accountsRoute + "?userId=" + userId).subscribe(account => {
       this.account = account;
@@ -21,4 +22,8 @@ export class DisplayAccountComponent implements OnInit {
   ngOnInit() {
     this.getAccount(this.userId);
   };
+
+  onSelect(accoun){
+    this.router.navigate(['/users', accoun.username]);
+  }
 }

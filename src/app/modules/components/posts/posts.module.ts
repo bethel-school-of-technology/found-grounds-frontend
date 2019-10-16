@@ -7,11 +7,12 @@ import { AccountsModule } from '../accounts/accounts.module';
 import { LikesModule } from '../likes/likes.module';
 import { DisplayCafepostsComponent } from './display-cafeposts/display-cafeposts.component';
 import { CafesModule } from '../cafes/cafes.module';
+import { DisplayProfilepostsComponent } from './display-profileposts/display-profileposts.component';
 @NgModule({
-  declarations: [DisplayPostsComponent, DisplayCafepostsComponent],
+  declarations: [DisplayPostsComponent, DisplayCafepostsComponent, DisplayProfilepostsComponent],
   imports: [
     CommonModule, HttpClientModule, CommentsModule, AccountsModule, LikesModule, CafesModule
   ],
-  exports: [DisplayPostsComponent, DisplayCafepostsComponent]
+  exports: [DisplayPostsComponent, DisplayCafepostsComponent, DisplayProfilepostsComponent]
 })
 export class PostsModule { }

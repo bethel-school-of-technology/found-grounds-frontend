@@ -10,7 +10,7 @@ import { Account } from '../../../shared/models/account';
 export class DisplayPageComponent implements OnInit {
   // pulls in userId from login token
   // @Input() userId: number;
-  userId = 1;
+  userId = 2;
 
   constructor() { }
  
