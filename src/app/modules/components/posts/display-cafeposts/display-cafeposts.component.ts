@@ -25,7 +25,7 @@ export class DisplayCafepostsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   getCafePosts(){
-    this.http.get<Post[]>(this.postsRoute + "?cafeId=" + this.cafeId).subscribe(posts => {
+    this.http.get<Post[]>(this.postsRoute + "?cafeId=" + this.cafeId + "&deleted=false").subscribe(posts => {
       this.posts = posts;
     });
   }

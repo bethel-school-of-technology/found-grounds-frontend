@@ -6,7 +6,7 @@
       "userId": 4,
       "text": "I love Americanos",
       "image_url": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
-      "deleted": 0,
+      "deleted": false,
       "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
       "timePosted": "23 mins",
       "cafeId": 1
@@ -17,41 +17,38 @@
       "userId": 2,
       "text": "We travel the world in search of great coffee. In the process, we discover beans so special and rare that we can't wait to bring them home and share. - Starbucks",
       "image_url": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
-      "deleted": 0,
+      "deleted": false,
       "profilePicture_URL": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
       "timePosted": "Yesterday"
     },
     {
-      "text": "I love Robusta",
-      "postid": 5,
-      "image_url": "",
-      "profilePicture_URL": "https://media.istockphoto.com/photos/portrait-of-smiling-handsome-man-in-blue-tshirt-standing-with-crossed-picture-id1045886560?k=6&m=1045886560&s=612x612&w=0&h=hXrxai1QKrfdqWdORI4TZ-M0ceCVakt4o6532vHaS3I=",
-      "userId": 1,
-      "deleted": 0,
+      "deleted": true,
       "id": 3
     },
     {
-      "text": "I can't wait to meet Jenny at Hebrews!",
-      "userId": "3",
+      "deleted": true,
       "id": 4
     },
     {
       "text": "Grabbing my morning Java",
       "userId": "1",
+      "id": 5,
       "cafeId": "1",
-      "id": 5
+      "deleted": true
     },
     {
       "text": "I love Robusta",
       "userId": "2",
       "cafeId": "1",
-      "id": 6
+      "id": 6,
+      "deleted": false
     },
     {
       "text": "The coffee was great",
       "userId": "2",
       "cafeId": "2",
-      "id": 7
+      "id": 7,
+      "deleted": false
     }
   ],
   "accounts": [

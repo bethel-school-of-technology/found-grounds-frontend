@@ -35,6 +35,7 @@ export class UploadPostComponent implements OnInit {
       "id": post.id,
       // image url data will be passed on from onFileSelected
       "image_url": this.image_url,
+      "deleted": false,
       // this simulates loggin in
       "userId": this.userId,
       "cafeId": post.cafeId

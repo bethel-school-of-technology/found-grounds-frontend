@@ -25,7 +25,7 @@ export class DisplayProfilepostsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   getUserPosts(){
-    this.http.get<Post[]>(this.postsRoute + "?userId=" + this.profileId).subscribe(posts => {
+    this.http.get<Post[]>(this.postsRoute + "?userId=" + this.profileId + "&deleted=false").subscribe(posts => {
       this.posts = posts;
     });
   }

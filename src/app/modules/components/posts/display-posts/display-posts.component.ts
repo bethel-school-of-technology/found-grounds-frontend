@@ -21,7 +21,7 @@ export class DisplayPostsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   getPosts(){
-    this.http.get<Post[]>(this.postsRoute).subscribe(posts => {
+    this.http.get<Post[]>(this.postsRoute + "?deleted=false").subscribe(posts => {
       this.posts = posts;
     })
     ;
