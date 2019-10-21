@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class DisplayCafepageComponent implements OnInit {
   // @Input() userId: number;
-  userId=1;
+  token=1;
   public cafeId;
 
   constructor( private route: ActivatedRoute) { }

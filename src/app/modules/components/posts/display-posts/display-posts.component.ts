@@ -10,7 +10,8 @@ import { } from 'rxjs';
 })
 
 export class DisplayPostsComponent implements OnInit {
-  @Input() userId: number;
+  @Input() token: number;
+
   private postsRoute = 'http://localhost:3000/posts';
   accountsRoute = 'http://localhost:3000/accounts';
   public posts: Post[];

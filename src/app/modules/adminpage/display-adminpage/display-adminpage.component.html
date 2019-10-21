@@ -18,12 +18,35 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class="w3-row">  
     <!-- Left Column -->
     <div class="w3-col m4">
-    <app-display-posts userId={{userId}}></app-display-posts>
+
     </div>
      <!-- Middle Column -->
      <div class="w3-col m8">
+
+        <div class="w3-white">
+            <div class="w3-container w3-padding found-grounds-brown">
+             <h3>All Our Cafes</h3>
+            </div>
+          </div>
+
         <app-display-allcafeprofiles></app-display-allcafeprofiles>
-        
+
+        <div class="w3-white">
+          <div class="w3-container w3-padding found-grounds-brown">
+           <h3>All Our Users</h3>
+          </div>
+        </div>
+
+        <app-display-allprofiles></app-display-allprofiles>
+
+        <div class="w3-white">
+            <div class="w3-container w3-padding found-grounds-brown">
+             <h3>All Our Users' Posts</h3>
+            </div>
+          </div>
+
+          <app-display-posts token={{token}}></app-display-posts>
+
         </div>
   <!-- End Grid -->
   </div>

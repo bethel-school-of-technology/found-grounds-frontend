@@ -10,7 +10,7 @@ import { } from 'rxjs';
 })
 export class DisplayProfilepostsComponent implements OnInit {
   // To replace with token
-  @Input() userId: number;
+  @Input() token: number;
 
   // posts and accounts
   private postsRoute = 'http://localhost:3000/posts';

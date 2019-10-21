@@ -8,7 +8,7 @@ import { Cafe } from '../../../../shared/models/cafe';
   styleUrls: ['./upload-review.component.css']
 })
 export class UploadReviewComponent implements OnInit {
-  @Input() userId: number;
+  @Input() token: number;
   @Input() cafeId: number;
 
   constructor(private http: HttpClient) { }
@@ -24,7 +24,7 @@ export class UploadReviewComponent implements OnInit {
     this.review = {
       "text": review.text,
       "cafeId": this.cafeId,
-      "userId": this.userId,
+      "userId": this.token,
       "id": review.id,
       "deleted": false,
       "reviewId": review.id,

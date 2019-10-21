@@ -8,7 +8,7 @@ import { Comment } from '../../../../shared/models/comment';
   styleUrls: ['./upload-comments.component.css']
 })
 export class UploadCommentsComponent implements OnInit {
-  @Input() userId: number;
+  @Input() token: number;
   @Input() postid: number;
 
   constructor(private http: HttpClient) { }
@@ -22,7 +22,7 @@ export class UploadCommentsComponent implements OnInit {
     this.comment = {
       "text": comment.text,
       "postid": this.postid,
-      "userId": this.userId,
+      "userId": this.token,
       "commentid": comment.id,
       "id": comment.id,
       "deleted": false,

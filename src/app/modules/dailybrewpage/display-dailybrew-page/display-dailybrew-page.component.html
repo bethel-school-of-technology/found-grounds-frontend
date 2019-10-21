@@ -19,15 +19,15 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <app-display-user-profile userId={{userId}}></app-display-user-profile>
+      <app-display-user-profile userId={{token}}></app-display-user-profile>
     <!-- End Left Column -->
     </div>
     
     <!-- Middle Column -->
     <div class="w3-col m7">
     
-      <app-upload-post userId={{userId}}></app-upload-post>
-    <app-display-posts userId={{userId}}></app-display-posts>
+      <app-upload-post userId={{token}}></app-upload-post>
+    <app-display-posts token={{token}}></app-display-posts>
       
   
     <!-- End Middle Column -->

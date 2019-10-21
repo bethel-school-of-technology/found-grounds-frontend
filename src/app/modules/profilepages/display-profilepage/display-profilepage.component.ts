@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./display-profilepage.component.css']
 })
 export class DisplayProfilepageComponent implements OnInit {
-  userId=1
+  token=1
   public username;
   public account: Account;
   private accountRoute = 'http://localhost:3000/accounts';

@@ -30,7 +30,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Blog entry -->
       <app-display-cafeprofile cafeId={{cafeId}}></app-display-cafeprofile>
       <!-- to be changed with cafeId -->
-      <app-display-cafeposts userId={{userId}} cafeId={{cafeId}}></app-display-cafeposts>
+      <app-display-cafeposts token={{token}} cafeId={{cafeId}}></app-display-cafeposts>
     <!-- END BLOG ENTRIES -->
     </div>
 
@@ -44,7 +44,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <app-photobox cafeId={{cafeId}}></app-photobox>
 <hr>
    <app-display-menu cafeId={{cafeId}}></app-display-menu>
-      <app-upload-review cafeId={{cafeId}} userId={{userId}}></app-upload-review>
+      <app-upload-review cafeId={{cafeId}} token={{token}}></app-upload-review>
     <!-- END About/Intro Menu -->
     </div>
 

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayAdminpageComponent implements OnInit {
 
-  public userId=1
+  public token=1
   
   constructor() { }
 

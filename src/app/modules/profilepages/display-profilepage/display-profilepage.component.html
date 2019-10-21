@@ -30,7 +30,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <app-display-profilepage-profile username={{username}}></app-display-profilepage-profile>
       <!-- to be changed with cafeId -->
       <div *ngFor="let accoun of account">
-        <app-display-profileposts profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-profileposts>
+        <app-display-profileposts profileId={{accoun.userId}} firstname={{accoun.firstName}} token={{token}}></app-display-profileposts>
       </div>
      
     

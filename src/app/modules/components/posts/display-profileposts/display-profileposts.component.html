@@ -26,7 +26,7 @@
               <app-display-likes postid={{post.id}}></app-display-likes>
               <app-toggle-like postid={{post.id}} userId={{userId}}></app-toggle-like>
               <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
-              <p class="hidden" id={{post.id}}> <app-commentbox userId={{userId}} postid={{post.id}}></app-commentbox></p>
+              <p class="hidden" id={{post.id}}> <app-commentbox token={{token}} postid={{post.id}}></app-commentbox></p>
             </div> 
   
       
