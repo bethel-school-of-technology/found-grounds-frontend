@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DisplayAllprofilesComponent } from './display-allprofiles/display-allprofiles.component';
 import { DisplayProfilepageComponent } from './display-profilepage/display-profilepage.component';
 import { ProfilesModule } from '../components/profile/profiles.module';
 import { PostsModule } from '../components/posts/posts.module';
 import { PhotosModule } from '../components/photos/photos.module';
 import { CafesModule } from '../components/cafes/cafes.module';
+import { DisplayAllprofilespageComponent } from './display-allprofilespage/display-allprofilespage.component';
 
 @NgModule({
-  declarations: [DisplayAllprofilesComponent, DisplayProfilepageComponent],
+  declarations: [DisplayProfilepageComponent, DisplayAllprofilespageComponent],
   imports: [
     CommonModule, ProfilesModule, PostsModule, PhotosModule, CafesModule
   ],
-  exports: [DisplayAllprofilesComponent],
+  exports: [DisplayProfilepageComponent, DisplayAllprofilespageComponent],
 })
-export class UserprofileModule { }
+export class ProfilepagesModule { }

@@ -15,32 +15,16 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px">    
   <!-- The Grid -->
-  <div class="w3-row">
+  <div class="w3-row">  
     <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Profile -->
-    <!-- End Left Column -->
-    </div>
-    
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-    
+    <div class="w3-col m4">
     <app-display-posts userId={{userId}}></app-display-posts>
-      
-  
-    <!-- End Middle Column -->
     </div>
-    
-    <!-- Right Column -->
-    <div class="w3-col m2">
-
-      <!-- <app-display-request></app-display-request> -->
-     
-    
-      
-    <!-- End Right Column -->
-    </div>
-    
+     <!-- Middle Column -->
+     <div class="w3-col m8">
+        <app-display-allcafeprofiles></app-display-allcafeprofiles>
+        
+        </div>
   <!-- End Grid -->
   </div>
   
