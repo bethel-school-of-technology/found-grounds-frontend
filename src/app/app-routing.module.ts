@@ -5,10 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DisplayDailybrewPageComponent } from './modules/dailybrewpage/display-dailybrew-page/display-dailybrew-page.component';
 import { DisplayCafepageComponent } from './modules/cafepage/display-cafepage/display-cafepage.component';
-import { DisplayAllcafesComponent} from './modules/cafepage/display-allcafes/display-allcafes.component';
 import { DisplayAllprofilesComponent } from './modules/userprofilepages/display-allprofiles/display-allprofiles.component';
 import { DisplayProfilepageComponent } from './modules/userprofilepages/display-profilepage/display-profilepage.component';
 import { DisplayAdminpageComponent } from './modules/adminpage/display-adminpage/display-adminpage.component';
+import { DisplayAllcafespageComponent } from './modules/cafepage/display-allcafespage/display-allcafespage.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'cafes',
-    component: DisplayAllcafesComponent,
+    component: DisplayAllcafespageComponent,
   },
   {
     path: 'cafes/:id',
@@ -56,5 +56,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  HomeComponent, SignupComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent, DisplayAllcafesComponent, DisplayAllprofilesComponent, DisplayProfilepageComponent, DisplayAdminpageComponent
+  HomeComponent, SignupComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilesComponent, DisplayProfilepageComponent, DisplayAdminpageComponent
 ]

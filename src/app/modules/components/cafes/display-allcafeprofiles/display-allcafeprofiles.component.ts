@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cafe } from '../../../shared/models/cafe';
+import { Cafe } from '../../../../shared/models/cafe';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-display-allcafes',
-  templateUrl: './display-allcafes.component.html',
-  styleUrls: ['./display-allcafes.component.css']
+  selector: 'app-display-allcafeprofiles',
+  templateUrl: './display-allcafeprofiles.component.html',
+  styleUrls: ['./display-allcafeprofiles.component.css']
 })
-export class DisplayAllcafesComponent implements OnInit {
+export class DisplayAllcafeprofilesComponent implements OnInit {
   private cafesRoute = 'http://localhost:3000/cafes';
   public cafes: Cafe[];
 

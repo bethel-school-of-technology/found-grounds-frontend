@@ -7,13 +7,13 @@ import { ReviewsModule } from '../components/reviews/reviews.module';
 import { PhotosModule } from '../components/photos/photos.module';
 import { MenuModule } from '../components/menu/menu.module';
 import { CafesModule } from '../components/cafes/cafes.module';
-import { DisplayAllcafesComponent } from './display-allcafes/display-allcafes.component';
+import { DisplayAllcafespageComponent } from './display-allcafespage/display-allcafespage.component';
 
 @NgModule({
-  declarations: [DisplayCafepageComponent, DisplayAllcafesComponent],
+  declarations: [DisplayCafepageComponent, DisplayAllcafespageComponent],
   imports: [
     CommonModule, PostsModule, AccountsModule, ReviewsModule, PhotosModule, MenuModule, CafesModule
   ],
-  exports: [DisplayCafepageComponent, DisplayAllcafesComponent]
+  exports: [DisplayCafepageComponent, DisplayAllcafespageComponent]
 })
 export class CafepageModule { }
