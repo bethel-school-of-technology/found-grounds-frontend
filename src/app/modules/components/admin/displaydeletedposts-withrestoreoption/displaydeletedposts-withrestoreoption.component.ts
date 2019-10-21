@@ -4,11 +4,11 @@ import { Post } from '../../../../shared/models/post';
 import { } from 'rxjs';
 
 @Component({
-  selector: 'app-displayallposts-withdeleteoption',
-  templateUrl: './displayallposts-withdeleteoption.component.html',
-  styleUrls: ['./displayallposts-withdeleteoption.component.css']
+  selector: 'app-displaydeletedposts-withrestoreoption',
+  templateUrl: './displaydeletedposts-withrestoreoption.component.html',
+  styleUrls: ['./displaydeletedposts-withrestoreoption.component.css']
 })
-export class DisplayallpostsWithdeleteoptionComponent implements OnInit {
+export class DisplaydeletedpostsWithrestoreoptionComponent implements OnInit {
   @Input() token: number;
 
   private postsRoute = 'http://localhost:3000/posts';
@@ -19,8 +19,8 @@ export class DisplayallpostsWithdeleteoptionComponent implements OnInit {
   id: number;
 
   constructor(private http: HttpClient) { }
-  getPosts() {
-    this.http.get<Post[]>(this.postsRoute + "?deleted=false").subscribe(posts => {
+  getDeletedPosts() {
+    this.http.get<Post[]>(this.postsRoute + "?deleted=true").subscribe(posts => {
       this.posts = posts;
     })
       ;
@@ -34,25 +34,25 @@ export class DisplayallpostsWithdeleteoptionComponent implements OnInit {
     document.getElementById(id).style.display = 'block';
   }
 
-  deletePost(post){
+  restorePost(post){
     if(confirm("Are you sure?")){
-      const deletedObj = {
+      const restoredObj = {
         "text": post.text,
         "userId": post.userId,
         "id": post.id,
         "image_url": post.image_url,
         "timePosted": post.timePosted,
         "cafeId": post.cafeId,
-        "deleted": true
+        "deleted": false
       }
       const url = `${this.postsRoute}/${post.id}`;
-      return this.http.put(url, deletedObj)
-      .toPromise().then(()=> {this.getPosts()})
+      return this.http.put(url, restoredObj)
+      .toPromise().then(()=> {this.getDeletedPosts()})
     }
   }
 
   ngOnInit() {
-    this.getPosts()
+    this.getDeletedPosts()
 
   };
 }

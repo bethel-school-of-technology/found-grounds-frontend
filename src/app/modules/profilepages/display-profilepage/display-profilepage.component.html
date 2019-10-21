@@ -26,10 +26,11 @@ and is wrapped around the whole page content, except for the footer in this exam
 
     <!-- Blog entries -->
     <div class="w3-col l8 s12">
+        <div *ngFor="let accoun of account">
       <!-- Blog entry -->
-    <app-display-profilepage-profile username={{username}}></app-display-profilepage-profile>
+    <app-display-profilepage-profile username={{accoun.username}}></app-display-profilepage-profile>
       <!-- to be changed with cafeId -->
-      <div *ngFor="let accoun of account">
+      
         <app-display-profileposts profileId={{accoun.userId}} firstname={{accoun.firstName}} token={{token}}></app-display-profileposts>
       </div>
      

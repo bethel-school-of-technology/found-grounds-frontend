@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Cafe } from '../../../shared/models/cafe';
 
 @Component({
   selector: 'app-display-cafepage',
@@ -10,13 +11,19 @@ import { Location } from '@angular/common';
 export class DisplayCafepageComponent implements OnInit {
   // @Input() userId: number;
   token=1;
-  public cafeId;
+  public cafe;
+  private cafesRoute = 'http://localhost:3000/cafes';
 
-  constructor( private route: ActivatedRoute) { }
+  constructor( private route: ActivatedRoute, private http: HttpClient) { }
+
+  getCafe(param){
+    this.http.get<Cafe>(this.cafesRoute + "?deleted=false&cafeId=" + param).subscribe(cafe => {
+      this.cafe = cafe
+    });}
 
   ngOnInit() {
-    let cafeId = parseInt(this.route.snapshot.paramMap.get('id'))
-    this.cafeId = cafeId;
+    let param = parseInt(this.route.snapshot.paramMap.get('id'))
+    this.getCafe(param)
   }
 
 }

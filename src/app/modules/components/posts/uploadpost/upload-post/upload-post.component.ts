@@ -48,7 +48,7 @@ export class UploadPostComponent implements OnInit {
     ;
   }
 
-  private cafesRoute = 'http://localhost:3000/cafes';
+  private cafesRoute = 'http://localhost:3000/cafes?deleted=false';
   public cafes: Cafe[];
   getCafe(){
     this.http.get<Cafe[]>(this.cafesRoute).subscribe(cafes => {

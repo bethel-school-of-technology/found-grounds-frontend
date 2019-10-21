@@ -9,6 +9,8 @@ import { DisplayAllprofilespageComponent } from './modules/profilepages/display-
 import { DisplayProfilepageComponent } from './modules/profilepages/display-profilepage/display-profilepage.component';
 import { DisplayAdminpageComponent } from './modules/adminpage/display-adminpage/display-adminpage.component';
 import { DisplayAllcafespageComponent } from './modules/cafepage/display-allcafespage/display-allcafespage.component';
+import {DisplayRestorecontentpageComponent} from './modules/adminpage/display-restorecontentpage/display-restorecontentpage.component';
+import { DisplayDeletecontentpageComponent } from './modules/adminpage/display-deletecontentpage/display-deletecontentpage.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'
@@ -44,6 +46,14 @@ const routes: Routes = [
   {
     path: 'adminaccess',
     component: DisplayAdminpageComponent
+  },
+  {
+    path: 'adminrestore',
+    component: DisplayRestorecontentpageComponent
+  },
+  {
+    path: 'admindelete',
+    component: DisplayDeletecontentpageComponent
   }
 ];
 
@@ -56,5 +66,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  HomeComponent, SignupComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent
+  HomeComponent, SignupComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent,DisplayRestorecontentpageComponent, DisplayDeletecontentpageComponent
 ]

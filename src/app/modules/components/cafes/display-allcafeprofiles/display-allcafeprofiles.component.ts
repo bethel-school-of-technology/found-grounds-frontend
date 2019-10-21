@@ -14,7 +14,7 @@ export class DisplayAllcafeprofilesComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
   getCafes(){
-    this.http.get<Cafe[]>(this.cafesRoute).subscribe(cafes => {
+    this.http.get<Cafe[]>(this.cafesRoute + "?deleted=false").subscribe(cafes => {
       this.cafes = cafes;
     });
   }

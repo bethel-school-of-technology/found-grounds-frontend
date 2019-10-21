@@ -7,12 +7,18 @@ import { AccountsModule } from '../accounts/accounts.module';
 import { LikesModule } from '../likes/likes.module';
 import { CafesModule } from '../cafes/cafes.module';
 import { PostsModule } from '../posts/posts.module';
+import { DisplayallusersWithdeleteoptionComponent } from './displayallusers-withdeleteoption/displayallusers-withdeleteoption.component';
+import { DisplayallcafesWithdeleteoptionComponent } from './displayallcafes-withdeleteoption/displayallcafes-withdeleteoption.component';
+import { DisplaydeletedcafesWithrestoreoptionComponent } from './displaydeletedcafes-withrestoreoption/displaydeletedcafes-withrestoreoption.component';
+import { DisplaydeletedpostsWithrestoreoptionComponent } from './displaydeletedposts-withrestoreoption/displaydeletedposts-withrestoreoption.component';
+import { DisplaydeletedusersWithrestoreoptionComponent } from './displaydeletedusers-withrestoreoption/displaydeletedusers-withrestoreoption.component';
+import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 
 @NgModule({
-  declarations: [DisplayallpostsWithdeleteoptionComponent],
+  declarations: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent],
   imports: [
     CommonModule, AccountsModule, CommentsModule, CafesModule, LikesModule
   ],
-  exports: [DisplayallpostsWithdeleteoptionComponent]
+  exports: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent ]
 })
 export class AdminModule { }

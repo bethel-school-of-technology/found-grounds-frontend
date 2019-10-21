@@ -15,7 +15,7 @@ export class DisplayAllprofilesComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   getAccount(){
-    this.http.get<Account[]>(this.accountRoute).subscribe(account => {
+    this.http.get<Account[]>(this.accountRoute + "?deleted=false").subscribe(account => {
       this.account = account;
     });
   }

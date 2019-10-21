@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectCafeDropdownComponent } from './select-cafe-dropdown.component';
+import { AdminnavbarComponent } from './adminnavbar.component';
 
-describe('SelectCafeDropdownComponent', () => {
-  let component: SelectCafeDropdownComponent;
-  let fixture: ComponentFixture<SelectCafeDropdownComponent>;
+describe('AdminnavbarComponent', () => {
+  let component: AdminnavbarComponent;
+  let fixture: ComponentFixture<AdminnavbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectCafeDropdownComponent ]
+      declarations: [ AdminnavbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectCafeDropdownComponent);
+    fixture = TestBed.createComponent(AdminnavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

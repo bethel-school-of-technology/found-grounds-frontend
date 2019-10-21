@@ -9,22 +9,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DisplayProfilepageComponent implements OnInit {
   token=1
-  public username;
+  public param;
   public account: Account;
   private accountRoute = 'http://localhost:3000/accounts';
 
   constructor( private route: ActivatedRoute, private http: HttpClient) { }
-  getAccount(){
-    this.http.get<Account>(this.accountRoute + "?username=" + this.username).subscribe(account => {
+  getAccount(username){
+    this.http.get<Account>(this.accountRoute + "?deleted=false&username=" + username).subscribe(account => {
       this.account = account;
     });
   }
 
   
   ngOnInit() {
-    let username= this.route.snapshot.paramMap.get('username')
-    this.username = username;
-    this.getAccount();
+    let param = this.route.snapshot.paramMap.get('username')
+    this.getAccount(param);
   }
 
 }

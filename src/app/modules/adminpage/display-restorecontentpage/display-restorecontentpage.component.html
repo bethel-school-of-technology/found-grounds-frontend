@@ -26,7 +26,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             </div>
           </div>
 
-        <app-display-allcafeprofiles></app-display-allcafeprofiles>
+          <app-displaydeletedcafes-withrestoreoption></app-displaydeletedcafes-withrestoreoption>
 
         <div class="w3-white">
           <div class="w3-container w3-padding found-grounds-brown">
@@ -34,7 +34,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           </div>
         </div>
 
-        <app-display-allprofiles></app-display-allprofiles>
+        <app-displaydeletedusers-withrestoreoption></app-displaydeletedusers-withrestoreoption>
 
         <div class="w3-white">
             <div class="w3-container w3-padding found-grounds-brown">
@@ -42,18 +42,12 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             </div>
           </div>
 
-          <app-display-posts token={{token}}></app-display-posts>
+          <app-displaydeletedposts-withrestoreoption token={{token}}></app-displaydeletedposts-withrestoreoption>
 
         </div>
-
           <!-- Right Column -->
-
-        
-
     <div class="w3-col m4">
-
-        <app-adminnavbar></app-adminnavbar>
-      
+            <app-adminnavbar></app-adminnavbar>
     </div>
   <!-- End Grid -->
   </div>

@@ -16,4 +16,5 @@ export class Account {
     amHome: boolean;
     birthday: Date;
     profilePicture_URL: string;
+    deleted: boolean;
 }

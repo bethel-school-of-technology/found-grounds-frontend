@@ -12,7 +12,8 @@
           
           <div *ngFor="let post of posts" class="w3-container w3-card w3-white w3-round w3-margin left-align"><br>
             <app-display-profile-picture userId={{post.userId}}></app-display-profile-picture>
-            <span class="w3-right w3-opacity">{{post.timePosted}}       <button (click)="deletePost(post)" type="button" class="w3-button w3-red">DELETE POST</button></span>
+            <button (click)="deletePost(post)" type="button" class="w3-button w3-red">DELETE POST</button>
+            <span class="w3-right w3-opacity">{{post.timePosted}}       </span>
             <h4><app-display-account userId={{post.userId}}></app-display-account><app-display-cafe-name cafeId={{post.cafeId}}></app-display-cafe-name></h4>
             <hr class="w3-clear">
             <p>{{post.text}}</p>
