@@ -40,6 +40,18 @@
       "userId": "1",
       "cafeId": "1",
       "id": 5
+    },
+    {
+      "text": "I love Robusta",
+      "userId": "2",
+      "cafeId": "1",
+      "id": 6
+    },
+    {
+      "text": "The coffee was great",
+      "userId": "2",
+      "cafeId": "2",
+      "id": 7
     }
   ],
   "accounts": [

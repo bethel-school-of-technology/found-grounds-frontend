@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DisplayRequestComponent } from './display-request.component';
+import { DisplayAdminpageComponent } from './display-adminpage.component';
 
-describe('DisplayRequestComponent', () => {
-  let component: DisplayRequestComponent;
-  let fixture: ComponentFixture<DisplayRequestComponent>;
+describe('DisplayAdminpageComponent', () => {
+  let component: DisplayAdminpageComponent;
+  let fixture: ComponentFixture<DisplayAdminpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayRequestComponent ]
+      declarations: [ DisplayAdminpageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayRequestComponent);
+    fixture = TestBed.createComponent(DisplayAdminpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

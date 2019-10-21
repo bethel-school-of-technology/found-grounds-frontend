@@ -1,17 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 *:focus {
   outline: none;
 }
 
-body {
+.signuppage {
   margin: 0;
-  padding: 0;
-  background: #DDD;
+  padding-top: 100px;
+  background-color: #b99c6b;
   font-size: 16px;
   color: #222;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
 }
+
 
 #login-box {
   position: relative;
@@ -167,6 +165,7 @@ button.social-signin.local {
 button.social-signin.google {
   background: #DD4B39;
 }
+
 
 /* form input {
     outline-width: 5;

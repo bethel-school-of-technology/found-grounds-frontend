@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <app-display-user-profile userId={{userId}}></app-display-user-profile>
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+    
+      <app-upload-post userId={{userId}}></app-upload-post>
+    <app-display-posts userId={{userId}}></app-display-posts>
+      
+  
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+
+      <!-- <app-display-request></app-display-request> -->
+      <div class="w3-card w3-round w3-white w3-padding-16 w3-padding w3-center">
+          <h3>Welcome to Found Grounds Beta</h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg"  class="w3-circle w3-center" style="height:150px;width:150px" alt="Want"> 
+         <h4>We hope you enjoy it!</h4>
+         </div>
+         <br>
+    
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+
+</body>
+</html> 
+
+

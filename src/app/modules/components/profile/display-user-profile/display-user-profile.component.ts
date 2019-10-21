@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Account } from '../../../../shared/models/account';
 
 @Component({
-  selector: 'app-display-profile',
-  templateUrl: './display-profile.component.html',
-  styleUrls: ['./display-profile.component.css']
+  selector: 'app-display-user-profile',
+  templateUrl: './display-user-profile.component.html',
+  styleUrls: ['./display-user-profile.component.css']
 })
-export class DisplayProfileComponent implements OnInit {
+export class DisplayUserProfileComponent implements OnInit {
   private accountRoute = 'http://localhost:3000/accounts';
   public account: Account[];
   @Input() userId: number;

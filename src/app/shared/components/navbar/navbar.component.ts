@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginmodalComponent } from '../loginmodal/loginmodal.component';
 
 @Component({
   selector: 'app-navbar',
