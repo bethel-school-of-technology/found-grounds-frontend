@@ -8,8 +8,8 @@
       "image_url": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
       "deleted": false,
       "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
-      "timePosted": "23 mins",
-      "cafeId": 1
+      "cafeId": 1,
+      "timePosted":"2019-10-04 15:00:00"
     },
     {
       "id": 2,
@@ -19,35 +19,55 @@
       "image_url": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
       "deleted": false,
       "profilePicture_URL": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      "timePosted": "Yesterday"
+      "timePosted": "2019-10-06 15:00:00"
     },
     {
       "text": "Grabbing my morning Java",
       "userId": "1",
       "id": 5,
       "cafeId": "1",
-      "deleted": true
+      "deleted": true,
+      "timePosted": "2019-10-07 15:00:00"
     },
     {
       "text": "I love Robusta",
       "userId": "2",
       "cafeId": "1",
       "id": 6,
-      "deleted": false
+      "deleted": false,
+      "timePosted": "2019-10-09 15:00:00"
     },
     {
       "text": "The coffee was great",
       "userId": "2",
       "cafeId": "2",
       "id": 7,
-      "deleted": false
+      "deleted": false,
+      "timePosted": "2019-10-11 15:00:00"
     },
     {
       "text": "YAY!",
       "deleted": false,
       "userId": "1",
       "cafeId": "",
-      "id": 8
+      "id": 8,
+      "timePosted": "2019-10-15 15:00:00"
+    },
+    {
+      "text": "Man! The flat whites at The Flat White never dissapoint!",
+      "timePosted": "2019-10-19 15:00:00",
+      "deleted": false,
+      "userId": "1",
+      "cafeId": "2",
+      "id": 9
+    },
+    {
+      "text": "I truly love this app!",
+      "timePosted": "2019-10-21 22:00:00",
+      "deleted": false,
+      "userId": "1",
+      "cafeId": "1",
+      "id": 10
     }
   ],
   "accounts": [

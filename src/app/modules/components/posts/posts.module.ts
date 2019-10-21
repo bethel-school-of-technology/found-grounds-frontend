@@ -8,10 +8,12 @@ import { LikesModule } from '../likes/likes.module';
 import { DisplayCafepostsComponent } from './display-cafeposts/display-cafeposts.component';
 import { CafesModule } from '../cafes/cafes.module';
 import { DisplayProfilepostsComponent } from './display-profileposts/display-profileposts.component';
+import { TimeModule } from '../time/time.module';
+
 @NgModule({
   declarations: [DisplayPostsComponent, DisplayCafepostsComponent, DisplayProfilepostsComponent],
   imports: [
-    CommonModule, HttpClientModule, CommentsModule, AccountsModule, LikesModule, CafesModule
+    CommonModule, HttpClientModule, CommentsModule, AccountsModule, LikesModule, CafesModule, TimeModule
   ],
   exports: [DisplayPostsComponent, DisplayCafepostsComponent, DisplayProfilepostsComponent]
 })

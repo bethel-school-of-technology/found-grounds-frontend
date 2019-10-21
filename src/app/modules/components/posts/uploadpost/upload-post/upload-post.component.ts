@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Post } from '../../../../../shared/models/post';
 import { Cafe } from '../../../../../shared/models/cafe';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-upload-post',
@@ -33,6 +34,7 @@ export class UploadPostComponent implements OnInit {
       "text": post.text,
       "postid": post.id,
       "id": post.id,
+      "timePosted": moment(), 
       // image url data will be passed on from onFileSelected
       "image_url": this.image_url,
       "deleted": false,
