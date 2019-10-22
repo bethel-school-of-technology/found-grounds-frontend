@@ -1,1 +1,16 @@
-html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif};
+html, body, h1, h2, h3, h4, h5 {
+    font-family: "Open Sans", sans-serif
+}
+
+body {
+    background-color: #b99c6b;
+    padding-top: 15 px;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}

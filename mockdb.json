@@ -9,7 +9,7 @@
       "deleted": false,
       "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
       "cafeId": 1,
-      "timePosted":"2019-10-04 15:00:00"
+      "timePosted": "2019-10-04 15:00:00"
     },
     {
       "id": 2,
@@ -25,9 +25,9 @@
       "text": "Grabbing my morning Java",
       "userId": "1",
       "id": 5,
+      "timePosted": "2019-10-07 15:00:00",
       "cafeId": "1",
-      "deleted": true,
-      "timePosted": "2019-10-07 15:00:00"
+      "deleted": false
     },
     {
       "text": "I love Robusta",
@@ -68,6 +68,14 @@
       "userId": "1",
       "cafeId": "1",
       "id": 10
+    },
+    {
+      "text": "Check this out!",
+      "timePosted": "2019-10-22T03:46:04.698Z",
+      "deleted": false,
+      "userId": "1",
+      "cafeId": "1",
+      "id": 11
     }
   ],
   "accounts": [
@@ -316,6 +324,12 @@
       "postid": "3",
       "like": true,
       "id": 6
+    },
+    {
+      "userId": "",
+      "postid": "5",
+      "like": true,
+      "id": 7
     }
   ]
 }

@@ -20,7 +20,18 @@ export class DisplayProfilepageComponent implements OnInit {
     });
   }
 
-  
+  showBox(id){
+    var x = document.getElementById(id);
+    if (x.className.indexOf("show") == -1) {
+      x.className += " show";
+      x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+      x.className = x.className.replace("show", "");
+      x.previousElementSibling.className =
+      x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+  }
+
   ngOnInit() {
     let param = this.route.snapshot.paramMap.get('username')
     this.getAccount(param);
