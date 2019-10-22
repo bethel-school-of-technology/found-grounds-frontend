@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommentboxComponent implements OnInit {
   @Input() postid: number;
-  @Input() userId: number;
+  @Input() token: number;
   
   constructor() { }
 

@@ -6,4 +6,5 @@ export class Post {
     deleted: boolean;
     id: number;
     cafeId: number;
+    timePosted: string;
 }

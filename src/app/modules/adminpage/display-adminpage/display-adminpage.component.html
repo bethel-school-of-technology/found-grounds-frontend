@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px">    
+  <!-- The Grid -->
+  <div class="w3-row">  
+  
+     <!-- Middle Column -->
+     <div class="w3-col m8">
+
+        <div class="w3-white">
+            <div class="w3-container w3-padding found-grounds-brown">
+             <h3>All Our Cafes</h3>
+            </div>
+          </div>
+
+        <app-display-allcafeprofiles></app-display-allcafeprofiles>
+
+        <div class="w3-white">
+          <div class="w3-container w3-padding found-grounds-brown">
+           <h3>All Our Users</h3>
+          </div>
+        </div>
+
+        <app-display-allprofiles></app-display-allprofiles>
+
+        <div class="w3-white">
+            <div class="w3-container w3-padding found-grounds-brown">
+             <h3>All Our Users' Posts</h3>
+            </div>
+          </div>
+
+          <app-display-posts token={{token}}></app-display-posts>
+
+        </div>
+
+          <!-- Right Column -->
+
+        
+
+    <div class="w3-col m4">
+
+        <app-adminnavbar></app-adminnavbar>
+      
+    </div>
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+
+</body>
+</html> 
+
+

@@ -10,7 +10,8 @@ import { Cafe } from '../../../../shared/models/cafe';
   styleUrls: ['./display-cafeposts.component.css']
 })
 export class DisplayCafepostsComponent implements OnInit {
-  @Input() userId: number;
+  @Input() token: number;
+  
   private postsRoute = 'http://localhost:3000/posts';
   accountsRoute = 'http://localhost:3000/accounts';
   public posts: Post[];
@@ -24,7 +25,7 @@ export class DisplayCafepostsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   getCafePosts(){
-    this.http.get<Post[]>(this.postsRoute + "?cafeId=" + this.cafeId).subscribe(posts => {
+    this.http.get<Post[]>(this.postsRoute + "?cafeId=" + this.cafeId + "&deleted=false").subscribe(posts => {
       this.posts = posts;
     });
   }

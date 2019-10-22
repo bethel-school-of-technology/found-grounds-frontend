@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Post } from '../../../../../shared/models/post';
 import { Cafe } from '../../../../../shared/models/cafe';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-upload-post',
@@ -33,8 +34,10 @@ export class UploadPostComponent implements OnInit {
       "text": post.text,
       "postid": post.id,
       "id": post.id,
+      "timePosted": moment(), 
       // image url data will be passed on from onFileSelected
       "image_url": this.image_url,
+      "deleted": false,
       // this simulates loggin in
       "userId": this.userId,
       "cafeId": post.cafeId
@@ -47,7 +50,7 @@ export class UploadPostComponent implements OnInit {
     ;
   }
 
-  private cafesRoute = 'http://localhost:3000/cafes';
+  private cafesRoute = 'http://localhost:3000/cafes?deleted=false';
   public cafes: Cafe[];
   getCafe(){
     this.http.get<Cafe[]>(this.cafesRoute).subscribe(cafes => {

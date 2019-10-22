@@ -1,0 +1,13 @@
+#feed {
+    justify-content: center;
+    justify-self: center;
+    margin: 0px auto
+}
+
+h2 {
+    color: white;
+}
+
+.left-align {
+    text-align: left;
+}

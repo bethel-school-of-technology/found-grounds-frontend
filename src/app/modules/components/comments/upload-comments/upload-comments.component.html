@@ -1,6 +1,6 @@
 <div>
     <div>
-        <app-display-comments-profile-picture userId={{userId}}></app-display-comments-profile-picture>
+        <app-display-comments-profile-picture userId={{token}}></app-display-comments-profile-picture>
     </div>
     <div>
         <form id="uploadNewComment" name="uploadNewComment" #commentData="ngForm" (ngSubmit)="uploadNewComment(commentData.value)">

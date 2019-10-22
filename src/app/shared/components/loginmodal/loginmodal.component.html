@@ -1,0 +1,26 @@
+<a onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGIN</a>
+ <!-- The Modal For Sign Up -->
+ <div class="modal"  id="id01">
+    
+  
+    <!-- Modal Content For Sign Up -->
+    <form id="loginmodal" name="loginmodal" #loginData="ngForm" (ngSubmit)="login(loginData.value)" class="modal-content animate w3-card" action="/action_page.php">
+        <span onclick="document.getElementById('id01').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
+      <div class="imgcontainer">
+        <img src="https://engageemployee.com/wp-content/uploads/2017/03/Coffee-drink.jpg" alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <input type="text" placeholder="Enter Username" name="usr" id="usr" required>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <button type="submit">Login</button>
+        <div class="w3-row">
+            <div class="w3-col s12">
+                    <button type="button" class="w3-button w3-theme w3-padding sharedbutton coffeebutton w3-left" onclick="document.getElementById('id01').style.display='none'" (click)="router.navigate(['/forgotpassword']);">Forgot Password?</button>
+                    <button type="button" class="w3-button w3-theme w3-padding sharedbutton coffeebutton w3-right" onclick="document.getElementById('id01').style.display='none'" (click)="router.navigate(['/signup']);">Sign Up</button>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>

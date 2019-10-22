@@ -1,14 +1,16 @@
-import { ProfilesModule } from './modules/fullprofilepage/profiles/profiles.module';
 import { HomeComponent } from './shared/components/home/home.component';
 import { SignupComponent } from './shared/components/signup/signup.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DisplayPageComponent } from './modules/fullprofilepage/display-page/display-page.component';
+import { DisplayDailybrewPageComponent } from './modules/dailybrewpage/display-dailybrew-page/display-dailybrew-page.component';
 import { DisplayCafepageComponent } from './modules/cafepage/display-cafepage/display-cafepage.component';
-import { DisplayAllcafesComponent} from './modules/cafepage/display-allcafes/display-allcafes.component';
-import { DisplayAllprofilesComponent } from './modules/userprofile/display-allprofiles/display-allprofiles.component';
-import { DisplayProfilepageComponent } from './modules/userprofile/display-profilepage/display-profilepage.component';
+import { DisplayAllprofilespageComponent } from './modules/profilepages/display-allprofilespage/display-allprofilespage.component';
+import { DisplayProfilepageComponent } from './modules/profilepages/display-profilepage/display-profilepage.component';
+import { DisplayAdminpageComponent } from './modules/adminpage/display-adminpage/display-adminpage.component';
+import { DisplayAllcafespageComponent } from './modules/cafepage/display-allcafespage/display-allcafespage.component';
+import {DisplayRestorecontentpageComponent} from './modules/adminpage/display-restorecontentpage/display-restorecontentpage.component';
+import { DisplayDeletecontentpageComponent } from './modules/adminpage/display-deletecontentpage/display-deletecontentpage.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'
@@ -23,11 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'dailybrew',
-    component: DisplayPageComponent,
+    component: DisplayDailybrewPageComponent,
   },
   {
     path: 'cafes',
-    component: DisplayAllcafesComponent,
+    component: DisplayAllcafespageComponent,
   },
   {
     path: 'cafes/:id',
@@ -35,12 +37,24 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: DisplayAllprofilesComponent,
+    component: DisplayAllprofilespageComponent,
   },
   {
     path: 'users/:username',
     component: DisplayProfilepageComponent,
   },
+  {
+    path: 'adminaccess',
+    component: DisplayAdminpageComponent
+  },
+  {
+    path: 'adminrestore',
+    component: DisplayRestorecontentpageComponent
+  },
+  {
+    path: 'admindelete',
+    component: DisplayDeletecontentpageComponent
+  }
 ];
 
 @NgModule({
@@ -52,5 +66,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  HomeComponent, SignupComponent, DisplayPageComponent, DisplayCafepageComponent, DisplayAllcafesComponent, DisplayAllprofilesComponent, DisplayProfilepageComponent
+  HomeComponent, SignupComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent,DisplayRestorecontentpageComponent, DisplayDeletecontentpageComponent
 ]

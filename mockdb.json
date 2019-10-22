@@ -6,10 +6,10 @@
       "userId": 4,
       "text": "I love Americanos",
       "image_url": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
-      "deleted": 0,
+      "deleted": false,
       "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
-      "timePosted": "23 mins",
-      "cafeId": 1
+      "cafeId": 1,
+      "timePosted":"2019-10-04 15:00:00"
     },
     {
       "id": 2,
@@ -17,29 +17,57 @@
       "userId": 2,
       "text": "We travel the world in search of great coffee. In the process, we discover beans so special and rare that we can't wait to bring them home and share. - Starbucks",
       "image_url": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
-      "deleted": 0,
+      "deleted": false,
       "profilePicture_URL": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      "timePosted": "Yesterday"
-    },
-    {
-      "text": "I love Robusta",
-      "postid": 5,
-      "image_url": "",
-      "profilePicture_URL": "https://media.istockphoto.com/photos/portrait-of-smiling-handsome-man-in-blue-tshirt-standing-with-crossed-picture-id1045886560?k=6&m=1045886560&s=612x612&w=0&h=hXrxai1QKrfdqWdORI4TZ-M0ceCVakt4o6532vHaS3I=",
-      "userId": 1,
-      "deleted": 0,
-      "id": 3
-    },
-    {
-      "text": "I can't wait to meet Jenny at Hebrews!",
-      "userId": "3",
-      "id": 4
+      "timePosted": "2019-10-06 15:00:00"
     },
     {
       "text": "Grabbing my morning Java",
       "userId": "1",
+      "id": 5,
       "cafeId": "1",
-      "id": 5
+      "deleted": true,
+      "timePosted": "2019-10-07 15:00:00"
+    },
+    {
+      "text": "I love Robusta",
+      "userId": "2",
+      "cafeId": "1",
+      "id": 6,
+      "deleted": false,
+      "timePosted": "2019-10-09 15:00:00"
+    },
+    {
+      "text": "The coffee was great",
+      "userId": "2",
+      "cafeId": "2",
+      "id": 7,
+      "deleted": false,
+      "timePosted": "2019-10-11 15:00:00"
+    },
+    {
+      "text": "YAY!",
+      "deleted": false,
+      "userId": "1",
+      "cafeId": "",
+      "id": 8,
+      "timePosted": "2019-10-15 15:00:00"
+    },
+    {
+      "text": "Man! The flat whites at The Flat White never dissapoint!",
+      "timePosted": "2019-10-19 15:00:00",
+      "deleted": false,
+      "userId": "1",
+      "cafeId": "2",
+      "id": 9
+    },
+    {
+      "text": "I truly love this app!",
+      "timePosted": "2019-10-21 22:00:00",
+      "deleted": false,
+      "userId": "1",
+      "cafeId": "1",
+      "id": 10
     }
   ],
   "accounts": [
@@ -52,7 +80,9 @@
       "state": "Arizona",
       "bio": "Espresso Fan",
       "birthday": "April 15, 1973",
-      "username": "jsmith4"
+      "username": "jsmith4",
+      "deleted": false,
+      "id": 1
     },
     {
       "userId": 2,
@@ -63,7 +93,9 @@
       "state": "Oklahoma",
       "bio": "Instant Coffee Gal",
       "birthday": "May 22, 1994",
-      "username": "kdoe22"
+      "username": "kdoe22",
+      "id": 2,
+      "deleted": false
     },
     {
       "userId": 3,
@@ -74,7 +106,9 @@
       "state": "New Mexico",
       "bio": "Java Nut",
       "birthday": "March 03, 1965",
-      "username": "hotespresso"
+      "username": "hotespresso",
+      "id": 3,
+      "deleted": false
     },
     {
       "userId": 4,
@@ -85,7 +119,9 @@
       "state": "Washington",
       "bio": "Coffee Coding",
       "birthday": "Feb, 08, 1996",
-      "username": "starbucks4eva"
+      "username": "starbucks4eva",
+      "id": 4,
+      "deleted": false
     }
   ],
   "comments": [
@@ -131,26 +167,26 @@
     {
       "cafeId": 1,
       "bio": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-      "deleted": false,
       "cafeName": "Mama Cika Cafe",
       "cafeAddress": "Jl. Punawarman 5",
       "cafeCity": "Jakarta",
       "cafeState": "Indonesia",
       "rating": 4.5,
       "profilePicture_URL": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
-      "id": 1
+      "id": 1,
+      "deleted": false
     },
     {
       "cafeId": 2,
       "bio": "Hipster is an understatement. ARTisan is our attitude. Coffee is our inspiration.",
-      "deleted": false,
       "cafeName": "The Flat White",
       "cafeAddress": "55 Mission Street",
       "cafeCity": "Redding",
       "cafeState": "California",
       "rating": 5,
       "profilePicture_URL": "https://cdn.resize.sparkplatform.com/sha/640x480/true/20180801184334499279000000-o.jpg",
-      "id": 2
+      "id": 2,
+      "deleted": false
     }
   ],
   "reviews": [
