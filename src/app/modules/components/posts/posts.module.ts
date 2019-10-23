@@ -9,11 +9,13 @@ import { DisplayCafepostsComponent } from './display-cafeposts/display-cafeposts
 import { CafesModule } from '../cafes/cafes.module';
 import { DisplayProfilepostsComponent } from './display-profileposts/display-profileposts.component';
 import { TimeModule } from '../time/time.module';
+import { EditModule } from '../edit/edit.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DisplayPostsComponent, DisplayCafepostsComponent, DisplayProfilepostsComponent],
   imports: [
-    CommonModule, HttpClientModule, CommentsModule, AccountsModule, LikesModule, CafesModule, TimeModule
+    CommonModule, HttpClientModule, CommentsModule, AccountsModule, LikesModule, CafesModule, TimeModule, EditModule, FormsModule
   ],
   exports: [DisplayPostsComponent, DisplayCafepostsComponent, DisplayProfilepostsComponent]
 })

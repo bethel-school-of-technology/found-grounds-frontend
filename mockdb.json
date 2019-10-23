@@ -1,81 +1,55 @@
 {
   "posts": [
     {
-      "id": 1,
-      "postid": 1,
+      "postId": 1,
       "userId": 4,
+      "shopId": 1,
       "text": "I love Americanos",
-      "image_url": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
+      "imageUrl": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
       "deleted": false,
-      "profilePicture_URL": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
-      "cafeId": 1,
       "timePosted": "2019-10-04 15:00:00"
     },
     {
-      "id": 2,
-      "postid": 2,
+      "postId": 2,
       "userId": 2,
       "text": "We travel the world in search of great coffee. In the process, we discover beans so special and rare that we can't wait to bring them home and share. - Starbucks",
-      "image_url": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
+      "imageUrl": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
       "deleted": false,
-      "profilePicture_URL": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
       "timePosted": "2019-10-06 15:00:00"
     },
     {
-      "text": "Grabbing my morning Java",
+      "postId": 3,
       "userId": "1",
-      "id": 5,
+      "shopId": "1",
+      "text": "Grabbing my morning Java",
+      "deleted": false,
       "timePosted": "2019-10-07 15:00:00",
-      "cafeId": "1",
-      "deleted": false
     },
     {
-      "text": "I love Robusta",
+      "postId": 4,
       "userId": "2",
-      "cafeId": "1",
-      "id": 6,
+      "shopId": "1",
+      "text": "I love Robusta",
       "deleted": false,
       "timePosted": "2019-10-09 15:00:00"
     },
     {
+     "postId": 5,
+     "userId": "2",
+     "shopId": "2",
       "text": "The coffee was great",
-      "userId": "2",
-      "cafeId": "2",
-      "id": 7,
       "deleted": false,
       "timePosted": "2019-10-11 15:00:00"
     },
     {
-      "text": "YAY!",
-      "deleted": false,
+      "postId": 6,
       "userId": "1",
-      "cafeId": "",
-      "id": 8,
-      "timePosted": "2019-10-15 15:00:00"
-    },
-    {
+      "cafeId": "2",
       "text": "Man! The flat whites at The Flat White never dissapoint!",
       "timePosted": "2019-10-19 15:00:00",
       "deleted": false,
-      "userId": "1",
-      "cafeId": "2",
+     
       "id": 9
-    },
-    {
-      "text": "I truly love this app!",
-      "timePosted": "2019-10-21 22:00:00",
-      "deleted": false,
-      "userId": "1",
-      "cafeId": "1",
-      "id": 10
-    },
-    {
-      "text": "Check this out!",
-      "timePosted": "2019-10-22T03:46:04.698Z",
-      "deleted": false,
-      "userId": "1",
-      "cafeId": "1",
-      "id": 11
     }
   ],
   "accounts": [
@@ -171,10 +145,10 @@
       "id": 4
     }
   ],
-  "cafes": [
+  "shops": [
     {
-      "cafeId": 1,
-      "bio": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
+      "shopId": 1,
+      "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
       "cafeName": "Mama Cika Cafe",
       "cafeAddress": "Jl. Punawarman 5",
       "cafeCity": "Jakarta",
@@ -199,11 +173,11 @@
   ],
   "reviews": [
     {
+      "reviewId": 1,
+      "shopId": 1
       "text": "Mama Cika Cafe has the best coffee in town!",
       "cafeId": 1,
       "userId": 2,
-      "reviewId": 1,
-      "id": 1,
       "deleted": false,
       "rating": 4
     },

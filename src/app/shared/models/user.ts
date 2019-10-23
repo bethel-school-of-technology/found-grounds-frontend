@@ -1,4 +1,4 @@
-export class Account {
+export class User {
     userId: number;
     rolesId: number;
     email: string;
@@ -15,6 +15,7 @@ export class Account {
     zip: number;
     amHome: boolean;
     birthday: Date;
-    profilePicture_URL: string;
+    imageUrl: string;
     deleted: boolean;
+    dateJoined: Date;
 }

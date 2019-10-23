@@ -1,7 +1,8 @@
 export class Photo {
-    postid: number;
-    cafeId: number;
-    image_url: string;
+    photoId: number;
+    shopId: number;
+    postId: number;
+    imageUrl: string;
     deleted: boolean;
-    id: number;
+    timePosted: Date;
 }

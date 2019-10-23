@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Account } from '../../../../shared/models/account';
+import { Account } from '../../../../shared/models/user';
 import { Router } from '@angular/router';
 
 @Component({
