@@ -1,10 +1,9 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Like } from '../../../../shared/models/like';
-import { DisplayLikesComponent } from '../display-likes/display-likes.component';
 
 @Component({
-  providers: [DisplayLikesComponent],
+  providers: [],
   selector: 'app-toggle-like',
   templateUrl: './toggle-like.component.html',
   styleUrls: ['./toggle-like.component.css']
@@ -12,30 +11,32 @@ import { DisplayLikesComponent } from '../display-likes/display-likes.component'
 export class ToggleLikeComponent implements OnInit {
   @Input() postId : number;
   @Input() userId : number;
-
-  constructor(private http: HttpClient, private comp: DisplayLikesComponent, ) { }
   private likesRoute = 'http://localhost:3000/likes';
-  public like: Like
+  public likes: Like [];
+
+  constructor(private http: HttpClient) { }
+  public likeToPost: Like
   isAdded: boolean = false;
   confirmationString: string = "New like has been uploaded";
 
-  // currently unable to toggle, only like
-  // button should look pressed when like is set to true
-  // 
+  getLikes(postId){
+    this.http.get<Like[]>(this.likesRoute + "?postId=" + postId).subscribe(likes => {
+      this.likes = likes;
+    })
+  }
+
   onClickLike(){
-    this.like = {
+    this.likeToPost = {
       "userId": this.userId,
       "postId": this.postId,
       "like": true,
     }
-    this.http.post(this.likesRoute, this.like).subscribe(res => (this.isAdded = true));
-    this.comp.getLikes(this.postId);
-    this.comp.ngOnInit();
- this.ngOnInit();
+    this.http.post(this.likesRoute, this.likeToPost).subscribe(res => (this.isAdded = true));
+    this.ngOnInit();
 ; }
 
   ngOnInit() {
-
+    this.getLikes(this.postId);
   }
 
 }

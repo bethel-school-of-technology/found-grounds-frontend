@@ -1,1 +1,6 @@
+<div>
+        <b *ngFor="let like of likes">
+        <app-display-comments-profile-picture userId={{like.userId}}></app-display-comments-profile-picture> <b> </b> 
+    </b>
+    <i *ngIf="likes?.length >0"class="fa fa-coffee"></i> </div>
 <button type="button" (click)="onClickLike()" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
