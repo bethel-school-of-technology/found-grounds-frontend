@@ -8,12 +8,12 @@ import { Photo } from '../../../../shared/models/photo';
   styleUrls: ['./photobox.component.css']
 })
 export class PhotoboxComponent implements OnInit {
-  @Input() cafeId: number;
+  @Input() shopId: number;
   private photosRoute = 'http://localhost:3000/photos';
   public images: Photo [];
   constructor( private http: HttpClient) { }
   getPhotos(){
-    this.http.get<Photo[]>(this.photosRoute + "?cafeId=" + this.cafeId).subscribe(images => {
+    this.http.get<Photo[]>(this.photosRoute + "?shopId=" + this.shopId).subscribe(images => {
       this.images = images;
     });
   }

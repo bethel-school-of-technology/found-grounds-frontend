@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Cafe } from '../../../shared/models/cafe';
+import { Shop } from '../../../shared/models/shop';
 
 @Component({
   selector: 'app-display-cafepage',
@@ -17,7 +17,7 @@ export class DisplayCafepageComponent implements OnInit {
   constructor( private route: ActivatedRoute, private http: HttpClient) { }
 
   getCafe(param){
-    this.http.get<Cafe>(this.cafesRoute + "?deleted=false&cafeId=" + param).subscribe(cafe => {
+    this.http.get<Shop>(this.cafesRoute + "?deleted=false&shopId=" + param).subscribe(cafe => {
       this.cafe = cafe
     });}
 

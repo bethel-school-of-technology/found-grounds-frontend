@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cafe } from '../../../../shared/models/cafe';
+import { Shop } from '../../../../shared/models/shop';
 
 @Component({
   selector: 'app-display-cafe-name',
@@ -9,12 +9,12 @@ import { Cafe } from '../../../../shared/models/cafe';
 })
 export class DisplayCafeNameComponent implements OnInit {
   private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Cafe;
-  @Input() cafeId: number;
+  public cafe: Shop;
+  @Input() shopId: number;
 
   constructor(private http: HttpClient) { }
   getCafe(){
-    this.http.get<Cafe>(this.cafesRoute + "?cafeId=" + this.cafeId).subscribe(cafe => {
+    this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
       this.cafe = cafe;
     });
   }

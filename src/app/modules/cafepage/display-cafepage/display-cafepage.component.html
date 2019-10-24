@@ -28,9 +28,9 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-col l8 s12">
     
       <!-- Blog entry -->
-      <app-display-cafeprofile cafeId={{caf.cafeId}}></app-display-cafeprofile>
-      <!-- to be changed with cafeId -->
-      <app-display-cafeposts token={{token}} cafeId={{caf.cafeId}}></app-display-cafeposts>
+      <app-display-cafeprofile shopId={{caf.shopId}}></app-display-cafeprofile>
+      <!-- to be changed with shopId -->
+      <app-display-cafeposts token={{token}} shopId={{caf.shopId}}></app-display-cafeposts>
     <!-- END BLOG ENTRIES -->
     </div>
 
@@ -38,13 +38,13 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-col l4">
 
       <!-- Posts -->
-        <app-reviewbox cafeId={{caf.cafeId}}></app-reviewbox>
+        <app-reviewbox shopId={{caf.shopId}}></app-reviewbox>
 
       <!-- Inspiration -->
-      <app-photobox cafeId={{caf.cafeId}}></app-photobox>
+      <app-photobox shopId={{caf.shopId}}></app-photobox>
 <hr>
-   <app-display-menu cafeId={{caf.cafeId}}></app-display-menu>
-      <app-upload-review cafeId={{caf.cafeId}} token={{token}}></app-upload-review>
+   <app-display-menu shopId={{caf.shopId}}></app-display-menu>
+      <app-upload-review shopId={{caf.shopId}} token={{token}}></app-upload-review>
     <!-- END About/Intro Menu -->
     </div>
 

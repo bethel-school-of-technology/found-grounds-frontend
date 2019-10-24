@@ -1,10 +1,11 @@
 export class Review {
-    reviewId: number;
     shopId: number;
     userId: number;
+    reviewId: number;
     text: string;
     rating: number;
     deleted: boolean;
-    timePosted: Date;
+    id: number;
+    timePosted;
 }
 

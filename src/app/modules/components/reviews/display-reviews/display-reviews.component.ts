@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./display-reviews.component.css']
 })
 export class DisplayReviewsComponent implements OnInit {
-  @Input() cafeId: number;
+  @Input() shopId: number;
 
   private reviewsRoute = 'http://localhost:3000/reviews';
   public reviews : Review [];
 
   constructor(private http: HttpClient) { }
-  getReviews(cafeId){
-    this.http.get<Review[]>(this.reviewsRoute + "?cafeId=" + cafeId).subscribe(reviews => {
+  getReviews(shopId){
+    this.http.get<Review[]>(this.reviewsRoute + "?shopId=" + shopId).subscribe(reviews => {
       this.reviews = reviews;
     })
   }
@@ -24,7 +24,7 @@ export class DisplayReviewsComponent implements OnInit {
     alert("Comment!")};
 
   ngOnInit() {
-    this.getReviews(this.cafeId);
+    this.getReviews(this.shopId);
   };
 
  

@@ -1,5 +1,5 @@
 export class Like {
-    postid: number;
+    postId: number;
     userId: number;
     like: boolean;
 }

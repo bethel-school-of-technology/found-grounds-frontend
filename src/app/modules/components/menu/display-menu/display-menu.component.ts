@@ -8,13 +8,13 @@ import { Menu } from '../../../../shared/models/menu';
   styleUrls: ['./display-menu.component.css']
 })
 export class DisplayMenuComponent implements OnInit {
-  @Input() cafeId: number;
+  @Input() shopId: number;
   private menusRoute = 'http://localhost:3000/menu';
   public menus: Menu [];
 
   constructor( private http:HttpClient) { }
   getMenus(){
-    this.http.get<Menu[]>(this.menusRoute + "?cafeId=" + this.cafeId).subscribe(menus => {
+    this.http.get<Menu[]>(this.menusRoute + "?shopId=" + this.shopId).subscribe(menus => {
       this.menus = menus;
     });
   }

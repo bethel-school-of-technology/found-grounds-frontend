@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Account } from '../../../../shared/models/user';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-display-profilepage-profile',
@@ -8,18 +8,18 @@ import { Account } from '../../../../shared/models/user';
   styleUrls: ['./display-profilepage-profile.component.css']
 })
 export class DisplayProfilepageProfileComponent implements OnInit {
-  private accountRoute = 'http://localhost:3000/accounts';
-  public account: Account[];
+  private userRoute = 'http://localhost:3000/users';
+  public user: User[];
   @Input() username: string;
 
   constructor(private http: HttpClient) { }
-  getAccount(){
-    this.http.get<Account[]>(this.accountRoute + "?username=" + this.username).subscribe(account => {
-      this.account = account;
+  getUser(){
+    this.http.get<User[]>(this.userRoute + "?username=" + this.username).subscribe(user => {
+      this.user = user;
     });
   }
   ngOnInit() {
-    this.getAccount();
+    this.getUser();
     console.log(this.username);
   }
 
