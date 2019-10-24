@@ -1,9 +1,10 @@
 export class Menu {
-    itemId: number;
     shopId: number;
+    itemId: number;
     name: string;
     text: string;
-    imageUrl: string;
+    image_url: string;
     deleted: boolean;
-    timePosted: Date;
+    id: number;
+    timePosted;
 }

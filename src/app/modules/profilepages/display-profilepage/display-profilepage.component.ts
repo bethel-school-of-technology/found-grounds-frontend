@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../../../shared/models/user';
 
 @Component({
   selector: 'app-display-profilepage',
@@ -10,13 +11,13 @@ import { HttpClient } from '@angular/common/http';
 export class DisplayProfilepageComponent implements OnInit {
   token=1
   public param;
-  public account: Account;
-  private accountRoute = 'http://localhost:3000/accounts';
+  public user: User;
+  private userRoute = 'http://localhost:3000/users';
 
   constructor( private route: ActivatedRoute, private http: HttpClient) { }
-  getAccount(username){
-    this.http.get<Account>(this.accountRoute + "?deleted=false&username=" + username).subscribe(account => {
-      this.account = account;
+  getUser(username){
+    this.http.get<User>(this.userRoute + "?deleted=false&username=" + username).subscribe(user => {
+      this.user = user;
     });
   }
 
@@ -34,7 +35,7 @@ export class DisplayProfilepageComponent implements OnInit {
 
   ngOnInit() {
     let param = this.route.snapshot.paramMap.get('username')
-    this.getAccount(param);
+    this.getUser(param);
   }
 
 }

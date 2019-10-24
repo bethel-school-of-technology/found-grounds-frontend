@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Comment } from '../../../../shared/models/comment';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-upload-comments',
@@ -9,7 +10,7 @@ import { Comment } from '../../../../shared/models/comment';
 })
 export class UploadCommentsComponent implements OnInit {
   @Input() token: number;
-  @Input() postid: number;
+  @Input() postId: number;
 
   constructor(private http: HttpClient) { }
 
@@ -21,11 +22,12 @@ export class UploadCommentsComponent implements OnInit {
   uploadNewComment(comment){
     this.comment = {
       "text": comment.text,
-      "postid": this.postid,
+      "postId": this.postId,
       "userId": this.token,
-      "commentid": comment.id,
+      "commentId": comment.id,
       "id": comment.id,
       "deleted": false,
+      "timePosted": moment()
     }
     this.http.post(this.commentsRoute, this.comment)
     .subscribe(res => (this.isAdded = true));

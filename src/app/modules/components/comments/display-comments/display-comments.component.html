@@ -1,4 +1,4 @@
     <div *ngFor="let comment of comments">
             <app-display-comments-profile-picture userId={{comment.userId}}></app-display-comments-profile-picture>
-       <p><app-display-account userId={{comment.userId}}></app-display-account> {{comment.text}}</p>
+       <p><app-display-user userId={{comment.userId}}></app-display-user> {{comment.text}}</p>
     </div>

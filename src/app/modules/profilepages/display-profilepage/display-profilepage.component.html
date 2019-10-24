@@ -12,13 +12,13 @@
 
 
 <!-- Page Container -->
-<div *ngFor="let accoun of account" class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+<div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
   <!-- The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <app-display-profilepage-profile username={{accoun.username}}></app-display-profilepage-profile>
+      <app-display-profilepage-profile username={{use.username}}></app-display-profilepage-profile>
 
       <!-- Accordion -->
 
@@ -26,13 +26,13 @@
 
      <div class="w3-card w3-round">
         <div class="w3-white">
-          <button (click)="showBox('CheckIns')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> {{accoun.firstName}}'s Check-ins </button>
+          <button (click)="showBox('CheckIns')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> {{use.firstName}}'s Check-ins </button>
           <div id="CheckIns" class="hidden">
-              <app-display-userscafes profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-userscafes>
+              <app-display-userscafes profileId={{use.userId}} firstname={{use.firstName}} userId={{userId}}></app-display-userscafes>
           </div>
-          <button (click)="showBox('Photos')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> {{accoun.firstName}}'s Photos</button>
+          <button (click)="showBox('Photos')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> {{use.firstName}}'s Photos</button>
           <div id="Photos" class="hidden">
-              <app-display-usersphotos profileId={{accoun.userId}} firstname={{accoun.firstName}} userId={{userId}}></app-display-usersphotos>
+              <app-display-usersphotos profileId={{use.userId}} firstname={{use.firstName}} userId={{userId}}></app-display-usersphotos>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
     <!-- Middle Column -->
     <div class="w3-col m7">
 
-      <app-display-profileposts profileId={{accoun.userId}} firstname={{accoun.firstName}} token={{token}}></app-display-profileposts>
+      <app-display-profileposts profileId={{use.userId}} firstname={{use.firstName}} token={{token}}></app-display-profileposts>
 
     <!-- End Middle Column -->
     </div>

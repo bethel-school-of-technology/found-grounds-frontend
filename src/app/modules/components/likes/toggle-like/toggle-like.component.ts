@@ -10,7 +10,7 @@ import { DisplayLikesComponent } from '../display-likes/display-likes.component'
   styleUrls: ['./toggle-like.component.css']
 })
 export class ToggleLikeComponent implements OnInit {
-  @Input() postid : number;
+  @Input() postId : number;
   @Input() userId : number;
 
   constructor(private http: HttpClient, private comp: DisplayLikesComponent, ) { }
@@ -25,11 +25,11 @@ export class ToggleLikeComponent implements OnInit {
   onClickLike(){
     this.like = {
       "userId": this.userId,
-      "postid": this.postid,
+      "postId": this.postId,
       "like": true,
     }
     this.http.post(this.likesRoute, this.like).subscribe(res => (this.isAdded = true));
-    this.comp.getLikes(this.postid);
+    this.comp.getLikes(this.postId);
     this.comp.ngOnInit();
  this.ngOnInit();
 ; }

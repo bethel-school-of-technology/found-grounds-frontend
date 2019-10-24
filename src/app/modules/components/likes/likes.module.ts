@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DisplayLikesComponent } from './display-likes/display-likes.component';
-import { AccountsModule } from '../accounts/accounts.module';
+import { UsersModule } from '../users/users.module';
 import { ToggleLikeComponent } from './toggle-like/toggle-like.component';
 
 
 @NgModule({
   declarations: [DisplayLikesComponent, ToggleLikeComponent],
   imports: [
-    CommonModule, AccountsModule
+    CommonModule, UsersModule
   ],
   exports: [ DisplayLikesComponent, ToggleLikeComponent
   ]

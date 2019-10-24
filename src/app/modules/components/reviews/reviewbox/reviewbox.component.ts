@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./reviewbox.component.css']
 })
 export class ReviewboxComponent implements OnInit {
-  @Input() cafeId: number;
+  @Input() shopId: number;
   @Input() userId: number;
   constructor() { }
 

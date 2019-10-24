@@ -1,14 +1,15 @@
 export class Shop {
     shopId: number;
     about: string;
+    deleted: boolean;
     name: string;
-    streetAddress1: string;
-    streetAddress2: string;
     city: string;
     state: string;
     zip: string;
+    streetAddress1: string;
+    streetAddress2: string;
     hoursOfOperation: string;
     rating: number;
     imageUrl: string;
-    deleted: boolean;
+    id: number;
 }

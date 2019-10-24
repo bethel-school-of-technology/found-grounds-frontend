@@ -1,13 +1,13 @@
-<div *ngFor="let accoun of account" class="w3-row">
-<div (click)="onSelect(accoun)"  class="w3-container w3-card w3-round w3-white w3-margin-top w3-col m8 w3-margin-bottom w3-padding left-align">
+<div *ngFor="let use of user" class="w3-row">
+<div (click)="onSelect(use)"  class="w3-container w3-card w3-round w3-white w3-margin-top w3-col m8 w3-margin-bottom w3-padding left-align">
         <div class="w3-row">
                     <div class="w3-col m4 s6 w3-padding w3-margin-right">
-                        <img src={{accoun.profilePicture_URL}} class="w3-circle" style="height:106px" alt="Avatar">
+                        <img src={{use.imageUrl}} class="w3-circle" style="height:106px" alt="Avatar">
                     </div>
                     <div class="w3-col m5 s6 w3-margin-left">
-                        <h2>{{accoun.firstName}} {{accoun.lastName}}</h2>
-                     <p>{{accoun.bio}}<br>
-                     {{accoun.city}}, {{accoun.state}}</p>
+                        <h2>{{use.firstName}} {{use.lastName}}</h2>
+                     <p>{{use.about}}<br>
+                     {{use.city}}, {{use.state}}</p>
                     </div>
                     <div class="w3-col m2 s0 w3-margin-left ">
                         
@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="w3-col m3 w3-padding w3-margin-left">
-                <button (click)="deleteAccount(accoun)" type="button" class="w3-button w3-red">DELETE ACCOUNT</button>
+                <button (click)="deleteUser(use)" type="button" class="w3-button w3-red">DELETE ACCOUNT</button>
           </div>
         
           <br>

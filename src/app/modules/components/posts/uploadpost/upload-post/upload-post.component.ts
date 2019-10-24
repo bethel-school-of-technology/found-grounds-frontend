@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Post } from '../../../../../shared/models/post';
-import { Cafe } from '../../../../../shared/models/cafe';
+import { Shop } from '../../../../../shared/models/shop';
 import * as moment from 'moment';
 
 @Component({
@@ -32,7 +32,7 @@ export class UploadPostComponent implements OnInit {
   uploadPost = function(post){
     this.post = {
       "text": post.text,
-      "postid": post.id,
+      "postId": post.id,
       "id": post.id,
       "timePosted": moment(), 
       // image url data will be passed on from onFileSelected
@@ -40,7 +40,7 @@ export class UploadPostComponent implements OnInit {
       "deleted": false,
       // this simulates loggin in
       "userId": this.userId,
-      "cafeId": post.cafeId
+      "shopId": post.shopId
     }
     this.http.post("http://localhost:3000/posts", this.post)
     .subscribe(res => (this.isAdded = true))
@@ -51,9 +51,9 @@ export class UploadPostComponent implements OnInit {
   }
 
   private cafesRoute = 'http://localhost:3000/cafes?deleted=false';
-  public cafes: Cafe[];
+  public cafes: Shop[];
   getCafe(){
-    this.http.get<Cafe[]>(this.cafesRoute).subscribe(cafes => {
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafes => {
       this.cafes = cafes;
     });
   }

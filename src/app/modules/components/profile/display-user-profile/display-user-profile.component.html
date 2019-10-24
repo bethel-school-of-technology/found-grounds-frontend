@@ -1,13 +1,13 @@
       <!-- Profile -->
-      <div *ngFor="let accoun of account" class="w3-card w3-round w3-white w3-center w3-margin-bottom">
+      <div *ngFor="let use of user" class="w3-card w3-round w3-white w3-center w3-margin-bottom">
         <div class="w3-container">
          <h5 class="w3-center">Welcome Back</h5>
-         <h3>{{accoun.firstName}} {{accoun.lastName}}</h3>
-         <p class="w3-center"><img src={{accoun.profilePicture_URL}} class="w3-circle" style="height:106px; max-width:100%" alt="Avatar"></p>
+         <h3>{{use.firstName}} {{use.lastName}}</h3>
+         <p class="w3-center"><img src={{use.imageUrl}} class="w3-circle" style="height:106px; max-width:100%" alt="Avatar"></p>
           <div class="left-align w3-margin-left">
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> {{accoun.bio}}</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> {{accoun.city}}, {{accoun.state}} </p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> {{accoun.birthday}}</p>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> {{use.bio}}</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> {{use.city}}, {{use.state}} </p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> {{use.birthday}}</p>
           </div>
         </div>
       </div>

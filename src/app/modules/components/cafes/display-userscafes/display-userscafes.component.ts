@@ -13,7 +13,7 @@ export class DisplayUserscafesComponent implements OnInit {
   // To replace with token
   @Input() userId: number;
 
-  // posts and accounts
+  // posts and users
   private postsRoute = 'http://localhost:3000/posts';
   public cafes: Post[];
   postObj = {};
@@ -43,6 +43,6 @@ export class DisplayUserscafesComponent implements OnInit {
   }
 
   onSelect(post){
-    this.router.navigate(['/cafes', post.cafeId]);
+    this.router.navigate(['/cafes', post.shopId]);
   }
 }
