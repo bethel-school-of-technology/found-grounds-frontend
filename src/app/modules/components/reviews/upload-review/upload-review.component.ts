@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Review } from '../../../../shared/models/review';
-import { Cafe } from '../../../../shared/models/shop';
+import { Shop } from '../../../../shared/models/shop';
 import * as moment from 'moment';
 
 @Component({
@@ -18,7 +18,7 @@ export class UploadReviewComponent implements OnInit {
   public review: Review;
 
   private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Cafe;
+  public cafe: Shop;
 
   isAdded: boolean = false;
   confirmationString: string = "New comment has been uploaded";
@@ -42,7 +42,7 @@ export class UploadReviewComponent implements OnInit {
   }
 
   getCafe(){
-    this.http.get<Cafe>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
+    this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
       this.cafe = cafe;
     });
   }

@@ -1,4 +1,4 @@
-export class Cafe {
+export class Shop {
     shopId: number;
     about: string;
     deleted: boolean;

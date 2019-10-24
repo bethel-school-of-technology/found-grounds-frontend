@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cafe } from '../../../../shared/models/shop';
+import { Shop } from '../../../../shared/models/shop';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class DisplayallcafesWithdeleteoptionComponent implements OnInit {
 
   private cafesRoute = 'http://localhost:3000/cafes';
-  public cafes: Cafe[];
+  public cafes: Shop[];
 
   constructor(private http: HttpClient, private router: Router) { }
   getCafes(){
-    this.http.get<Cafe[]>(this.cafesRoute +"?deleted=false").subscribe(cafes => {
+    this.http.get<Shop[]>(this.cafesRoute +"?deleted=false").subscribe(cafes => {
       this.cafes = cafes;
     });
   }

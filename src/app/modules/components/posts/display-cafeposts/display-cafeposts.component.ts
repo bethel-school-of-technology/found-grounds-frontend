@@ -2,7 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../../../shared/models/post';
 import { } from 'rxjs';
-import { Cafe } from '../../../../shared/models/shop';
+import { Shop } from '../../../../shared/models/shop';
 import { User } from '../../../../shared/models/user';
 
 @Component({
@@ -21,7 +21,7 @@ export class DisplayCafepostsComponent implements OnInit {
   id: number;
 
   private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Cafe;
+  public cafe: Shop;
   @Input() shopId: number;
 
   constructor(private http: HttpClient) { }
@@ -33,7 +33,7 @@ export class DisplayCafepostsComponent implements OnInit {
   show = false;
   
   getCafe(){
-    this.http.get<Cafe>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
+    this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
       this.cafe = cafe;
     });
   }
