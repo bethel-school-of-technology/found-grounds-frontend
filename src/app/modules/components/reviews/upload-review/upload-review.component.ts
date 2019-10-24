@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Review } from '../../../../shared/models/review';
-import { Cafe } from '../../../../shared/models/cafe';
+import { Cafe } from '../../../../shared/models/shop';
 import * as moment from 'moment';
 
 @Component({

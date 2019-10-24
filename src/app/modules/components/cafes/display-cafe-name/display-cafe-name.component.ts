@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cafe } from '../../../../shared/models/cafe';
+import { Cafe } from '../../../../shared/models/shop';
 
 @Component({
   selector: 'app-display-cafe-name',

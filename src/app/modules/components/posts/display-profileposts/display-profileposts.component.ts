@@ -12,7 +12,7 @@ export class DisplayProfilepostsComponent implements OnInit {
   // To replace with token
   @Input() token: number;
 
-  // posts and accounts
+  // posts and users
   private postsRoute = 'http://localhost:3000/posts';
   public posts: Post[];
   postObj = {};

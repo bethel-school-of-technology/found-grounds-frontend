@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cafe } from '../../../../shared/models/cafe';
+import { Cafe } from '../../../../shared/models/shop';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,11 +24,11 @@ export class DisplayallcafesWithdeleteoptionComponent implements OnInit {
     if(confirm("Are you sure?")){
       const deletedCafe = {
         "shopId": cafe.shopId,
-        "bio": cafe.bio,
-        "cafeName": cafe.cafeName,
-        "cafeAddress": cafe.cafeAddress,
-        "cafeCity": cafe.cafeCity,
-        "cafeState": cafe.cafeState,
+        "about": cafe.about,
+        "name": cafe.name,
+        "streetAddress1": cafe.streetAddress1,
+        "city": cafe.city,
+        "state": cafe.state,
         "rating": cafe.rating,
         "imageUrl": cafe.imageUrl,
         "id": cafe.id,

@@ -78,7 +78,7 @@
       "id": 11
     }
   ],
-  "accounts": [
+  "users": [
     {
       "userId": 1,
       "firstName": "John",
@@ -176,16 +176,24 @@
       "userId": "1",
       "deleted": false,
       "id": 5
+    },
+    {
+      "text": "LOL!",
+      "postId": "5",
+      "userId": "1",
+      "deleted": false,
+      "timePosted": "2019-10-24T04:03:35.940Z",
+      "id": 6
     }
   ],
   "cafes": [
     {
       "shopId": 1,
-      "bio": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-      "cafeName": "Mama Cika Cafe",
-      "cafeAddress": "Jl. Punawarman 5",
-      "cafeCity": "Jakarta",
-      "cafeState": "Indonesia",
+      "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
+      "name": "Mama Cika Cafe",
+      "streetAddress1": "Jl. Punawarman 5",
+      "city": "Jakarta",
+      "state": "Indonesia",
       "rating": 4.5,
       "imageUrl": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
       "id": 1,
@@ -193,11 +201,11 @@
     },
     {
       "shopId": 2,
-      "bio": "Hipster is an understatement. ARTisan is our attitude. Coffee is our inspiration.",
-      "cafeName": "The Flat White",
-      "cafeAddress": "55 Mission Street",
-      "cafeCity": "Redding",
-      "cafeState": "California",
+      "about": "Hipster is an understatement. ARTisan is our attitude. Coffee is our inspiration.",
+      "name": "The Flat White",
+      "streetAddress1": "55 Mission Street",
+      "city": "Redding",
+      "state": "California",
       "rating": 5,
       "imageUrl": "https://cdn.resize.sparkplatform.com/sha/640x480/true/20180801184334499279000000-o.jpg",
       "id": 2,
@@ -340,12 +348,6 @@
       "postId": "3",
       "like": true,
       "id": 6
-    },
-    {
-      "userId": "",
-      "postId": "5",
-      "like": true,
-      "id": 7
     }
   ]
 }

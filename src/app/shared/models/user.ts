@@ -1,4 +1,4 @@
-export class Account {
+export class User {
     userId: number;
     rolesId: number;
     email: string;

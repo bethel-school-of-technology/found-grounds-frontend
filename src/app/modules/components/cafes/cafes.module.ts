@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccountsModule } from '../accounts/accounts.module';
+import { UsersModule } from '../users/users.module';
 import { ReviewsModule } from '../reviews/reviews.module';
 import { PhotosModule } from '../photos/photos.module';
 import { MenuModule } from '../menu/menu.module';
@@ -13,7 +13,7 @@ import { DisplayAllcafeprofilesComponent } from './display-allcafeprofiles/displ
 @NgModule({
   declarations: [DisplayCafeprofileComponent, DisplayCafeNameComponent, DisplayUserscafesComponent, DisplayUserscafesInfoComponent, DisplayAllcafeprofilesComponent],
   imports: [
-    CommonModule, AccountsModule, ReviewsModule, PhotosModule, MenuModule
+    CommonModule, UsersModule, ReviewsModule, PhotosModule, MenuModule
   ],
   exports: [DisplayCafeprofileComponent, DisplayCafeNameComponent, DisplayUserscafesComponent, DisplayAllcafeprofilesComponent]
 })

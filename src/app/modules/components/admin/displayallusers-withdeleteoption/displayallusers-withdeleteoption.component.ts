@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Account } from '../../../../shared/models/account';
+import { User } from '../../../../shared/models/user';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,44 +9,44 @@ import { Router } from '@angular/router';
   styleUrls: ['./displayallusers-withdeleteoption.component.css']
 })
 export class DisplayallusersWithdeleteoptionComponent implements OnInit {
-  private accountRoute = 'http://localhost:3000/accounts';
-  public account: Account[];
+  private userRoute = 'http://localhost:3000/users';
+  public user: User[];
   
   constructor(private http: HttpClient, private router: Router) { }
 
-  getAccount(){
-    this.http.get<Account[]>(this.accountRoute + "?deleted=false").subscribe(account => {
-      this.account = account;
+  getUser(){
+    this.http.get<User[]>(this.userRoute + "?deleted=false").subscribe(user => {
+      this.user = user;
     });
   }
 
-  deleteAccount(accoun){
-    if(confirm("Are you sure? You will be deleting user " + accoun.id)){
-      const deletedAccount = {
-        "userId": accoun.userId,
-        "firstName": accoun.firstName,
-        "lastName": accoun.lastName,
-        "imageUrl": accoun.imageUrl,
-        "city": accoun.city,
-        "state": accoun.state,
-        "bio": accoun.bio,
-        "birthday": accoun.birthday,
-        "username": accoun.username,
+  deleteUser(use){
+    if(confirm("Are you sure? You will be deleting user " + use.id)){
+      const deletedUser = {
+        "userId": use.userId,
+        "firstName": use.firstName,
+        "lastName": use.lastName,
+        "imageUrl": use.imageUrl,
+        "city": use.city,
+        "state": use.state,
+        "bio": use.bio,
+        "birthday": use.birthday,
+        "username": use.username,
         "deleted": true
       }
-      const url = `${this.accountRoute}/${accoun.id}`;
-      return this.http.put(url, deletedAccount)
-      .toPromise().then(()=>{this.getAccount()})
+      const url = `${this.userRoute}/${use.id}`;
+      return this.http.put(url, deletedUser)
+      .toPromise().then(()=>{this.getUser()})
     }
   }
 
   
 
   ngOnInit() {
-    this.getAccount();
+    this.getUser();
   }
 
-  onSelect(accoun){
-    this.router.navigate(['/users', accoun.username]);
+  onSelect(use){
+    this.router.navigate(['/users', use.username]);
   }
 }

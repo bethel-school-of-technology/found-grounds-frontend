@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Account } from '../../../../shared/models/account';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-display-profile-picture',
@@ -9,16 +9,16 @@ import { Account } from '../../../../shared/models/account';
 })
 export class DisplayProfilePictureComponent implements OnInit {
   @Input() userId: number;
-  private accountsRoute = 'http://localhost:3000/accounts'; 
-  public account: Account;
+  private usersRoute = 'http://localhost:3000/users'; 
+  public user: User;
 
   constructor(private http: HttpClient) { }
-  getAccount(userId){
-    this.http.get<Account>(this.accountsRoute + "?userId=" + userId).subscribe(account => {
-      this.account = account;
+  getUser(userId){
+    this.http.get<User>(this.usersRoute + "?userId=" + userId).subscribe(user => {
+      this.user = user;
     })
   }
   ngOnInit() {
-    this.getAccount(this.userId);
+    this.getUser(this.userId);
   };
 }

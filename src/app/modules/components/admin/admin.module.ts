@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DisplayallpostsWithdeleteoptionComponent } from './displayallposts-withdeleteoption/displayallposts-withdeleteoption.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommentsModule } from '../comments/comments.module';
-import { AccountsModule } from '../accounts/accounts.module';
+import { UsersModule } from '../users/users.module';
 import { LikesModule } from '../likes/likes.module';
 import { CafesModule } from '../cafes/cafes.module';
 import { PostsModule } from '../posts/posts.module';
@@ -17,7 +17,7 @@ import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 @NgModule({
   declarations: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent],
   imports: [
-    CommonModule, AccountsModule, CommentsModule, CafesModule, LikesModule
+    CommonModule, UsersModule, CommentsModule, CafesModule, LikesModule
   ],
   exports: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent ]
 })

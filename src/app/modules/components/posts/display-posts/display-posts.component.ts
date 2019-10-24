@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../../../shared/models/post';
 import { } from 'rxjs';
+import { User } from '../../../../shared/models/user';
 
 @Component({ 
   selector: 'app-display-posts',
@@ -13,9 +14,9 @@ export class DisplayPostsComponent implements OnInit {
   @Input() token: number;
 
   private postsRoute = 'http://localhost:3000/posts';
-  accountsRoute = 'http://localhost:3000/accounts';
+  usersRoute = 'http://localhost:3000/users';
   public posts: Post[];
-  accounts: Account[];
+  users: User[];
   postObj = {};
   id: number;
 

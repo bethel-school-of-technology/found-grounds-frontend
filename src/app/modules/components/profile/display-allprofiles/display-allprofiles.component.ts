@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Account } from '../../../../shared/models/account';
+import { User } from '../../../../shared/models/user';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,21 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./display-allprofiles.component.css']
 })
 export class DisplayAllprofilesComponent implements OnInit {
-  private accountRoute = 'http://localhost:3000/accounts';
-  public account: Account[];
+  private userRoute = 'http://localhost:3000/users';
+  public user: User[];
   
   constructor(private http: HttpClient, private router: Router) { }
 
-  getAccount(){
-    this.http.get<Account[]>(this.accountRoute + "?deleted=false").subscribe(account => {
-      this.account = account;
+  getUser(){
+    this.http.get<User[]>(this.userRoute + "?deleted=false").subscribe(user => {
+      this.user = user;
     });
   }
   ngOnInit() {
-    this.getAccount();
+    this.getUser();
   }
 
-  onSelect(accoun){
-    this.router.navigate(['/users', accoun.username]);
+  onSelect(use){
+    this.router.navigate(['/users', use.username]);
   }
 }
