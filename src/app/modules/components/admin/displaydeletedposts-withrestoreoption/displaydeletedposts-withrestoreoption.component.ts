@@ -42,7 +42,7 @@ export class DisplaydeletedpostsWithrestoreoptionComponent implements OnInit {
         "id": post.id,
         "image_url": post.image_url,
         "timePosted": post.timePosted,
-        "cafeId": post.cafeId,
+        "shopId": post.shopId,
         "deleted": false
       }
       const url = `${this.postsRoute}/${post.id}`;

@@ -32,7 +32,7 @@ export class UploadPostComponent implements OnInit {
   uploadPost = function(post){
     this.post = {
       "text": post.text,
-      "postid": post.id,
+      "postId": post.id,
       "id": post.id,
       "timePosted": moment(), 
       // image url data will be passed on from onFileSelected
@@ -40,7 +40,7 @@ export class UploadPostComponent implements OnInit {
       "deleted": false,
       // this simulates loggin in
       "userId": this.userId,
-      "cafeId": post.cafeId
+      "shopId": post.shopId
     }
     this.http.post("http://localhost:3000/posts", this.post)
     .subscribe(res => (this.isAdded = true))

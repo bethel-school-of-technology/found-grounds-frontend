@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./commentbox.component.css']
 })
 export class CommentboxComponent implements OnInit {
-  @Input() postid: number;
+  @Input() postId: number;
   @Input() token: number;
   
   constructor() { }

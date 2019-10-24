@@ -42,7 +42,7 @@ export class DisplayallpostsWithdeleteoptionComponent implements OnInit {
         "id": post.id,
         "image_url": post.image_url,
         "timePosted": post.timePosted,
-        "cafeId": post.cafeId,
+        "shopId": post.shopId,
         "deleted": true
       }
       const url = `${this.postsRoute}/${post.id}`;

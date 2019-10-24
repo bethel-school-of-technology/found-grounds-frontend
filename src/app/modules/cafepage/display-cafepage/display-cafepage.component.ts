@@ -17,7 +17,7 @@ export class DisplayCafepageComponent implements OnInit {
   constructor( private route: ActivatedRoute, private http: HttpClient) { }
 
   getCafe(param){
-    this.http.get<Cafe>(this.cafesRoute + "?deleted=false&cafeId=" + param).subscribe(cafe => {
+    this.http.get<Cafe>(this.cafesRoute + "?deleted=false&shopId=" + param).subscribe(cafe => {
       this.cafe = cafe
     });}
 

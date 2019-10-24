@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Review } from '../../../../shared/models/review';
 import { Cafe } from '../../../../shared/models/cafe';
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-upload-review',
   templateUrl: './upload-review.component.html',
@@ -9,7 +11,7 @@ import { Cafe } from '../../../../shared/models/cafe';
 })
 export class UploadReviewComponent implements OnInit {
   @Input() token: number;
-  @Input() cafeId: number;
+  @Input() shopId: number;
 
   constructor(private http: HttpClient) { }
   private reviewsRoute = 'http://localhost:3000/reviews';
@@ -23,12 +25,13 @@ export class UploadReviewComponent implements OnInit {
   uploadNewReview(review){
     this.review = {
       "text": review.text,
-      "cafeId": this.cafeId,
+      "shopId": this.shopId,
       "userId": this.token,
       "id": review.id,
       "deleted": false,
       "reviewId": review.id,
-      "rating": review.rating
+      "rating": review.rating,
+      "timePosted": moment()
     }
     this.http.post(this.reviewsRoute, this.review)
     .subscribe(res => (this.isAdded = true));
@@ -39,7 +42,7 @@ export class UploadReviewComponent implements OnInit {
   }
 
   getCafe(){
-    this.http.get<Cafe>(this.cafesRoute + "?cafeId=" + this.cafeId).subscribe(cafe => {
+    this.http.get<Cafe>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
       this.cafe = cafe;
     });
   }

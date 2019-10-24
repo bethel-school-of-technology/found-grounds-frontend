@@ -43,6 +43,6 @@ export class DisplayUserscafesComponent implements OnInit {
   }
 
   onSelect(post){
-    this.router.navigate(['/cafes', post.cafeId]);
+    this.router.navigate(['/cafes', post.shopId]);
   }
 }

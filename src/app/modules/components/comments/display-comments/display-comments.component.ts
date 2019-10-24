@@ -8,20 +8,20 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./display-comments.component.css']
 })
 export class DisplayCommentsComponent implements OnInit {
-  @Input() postid: number;
+  @Input() postId: number;
   
   private commentsRoute = 'http://localhost:3000/comments';
   public comments : Comment [];
 
   constructor(private http: HttpClient) { }
-  getComments(postid){
-    this.http.get<Comment[]>(this.commentsRoute + "?postid=" + postid).subscribe(comments => {
+  getComments(postId){
+    this.http.get<Comment[]>(this.commentsRoute + "?postId=" + postId).subscribe(comments => {
       this.comments = comments;
     })
   }
 
   ngOnInit() {
-    this.getComments(this.postid);
+    this.getComments(this.postId);
   };
 
  

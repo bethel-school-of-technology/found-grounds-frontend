@@ -13,7 +13,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <div (click)="onSelect(cafe)" *ngFor="let cafe of cafes" class="w3-container w3-card w3-round w3-white w3-margin-top w3-margin-bottom w3-padding left-align">
             <div class="w3-row">
                         <div class="w3-col m3 w3-padding">
-                            <img src={{cafe.profilePicture_URL}} class="w3-circle w3-left w3-margin-right" style="height:150px;width:150px" alt="Avatar"> 
+                            <img src={{cafe.imageUrl}} class="w3-circle w3-left w3-margin-right" style="height:150px;width:150px" alt="Avatar"> 
                         </div>
                         <div class="w3-col m4 w3-margin-left">
                             <h2>{{cafe.cafeName}}</h2>

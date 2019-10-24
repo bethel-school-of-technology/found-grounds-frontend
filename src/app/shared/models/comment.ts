@@ -1,8 +1,9 @@
 export class Comment {
-    postid: number;
+    postId: number;
     userId: number;
-    commentid: number;
+    commentId: number;
     text: string;
     deleted: boolean;
     id: number;
+    timePosted;
 }

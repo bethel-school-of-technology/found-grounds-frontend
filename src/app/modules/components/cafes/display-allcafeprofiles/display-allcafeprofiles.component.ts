@@ -23,6 +23,6 @@ export class DisplayAllcafeprofilesComponent implements OnInit {
   }
 
   onSelect(cafe){
-    this.router.navigate(['/cafes', cafe.cafeId]);
+    this.router.navigate(['/cafes', cafe.shopId]);
   }
 }

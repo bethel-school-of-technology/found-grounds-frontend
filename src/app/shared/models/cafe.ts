@@ -1,5 +1,5 @@
 export class Cafe {
-    cafeId: number;
+    shopId: number;
     bio: string;
     deleted: boolean;
     cafeName: string;
@@ -7,6 +7,6 @@ export class Cafe {
     cafeState: string;
     cafeAddress: string;
     rating: number;
-    profilePicture_URL: string;
+    imageUrl: string;
     id: number;
 }

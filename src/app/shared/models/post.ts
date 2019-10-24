@@ -1,10 +1,11 @@
 export class Post {
-    postid: number;
-    accountid: number;
+    postId: number;
+    userId: number;
     text: string;
     image_url: string;
     deleted: boolean;
     id: number;
-    cafeId: number;
+    shopId: number;
+    edited: boolean;
     timePosted: string;
 }

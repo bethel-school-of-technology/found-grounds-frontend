@@ -15,6 +15,7 @@ export class Account {
     zip: number;
     amHome: boolean;
     birthday: Date;
-    profilePicture_URL: string;
+    imageUrl: string;
     deleted: boolean;
+    dateJoined: Date;
 }

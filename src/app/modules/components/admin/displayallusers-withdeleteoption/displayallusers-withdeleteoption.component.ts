@@ -26,7 +26,7 @@ export class DisplayallusersWithdeleteoptionComponent implements OnInit {
         "userId": accoun.userId,
         "firstName": accoun.firstName,
         "lastName": accoun.lastName,
-        "profilePicture_URL": accoun.profilePicture_URL,
+        "imageUrl": accoun.imageUrl,
         "city": accoun.city,
         "state": accoun.state,
         "bio": accoun.bio,

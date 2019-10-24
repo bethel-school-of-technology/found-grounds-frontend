@@ -23,14 +23,14 @@ export class DisplayallcafesWithdeleteoptionComponent implements OnInit {
   deleteCafe(cafe){
     if(confirm("Are you sure?")){
       const deletedCafe = {
-        "cafeId": cafe.cafeId,
+        "shopId": cafe.shopId,
         "bio": cafe.bio,
         "cafeName": cafe.cafeName,
         "cafeAddress": cafe.cafeAddress,
         "cafeCity": cafe.cafeCity,
         "cafeState": cafe.cafeState,
         "rating": cafe.rating,
-        "profilePicture_URL": cafe.profilePicture_URL,
+        "imageUrl": cafe.imageUrl,
         "id": cafe.id,
         "deleted": true
       }
@@ -44,7 +44,7 @@ export class DisplayallcafesWithdeleteoptionComponent implements OnInit {
   }
 
   onSelect(cafe){
-    this.router.navigate(['/cafes', cafe.cafeId]);
+    this.router.navigate(['/cafes', cafe.shopId]);
   }
 }
 
