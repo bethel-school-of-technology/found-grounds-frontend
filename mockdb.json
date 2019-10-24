@@ -195,6 +195,14 @@
       "timePosted": "2019-10-24T08:31:34.903Z",
       "shopId": "1",
       "deleted": true
+    },
+    {
+      "text": "My coffee here was phenomenal!",
+      "userId": "1",
+      "id": 28,
+      "timePosted": "2019-10-24T09:00:29.652Z",
+      "shopId": "2",
+      "deleted": true
     }
   ],
   "users": [
