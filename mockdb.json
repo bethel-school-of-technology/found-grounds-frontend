@@ -5,9 +5,8 @@
       "postId": 1,
       "userId": 4,
       "text": "I love Americanos",
-      "image_url": "https://www.incimages.com/uploaded_files/image/970x450/getty_938993594_401542.jpg",
-      "deleted": false,
       "imageUrl": "https://media.istockphoto.com/photos/coffee-business-concept-portrait-of-lady-barista-in-apron-preparing-picture-id843469970?k=6&m=843469970&s=612x612&w=0&h=HB07kpTC3sKqPZYBxWD4X0GrGQf5d8pD2WiXaF6yDyI=",
+      "deleted": false,
       "shopId": 1,
       "timePosted": "2019-10-04 15:00:00"
     },
@@ -15,17 +14,18 @@
       "text": "We travel the world in search of great coffee. In the process, we discover beans so special and rare that we can't wait to bring them home and share. - Starbucks",
       "userId": 2,
       "id": 2,
-      "image_url": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
+      "imageUrl": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
       "timePosted": "2019-10-06 15:00:00",
       "deleted": true
     },
     {
-      "text": "Grabbing my morning Java",
+      "text": "Grabbing my morning Java at Mama Cika's. Oops I meant Flat White.",
+      "shopId": "2",
       "userId": "1",
-      "id": 5,
       "timePosted": "2019-10-07 15:00:00",
-      "shopId": "1",
-      "deleted": false
+      "id": 5,
+      "deleted": false,
+      "edited": true
     },
     {
       "text": "I love Robusta",
@@ -44,44 +44,157 @@
       "timePosted": "2019-10-11 15:00:00"
     },
     {
-      "text": "YAY!",
-      "deleted": false,
+      "text": "YAY! I LOVE THIS APP!",
       "userId": "1",
-      "shopId": "",
       "id": 8,
-      "timePosted": "2019-10-15 15:00:00"
+      "timePosted": "2019-10-15 15:00:00",
+      "deleted": true
     },
     {
-      "text": "Man! The flat whites at The Flat White never dissapoint!",
-      "timePosted": "2019-10-19 15:00:00",
-      "deleted": false,
+      "text": "WOWWWaaasdfasdfasdfasdf",
       "userId": "1",
+      "id": 9,
+      "timePosted": "2019-10-19 15:00:00",
       "shopId": "2",
-      "id": 9
+      "deleted": true
     },
     {
       "text": "I truly love this app!",
-      "timePosted": "2019-10-21 22:00:00",
-      "deleted": false,
       "userId": "1",
+      "id": 10,
+      "timePosted": "2019-10-21 22:00:00",
       "shopId": "1",
-      "id": 10
+      "deleted": true
     },
     {
       "text": "Check this out!",
-      "timePosted": "2019-10-22T03:46:04.698Z",
-      "deleted": false,
       "userId": "1",
+      "id": 11,
+      "timePosted": "2019-10-22T03:46:04.698Z",
       "shopId": "1",
-      "id": 11
+      "deleted": true
     },
     {
       "text": "Beautiful!",
-      "timePosted": "2019-10-24T06:29:13.678Z",
-      "deleted": false,
       "userId": "1",
+      "id": 12,
+      "timePosted": "2019-10-24T06:29:13.678Z",
       "shopId": "2",
-      "id": 12
+      "deleted": true
+    },
+    {
+      "text": "Coba yuk ehehehe",
+      "userId": "1",
+      "id": 13,
+      "timePosted": "2019-10-24T07:31:12.353Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "Coba yuk ehehehe",
+      "userId": "1",
+      "id": 14,
+      "timePosted": "2019-10-24T07:31:16.025Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "Coba yuk ehehehe",
+      "userId": "1",
+      "id": 15,
+      "timePosted": "2019-10-24T07:31:16.413Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "Lagi ahhh..",
+      "userId": "1",
+      "id": 16,
+      "timePosted": "2019-10-24T07:31:50.098Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "text WOW!!!",
+      "userId": "1",
+      "id": 17,
+      "timePosted": "2019-10-24T07:32:16.601Z",
+      "deleted": true
+    },
+    {
+      "text": "coba ahh ganti ganti",
+      "userId": "1",
+      "id": 18,
+      "timePosted": "2019-10-24T07:32:43.377Z",
+      "deleted": true
+    },
+    {
+      "userId": "1",
+      "id": 19,
+      "timePosted": "2019-10-24T07:33:17.313Z",
+      "deleted": true
+    },
+    {
+      "text": "kok gak jalan sih",
+      "userId": "1",
+      "id": 20,
+      "timePosted": "2019-10-24T07:33:26.676Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "lagi ah",
+      "userId": "1",
+      "id": 21,
+      "timePosted": "2019-10-24T07:33:43.253Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "userId": "1",
+      "id": 22,
+      "timePosted": "2019-10-24T07:34:11.904Z",
+      "deleted": true
+    },
+    {
+      "text": "uwaww...",
+      "userId": "1",
+      "id": 23,
+      "timePosted": "2019-10-24T07:34:30.077Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "coba lagi yuk",
+      "userId": "1",
+      "id": 24,
+      "timePosted": "2019-10-24T07:35:53.684Z",
+      "shopId": "1",
+      "deleted": true
+    },
+    {
+      "text": "meuni keren pisaannnn",
+      "userId": "1",
+      "id": 25,
+      "timePosted": "2019-10-24T07:35:59.267Z",
+      "shopId": "1",
+      "deleted": true
+    },
+    {
+      "text": "memang keren sih",
+      "userId": "1",
+      "id": 26,
+      "timePosted": "2019-10-24T07:37:10.061Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "This is über cool!",
+      "userId": "1",
+      "id": 27,
+      "timePosted": "2019-10-24T08:31:34.903Z",
+      "shopId": "1",
+      "deleted": true
     }
   ],
   "users": [
@@ -266,25 +379,25 @@
   "photos": [
     {
       "shopId": 1,
-      "image_url": "https://img.qraved.co/v2/image/data/Indonesia/Bandung/Ciumbuleuit/Miss_Bee_Providore/13724662_1056206164459841_2118988461_n.15083046291067.621-m.jpg",
+      "imageUrl": "https://img.qraved.co/v2/image/data/Indonesia/Bandung/Ciumbuleuit/Miss_Bee_Providore/13724662_1056206164459841_2118988461_n.15083046291067.621-m.jpg",
       "id": 1,
       "deleted": false
     },
     {
       "shopId": 1,
-      "image_url": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Menu-miss-bee-providore.jpg",
+      "imageUrl": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Menu-miss-bee-providore.jpg",
       "id": 2,
       "deleted": false
     },
     {
       "shopId": 1,
-      "image_url": "https://iradiofm.com/wp-content/uploads/2014/11/images_2014_daerah_missbdg-edt.jpg",
+      "imageUrl": "https://iradiofm.com/wp-content/uploads/2014/11/images_2014_daerah_missbdg-edt.jpg",
       "id": 3,
       "deleted": false
     },
     {
       "shopId": 1,
-      "image_url": "https://assets-pergikuliner.com/Zrs1Ny70Nn5n3ZWsdboKj135xYc=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/415831/picture-1482373401.jpg",
+      "imageUrl": "https://assets-pergikuliner.com/Zrs1Ny70Nn5n3ZWsdboKj135xYc=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/415831/picture-1482373401.jpg",
       "id": 4,
       "deleted": false
     }
@@ -294,7 +407,7 @@
       "shopId": 1,
       "itemId": 1,
       "name": "Arabica Machiato",
-      "image_url": "https://images.summitmedia-digital.com/spotph/images/2018/01/12/Arabica8.jpg",
+      "imageUrl": "https://images.summitmedia-digital.com/spotph/images/2018/01/12/Arabica8.jpg",
       "id": 1,
       "deleted": false,
       "text": "Earthy and creamy"
@@ -302,7 +415,7 @@
     {
       "shopId": 1,
       "itemId": 2,
-      "image_url": "https://images.japancentre.com/recipes/pics/16/main/matcha-latte.jpg?1469572822",
+      "imageUrl": "https://images.japancentre.com/recipes/pics/16/main/matcha-latte.jpg?1469572822",
       "name": "Matcha Latte",
       "id": 2,
       "deleted": false,
@@ -311,7 +424,7 @@
     {
       "shopId": 1,
       "itemId": 3,
-      "image_url": "https://cdn.shopify.com/s/files/1/1116/1002/products/Alvin_s-Cold-Brew-Coffee_grande.jpg?v=1470703355",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1116/1002/products/Alvin_s-Cold-Brew-Coffee_grande.jpg?v=1470703355",
       "name": "Cold Brew Robusta",
       "id": 3,
       "deleted": false,

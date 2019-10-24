@@ -41,7 +41,7 @@ export class DisplayallpostsWithdeleteoptionComponent implements OnInit {
         "text": post.text,
         "userId": post.userId,
         "id": post.id,
-        "image_url": post.image_url,
+        "imageUrl": post.imageUrl,
         "timePosted": post.timePosted,
         "shopId": post.shopId,
         "deleted": true

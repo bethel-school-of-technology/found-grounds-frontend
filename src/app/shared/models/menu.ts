@@ -3,7 +3,7 @@ export class Menu {
     itemId: number;
     name: string;
     text: string;
-    image_url: string;
+    imageUrl: string;
     deleted: boolean;
     id: number;
     timePosted;

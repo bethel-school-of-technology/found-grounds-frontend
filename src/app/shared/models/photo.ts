@@ -1,7 +1,7 @@
 export class Photo {
     postId: number;
     shopId: number;
-    image_url: string;
+    imageUrl: string;
     deleted: boolean;
     id: number;
     photoId: number;

@@ -26,7 +26,7 @@ export class DisplayProfilepostsComponent implements OnInit {
 
   getUserPosts(){
     this.http.get<Post[]>(this.postsRoute + "?userId=" + this.profileId + "&deleted=false").subscribe(posts => {
-      this.posts = posts;
+      this.posts = posts.slice().reverse();
     });
   }
   show = false;

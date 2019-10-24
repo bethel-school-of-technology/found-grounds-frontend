@@ -27,7 +27,7 @@ export class DisplayCafepostsComponent implements OnInit {
   constructor(private http: HttpClient) { }
   getCafePosts(){
     this.http.get<Post[]>(this.postsRoute + "?shopId=" + this.shopId + "&deleted=false").subscribe(posts => {
-      this.posts = posts;
+      this.posts = posts.slice().reverse();
     });
   }
   show = false;

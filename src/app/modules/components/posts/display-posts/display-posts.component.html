@@ -1,26 +1,117 @@
 <div class="feed">
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
-    </style>
 
-          
-          <div *ngFor="let post of posts" class="w3-container w3-card w3-white w3-round w3-margin left-align"><br>
-            <app-display-profile-picture userId={{post.userId}}></app-display-profile-picture>
-            <span class="w3-right w3-opacity"><app-moment timestamp={{post.timePosted}} ></app-moment>     <button type="button" class="w3-button w3-theme-d3 w3-margin-bottom"><i class="fa fa-ellipsis-h"></i></button></span>
-            <h4><app-display-user userId={{post.userId}}></app-display-user><app-display-cafe-name shopId={{post.shopId}}></app-display-cafe-name></h4>
-            <hr class="w3-clear">
-            <p>{{post.text}}</p>
-            <img src={{post.image_url}} style="width:100%" class="w3-margin-bottom">
-            <app-display-likes postId={{post.id}}></app-display-likes>
-            <app-toggle-like postId={{post.id}} userId={{token}}></app-toggle-like>
-            <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
-            <p class="hidden" id={{post.id}}> <app-commentbox token={{token}} postId={{post.id}}></app-commentbox></p>
-          </div> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Open Sans", sans-serif
+    }
+  </style>
 
-    
+  <!-- Uploading Post -->
+  <div class="w3-row-padding">
+    <div class="w3-col m12">
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container w3-padding">
+          <form id="uploadNewPost" name="uploadNewPost" #postData="ngForm" (ngSubmit)="uploadPost(postData.value)">
+            <!-- Text Input -->
+            <input class="w3-border w3-padding coffeetext" type="text" name="text" id="text"
+              placeholder="I've had five espressos today.." required ngModel />
+            <!-- Photos Input -->
+            <input style="display:none" type="file" (change)="onFileSelected($event)" #fileInput />
+            <div class="w3-row">
+              <div class="w3-col l7">
+                <button type="button" class="w3-button w3-theme w3-padding w3-margin-right coffeebutton"
+                  (click)="fileInput.click()"><i class="fa fa-photo"></i>  Upload Photo</button>
+                <button type="submit" class="w3-button w3-theme w3-padding coffeebutton"><i class="fa fa-coffee"></i>
+                   Brew!</button>
+              </div>
+              <!-- Cafe Input -->
+              <div class="w3-col l5 w3-right">
+                <select id="shopId" name="shopId" class="form-control w3-right w3-margin-left" ngModel>
+                  <option value="">Give the Café a Shout Out</option>
+                  <option *ngFor="let cafe of cafes" value={{cafe.shopId}}>{{cafe.name}}</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Posts -->
+  <div *ngFor="let post of posts" class="w3-container w3-card w3-white w3-round w3-margin left-align"><br>
+    <app-display-profile-picture userId={{post.userId}}></app-display-profile-picture>
+    <span class="w3-right w3-opacity">
+      <app-moment timestamp={{post.timePosted}}></app-moment>
+      <p *ngIf="post.edited == true">Edited</p>
+    </span>
+    <h4>
+      <app-display-user userId={{post.userId}}></app-display-user>
+      <app-display-cafe-name shopId={{post.shopId}}></app-display-cafe-name>
+    </h4>
+    <hr class="w3-clear">
+    <p>{{post.text}}</p>
+    <img src={{post.imageUrl}} style="width:100%" class="w3-margin-bottom">
+
+    <!-- Likes -->
+    <app-display-likes postId={{post.id}}></app-display-likes>
+    <app-toggle-like postId={{post.id}} userId={{token}}></app-toggle-like>
+
+    <!-- Comment Button -->
+    <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i
+        class="fa fa-comment"></i>  Comment</button>
+
+    <!-- Edit Box/Delete Button -->
+    <div class="w3-right" *ngIf="token == post.userId">
+      <button type="button" (click)="showBox(post.id, editing)" class="w3-button w3-theme-d2 w3-margin-bottom">
+        <i class="fa fa-pencil"></i></button>
+       <button type="button" (click)="deletePost(post)" class="w3-button w3-theme-d2 w3-margin-bottom">
+        <i class="fa fa-trash"></i></button>
+
+      <!-- Editing Box -->
+      <div class="modal" id="{{post.id + editing}}">
+        <div class="formborder modal-content animate w3-card" action="/action_page.php">
+          <span (click)="closeBox(post.id, editing)" class="close" title="Close Modal">&times;</span>
+          <div class="container">
+              <form id="editPost" name="editPost" #editData="ngForm" (ngSubmit)="editPost(editData.value, post)">
+                  <!-- Text Input -->
+                  <h4>Edit Your Post</h4>
+                  <input type="text" name="text" ngModel={{post.text}}>
+                  <img src={{post.imageUrl}} style="width:100%" class="w3-margin-bottom">
+                  <div class="w3-row">
+                    <div class="w3-col l7">
+                      <button type="submit" class="w3-button w3-theme w3-padding coffeebutton"><i class="fa fa-coffee"></i>
+                         Rebrew!</button>
+                    </div>
+                    <!-- Cafe Input -->
+                    <div class="w3-col l5 w3-right">
+                      <select id="shopId" name="shopId" class="form-control w3-right w3-margin-left" ngModel={{post.shopId}}>
+                        <option value={{post.shopId}}>Change the Café?</option>
+                        <option *ngFor="let cafe of cafes" value={{cafe.shopId}}>{{cafe.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Comment Box -->
+    <p class="hidden" id={{post.id}}>
+      <app-commentbox token={{token}} postId={{post.id}}></app-commentbox>
+    </p>
+  </div>

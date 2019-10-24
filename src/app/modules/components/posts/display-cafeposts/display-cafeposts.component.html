@@ -22,7 +22,7 @@
                       <h4><app-display-user userId={{post.userId}}></app-display-user><app-display-cafe-name shopId={{post.shopId}}></app-display-cafe-name></h4>
                       <hr class="w3-clear">
                       <p>{{post.text}}</p>
-                      <img src={{post.image_url}} style="width:100%" class="w3-margin-bottom">
+                      <img src={{post.imageUrl}} style="width:100%" class="w3-margin-bottom">
                       <app-display-likes postId={{post.id}}></app-display-likes>
                       <app-toggle-like postId={{post.id}} userId={{token}}></app-toggle-like>
                       <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
