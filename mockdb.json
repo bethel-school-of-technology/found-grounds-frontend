@@ -203,6 +203,14 @@
       "timePosted": "2019-10-24T09:00:29.652Z",
       "shopId": "2",
       "deleted": true
+    },
+    {
+      "text": "Mama Cika's Cafe is the bestest ever",
+      "userId": "1",
+      "id": 29,
+      "timePosted": "2019-10-24T10:05:22.099Z",
+      "shopId": "1",
+      "deleted": true
     }
   ],
   "users": [
@@ -375,12 +383,12 @@
       "id": 3
     },
     {
-      "text": "I love this place!",
-      "shopId": "1",
-      "userId": "1",
+      "text": "Phenomenal!",
+      "shopId": "2",
+      "userId": "2",
       "deleted": false,
-      "rating": "",
-      "timePosted": "2019-10-24T03:42:14.162Z",
+      "rating": "5",
+      "timePosted": "2019-10-24T09:24:37.802Z",
       "id": 4
     }
   ],

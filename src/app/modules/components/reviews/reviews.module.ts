@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReviewboxComponent } from './reviewbox/reviewbox.component';
-import { DisplayReviewsComponent } from './display-reviews/display-reviews.component';
 import { UsersModule } from '../users/users.module';
-import { UploadReviewComponent } from './upload-review/upload-review.component';
 import { FormsModule } from '@angular/forms'
+import { TimeModule } from '../time/time.module'
 
 @NgModule({
-  declarations: [ReviewboxComponent, DisplayReviewsComponent, UploadReviewComponent],
+  declarations: [ReviewboxComponent],
   imports: [
-    CommonModule, UsersModule, FormsModule
+    CommonModule, UsersModule, FormsModule, TimeModule
   ],
-  exports: [ReviewboxComponent, UploadReviewComponent]
+  exports: [ReviewboxComponent]
 })
 export class ReviewsModule { }
