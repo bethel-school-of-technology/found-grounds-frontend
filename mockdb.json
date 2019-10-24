@@ -16,7 +16,7 @@
       "id": 2,
       "imageUrl": "https://theexoticbean.com/wp-content/uploads/2017/02/coffeeflower.jpg",
       "timePosted": "2019-10-06 15:00:00",
-      "deleted": true
+      "deleted": false
     },
     {
       "text": "Grabbing my morning Java at Mama Cika's. Oops I meant Flat White.",
@@ -319,6 +319,22 @@
       "deleted": false,
       "timePosted": "2019-10-24T04:03:35.940Z",
       "id": 6
+    },
+    {
+      "text": "I love Robusta too Kelly!",
+      "postId": "6",
+      "userId": "1",
+      "deleted": false,
+      "timePosted": "2019-10-24T10:10:25.658Z",
+      "id": 7
+    },
+    {
+      "text": "HAHA",
+      "postId": "5",
+      "userId": "1",
+      "deleted": false,
+      "timePosted": "2019-10-24T10:10:32.151Z",
+      "id": 8
     }
   ],
   "cafes": [
