@@ -18,7 +18,7 @@
                       
                   <div *ngFor="let post of posts" class="w3-container w3-card w3-white w3-round w3-margin left-align"><br>
                       <app-display-profile-picture userId={{post.userId}}></app-display-profile-picture>
-                      <span class="w3-right w3-opacity">{{post.timePosted}}         <button type="button" class="w3-button w3-theme-d3 w3-margin-bottom"><i class="fa fa-ellipsis-h"></i></button></span>
+                      <span class="w3-right w3-opacity"><app-moment timestamp={{post.timePosted}} ></app-moment>          <button type="button" class="w3-button w3-theme-d3 w3-margin-bottom"><i class="fa fa-ellipsis-h"></i></button></span>
                       <h4><app-display-account userId={{post.userId}}></app-display-account><app-display-cafe-name cafeId={{post.cafeId}}></app-display-cafe-name></h4>
                       <hr class="w3-clear">
                       <p>{{post.text}}</p>
