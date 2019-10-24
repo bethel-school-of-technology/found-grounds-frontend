@@ -371,7 +371,8 @@
       "reviewId": 1,
       "id": 1,
       "deleted": false,
-      "rating": 4
+      "rating": 4,
+      "timePosted": "2019-04-15T10:34:10.072Z"
     },
     {
       "text": "I love the ambience and especially their Dark Espresso",
@@ -380,7 +381,8 @@
       "reviewId": 1,
       "id": 1,
       "deleted": false,
-      "rating": 5
+      "rating": 5,
+      "timePosted": "2019-09-15T10:34:10.072Z"
     },
     {
       "text": "Machiattos with some shortbread here always hit the spot",
@@ -388,7 +390,8 @@
       "userId": "4",
       "deleted": false,
       "id": 2,
-      "rating": 4.6
+      "rating": 4.6,
+      "timePosted": "2019-10-12T10:34:10.072Z"
     },
     {
       "text": "Last time I was at The Flat White, I met the owner John, who showed me the beans they roast themselves in-house.",
@@ -396,7 +399,8 @@
       "userId": "1",
       "deleted": false,
       "rating": "5",
-      "id": 3
+      "id": 3,
+      "timePosted": "2019-10-15T10:34:10.072Z"
     },
     {
       "text": "Phenomenal!",
@@ -406,6 +410,16 @@
       "rating": "5",
       "timePosted": "2019-10-24T09:24:37.802Z",
       "id": 4
+    },
+    {
+      "text": "Wonderful. Truly. I had the best customer service and they catered to my food allergies.",
+      "shopId": "1",
+      "userId": "1",
+      "deleted": false,
+      "rating": "5",
+      "timePosted": "2019-10-24T10:34:10.072Z",
+      "edited": false,
+      "id": 5
     }
   ],
   "photos": [

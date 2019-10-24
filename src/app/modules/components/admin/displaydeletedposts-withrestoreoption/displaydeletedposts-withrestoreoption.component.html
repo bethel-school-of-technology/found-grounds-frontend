@@ -18,7 +18,6 @@
                 <hr class="w3-clear">
                 <p>{{post.text}}</p>
                 <img src={{post.imageUrl}} style="width:100%" class="w3-margin-bottom">
-                <app-display-likes postId={{post.id}}></app-display-likes>
                 <app-toggle-like postId={{post.id}} userId={{userId}}></app-toggle-like>
                 <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
                 <p id={{post.id}}> <app-commentbox token={{token}} postId={{post.id}}></app-commentbox></p>
