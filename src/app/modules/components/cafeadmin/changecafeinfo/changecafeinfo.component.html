@@ -1,0 +1,51 @@
+<div *ngFor="let caf of cafe">
+    <div class="w3-container w3-card w3-round w3-white w3-padding left-align">
+        <div class="w3-row">
+            <div class="w3-col m3 w3-padding">
+                <img src={{caf.imageUrl}} class="w3-circle w3-left w3-margin-right" style="height:150px;width:150px"
+                    alt="Avatar">
+            </div>
+            <div class="w3-col m4 w3-margin-left">
+                <h2><a>{{caf.name}}</a></h2>
+                <p>{{caf.streetAddress1}}<br>
+                    {{caf.city}}, {{caf.state}}</p>
+                <p class="w3-tag"><i class="fa fa-star"></i> {{caf.rating}} stars</p>
+            </div>
+            <div class="w3-col m4 w3-margin-left ">
+                <h4>About Us</h4>
+                <p>{{caf.about}}<br>
+                    <br>
+                    <!-- icons to be replaced with links -->
+                    <i class="fa fa-facebook-official w3-hover-opacity w3"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+            </div>
+        </div>
+        <button (click)="deleteCafe(caf)" type="button" class="w3-button w3-red">DELETE CAFE</button>
+        
+        <button type="button" (click)="onSelect(caf)" class="w3-button w3-blue w3-right w3-margin-left">GO TO CAFÉ PAGE</button>
+        <button type="button" (click)="showBox(caf)" class="w3-button w3-green w3-right">EDIT CAFE</button>
+    </div>
+    <br>
+    <div id="{{caf.shopId + editing}}" class="hidden">
+        <div class="w3-container w3-card w3-round w3-white w3-padding left-align w3-margin-bottom">
+            <form id="editCafe" name="editCafe" #editData="ngForm" (ngSubmit)="editCafe(caf, editData.value)">
+                <label>Name:</label><input type="text" name="name" ngModel={{caf.name}}>
+                <br>
+                <label>About:</label><input type="text" name="about" ngModel={{caf.about}}>
+                <br>
+                <label>Address:</label><input type="text" name="streetAddress1" ngModel={{caf.streetAddress1}}>
+                <br>
+                <label>City:</label><input type="text" name="city" ngModel={{caf.city}}>
+                <br>
+                <label>State:</label><input type="text" name="state" ngModel={{caf.state}}>
+                <br>
+                <button type="submit" class="w3-button w3-green w3-margin-right"> EDIT</button>
+                <button type="button" (click)="closeBox(caf)" class="w3-button w3-grey">CANCEL</button>
+            </form>
+          
+        </div>
+
+    </div>
+
+</div>

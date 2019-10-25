@@ -235,6 +235,14 @@
       "userId": "5",
       "shopId": "1",
       "id": 32
+    },
+    {
+      "text": "Just checking in again after my cup of Arabica.",
+      "timePosted": "2019-10-25T17:17:14.443Z",
+      "deleted": false,
+      "userId": "1",
+      "shopId": "1",
+      "id": 33
     }
   ],
   "users": [
@@ -262,9 +270,8 @@
       "bio": "Instant Coffee Gal",
       "birthday": "May 22, 1994",
       "username": "kdoe22",
-      "id": 2,
       "deleted": false,
-      "rolesId": 2
+      "id": 2
     },
     {
       "userId": 3,
@@ -290,9 +297,8 @@
       "bio": "Coffee Coding",
       "birthday": "Feb, 08, 1996",
       "username": "starbucks4eva",
-      "id": 4,
       "deleted": false,
-      "rolesId": 1
+      "id": 4
     },
     {
       "userId": 5,
@@ -1169,8 +1175,8 @@
       "shopId": 1,
       "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
       "name": "Mama Cika Cafe",
-      "streetAddress1": "Jl. Punawarman 5",
-      "city": "Jakarta",
+      "streetAddress1": "Jl. Punawarman 6",
+      "city": "Bandung",
       "state": "Indonesia",
       "rating": 4.5,
       "imageUrl": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
@@ -1448,6 +1454,20 @@
       "like": true,
       "id": "554535",
       "likeId": "554535"
+    },
+    {
+      "userId": "1",
+      "postId": "32",
+      "like": true,
+      "id": "3254531",
+      "likeId": "3254531"
+    },
+    {
+      "userId": "5",
+      "postId": "33",
+      "like": true,
+      "id": "3354535",
+      "likeId": "3354535"
     }
   ]
 }

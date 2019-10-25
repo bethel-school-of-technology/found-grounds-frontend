@@ -10,11 +10,12 @@ import { DisplayUserscafesComponent } from './display-userscafes/display-usersca
 import { DisplayUserscafesInfoComponent } from './display-userscafes-info/display-userscafes-info.component';
 import { DisplayAllcafeprofilesComponent } from './display-allcafeprofiles/display-allcafeprofiles.component';
 import { TimeModule } from '../time/time.module';
+import { DisplayCafeNameOnlyComponent } from './display-cafe-name-only/display-cafe-name-only.component';
 @NgModule({
-  declarations: [DisplayCafeprofileComponent, DisplayCafeNameComponent, DisplayUserscafesComponent, DisplayUserscafesInfoComponent, DisplayAllcafeprofilesComponent],
+  declarations: [DisplayCafeprofileComponent, DisplayCafeNameComponent, DisplayUserscafesComponent, DisplayUserscafesInfoComponent, DisplayAllcafeprofilesComponent, DisplayCafeNameOnlyComponent],
   imports: [
     CommonModule, UsersModule, ReviewsModule, PhotosModule, MenuModule, TimeModule
   ],
-  exports: [DisplayCafeprofileComponent, DisplayCafeNameComponent, DisplayUserscafesComponent, DisplayAllcafeprofilesComponent]
+  exports: [DisplayCafeprofileComponent, DisplayCafeNameComponent, DisplayUserscafesComponent, DisplayAllcafeprofilesComponent, DisplayCafeNameOnlyComponent]
 })
 export class CafesModule { }

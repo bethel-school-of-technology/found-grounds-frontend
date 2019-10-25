@@ -7,75 +7,78 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Open Sans", sans-serif
+  }
 </style>
-<body class="w3-theme-l5" >
+
+<body class="w3-theme-l5">
 
 
-<!-- Page Container -->
-<div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px">   
+  <!-- Page Container -->
+  <div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px">
 
-  <!-- for Non Admin-->
-  <div *ngIf="use.rolesId == 1" class="w3-row">  
-    <h1>I'm sorry {{use.firstName}}, please login as an admin</h1>
-  </div>
-
-  <!-- for Cafe Admin -->
-  <div *ngIf="use.rolesId == 3" class="w3-row">  
-      <h1>Welcome {{use.firstName}}, you are admin over <app-display-cafe-name shopId={{use.shopId}}></app-display-cafe-name></h1>
-   
+    <!-- for Non Admin-->
+    <div *ngIf="use.rolesId == 1" class="w3-row">
+      <h1>I'm sorry {{use.firstName}}, please login as an admin</h1>
     </div>
 
-  <!-- for Master Admins -->
-  <div *ngIf="use.rolesId == 2" class="w3-row">  
+    <!-- for Cafe Admin -->
+    <div *ngIf="use.rolesId == 3" class="w3-row">
+      <h1>Welcome {{use.firstName}}, you are admin over <app-display-cafe-name-only shopId={{use.shopId}}>
+        </app-display-cafe-name-only>
+      </h1>
+      <div class="w3-col m8">
+          <app-changecafeinfo shopId={{use.shopId}}></app-changecafeinfo>
+        </div>
+        <div class="w3-col m4">
+            <div class="w3-card w3-round w3-white w3-padding-16 w3-padding w3-center w3-margin-left">
+                <h2>Cafe Admin Home Page</h2>
+               <p>As a café admin, you can change your café's information and update its menu. In future versions of Found Grounds, you will be able to own multiple cafe pages and flag any inappropriate reviews for removal.</p>
+        
+               </div>
+        </div>
+    </div>
+
+    <!-- for Master Admins -->
+    <div *ngIf="use.rolesId == 2" class="w3-row">
       <h1>Welcome {{use.firstName}}, you have master admin access</h1>
-     <!-- Middle Column -->
-     <div class="w3-col m8">
-
-        <div class="w3-white">
-            <div class="w3-container w3-padding found-grounds-brown">
-             <h3>All Our Cafes</h3>
-            </div>
-          </div>
-
-        <app-display-allcafeprofiles></app-display-allcafeprofiles>
-
+      <div class="w3-col m8">
         <div class="w3-white">
           <div class="w3-container w3-padding found-grounds-brown">
-           <h3>All Our Users</h3>
+            <h3>All Our Cafes</h3>
           </div>
         </div>
-
-        <app-display-allprofiles></app-display-allprofiles>
-
+        <app-display-allcafeprofiles></app-display-allcafeprofiles>
         <div class="w3-white">
-            <div class="w3-container w3-padding found-grounds-brown">
-             <h3>All Our Users' Posts</h3>
-            </div>
+          <div class="w3-container w3-padding found-grounds-brown">
+            <h3>All Our Users</h3>
           </div>
-
-          <app-display-posts token={{token}}></app-display-posts>
-
         </div>
-
-          <!-- Right Column -->
-
-        
-
-    <div class="w3-col m4">
-
+        <app-display-allprofiles></app-display-allprofiles>
+        <div class="w3-white">
+          <div class="w3-container w3-padding found-grounds-brown">
+            <h3>All Our Users' Posts</h3>
+          </div>
+        </div>
+        <app-simplydisplayposts token={{token}}></app-simplydisplayposts>
+      </div>
+      <div class="w3-col m4">
         <app-adminnavbar></app-adminnavbar>
-      
+      </div>
     </div>
-  <!-- End Grid -->
+
+    <!-- End Page Container -->
   </div>
-  
-<!-- End Page Container -->
-</div>
-<br>
+  <br>
 
 
 </body>
-</html> 
 
-
+</html>

@@ -1,10 +1,10 @@
 <ul class="w3-ul w3-hoverable w3-white left-align w3-row">
-    <li *ngFor="let cafe of cafes" class="w3-padding-16">
-        <div *ngIf="cafe.shopId">
+    <div *ngFor="let cafe of cafes">
+    <li  *ngIf="cafe.shopId" class="w3-padding-16">
                 <app-display-userscafes-info (click)="onSelect(cafe)" shopId={{cafe.shopId}}></app-display-userscafes-info>
                 <div class="w3-center">
                         <app-moment timestamp={{cafe.timePosted}}></app-moment>
-                </div>
         </div>
     </li>
+</div>
 </ul>
