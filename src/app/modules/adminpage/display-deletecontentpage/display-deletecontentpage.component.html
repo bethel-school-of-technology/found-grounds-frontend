@@ -13,9 +13,12 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
 
 <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px">    
+<div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px">    
   <!-- The Grid -->
-  <div class="w3-row">  
+  <div *ngIf="use.rolesId == 1" class="w3-row">  
+      <h1>I'm sorry {{use.firstName}}, please login again</h1>
+  </div>
+  <div *ngIf="use.rolesId == 2" class="w3-row">  
   
      <!-- Middle Column -->
      <div class="w3-col m8">

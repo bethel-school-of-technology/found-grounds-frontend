@@ -91,3 +91,24 @@ input[type=text], select {
     color: #000;
     text-shadow: 0 0 5px brown;
   }
+
+  .button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  .button:hover {
+    background-color: red; /* Green */
+    color: white;
+  }
+
+  .button {
+    background-color: white;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }

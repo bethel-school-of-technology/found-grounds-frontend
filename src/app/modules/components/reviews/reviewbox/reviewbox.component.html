@@ -8,6 +8,7 @@
                 <div class="w3-row">
                     <div class="w3-col s3 vertical-center">
                         <app-display-profile-picture userId={{review.userId}}></app-display-profile-picture>
+                        <button class="button" *ngIf="review.userId == token" (click)="deleteReview(review)">Delete</button>
                     </div>
                     <div class="w3-col s9">
                         <p class="w3-center"> {{review.rating}} <i class="fa fa-star"></i>

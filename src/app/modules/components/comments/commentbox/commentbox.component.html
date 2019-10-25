@@ -1,10 +1,12 @@
 <div *ngFor="let comment of comments">
         <app-display-comments-profile-picture userId={{comment.userId}}></app-display-comments-profile-picture>
-   <p><app-display-user userId={{comment.userId}}></app-display-user> {{comment.text}}</p>
+   <p><app-display-user userId={{comment.userId}}></app-display-user> {{comment.text}} 
+    <button class="button" *ngIf="comment.userId == token" (click)="deleteComment(comment)">Delete</button>
+</p>
 </div>
 <div>
         <div>
-            <app-display-comments-profile-picture userId={{token}}></app-display-comments-profile-picture>
+            <app-display-comments-profile-picture userId={{token2a}}></app-display-comments-profile-picture>
         </div>
         <div>
             <form id="uploadNewComment" name="uploadNewComment" #commentData="ngForm" (ngSubmit)="uploadNewComment(commentData.value)">

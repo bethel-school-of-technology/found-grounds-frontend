@@ -9,14 +9,26 @@
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
-<body class="w3-theme-l5">
+<body class="w3-theme-l5" >
 
 
 <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px">    
-  <!-- The Grid -->
-  <div class="w3-row">  
-  
+<div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px">   
+
+  <!-- for Non Admin-->
+  <div *ngIf="use.rolesId == 1" class="w3-row">  
+    <h1>I'm sorry {{use.firstName}}, please login as an admin</h1>
+  </div>
+
+  <!-- for Cafe Admin -->
+  <div *ngIf="use.rolesId == 3" class="w3-row">  
+      <h1>Welcome {{use.firstName}}, you are admin over <app-display-cafe-name shopId={{use.shopId}}></app-display-cafe-name></h1>
+   
+    </div>
+
+  <!-- for Master Admins -->
+  <div *ngIf="use.rolesId == 2" class="w3-row">  
+      <h1>Welcome {{use.firstName}}, you have master admin access</h1>
      <!-- Middle Column -->
      <div class="w3-col m8">
 

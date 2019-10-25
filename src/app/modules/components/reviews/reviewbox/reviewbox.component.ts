@@ -19,12 +19,13 @@ export class ReviewboxComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   getReviews(shopId){
-    this.http.get<Review[]>(this.reviewsRoute + "?shopId=" + shopId).subscribe(reviews => {
+    this.http.get<Review[]>(this.reviewsRoute + "?deleted=false&shopId=" + shopId).subscribe(reviews => {
       this.reviews = reviews;
     })
   }
  
   public reviewToPost: Review;
+  public reviewToDelete: Review;
   private cafesRoute = 'http://localhost:3000/cafes';
   public cafe: Shop;
 
@@ -43,19 +44,31 @@ export class ReviewboxComponent implements OnInit {
       "edited": false,
     }
     this.http.post(this.reviewsRoute, this.reviewToPost)
-    .subscribe(res => (this.isAdded = true));
-  
-    this.ngOnInit();
-    // .then(()=>{ this.router.navigate([`/${this.id}`])})
-    // add above code once router is done
-    ;
-  }
+      .toPromise().then(()=> {this.ngOnInit()});}
 
   getCafe(){
     this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
       this.cafe = cafe;
     });
   }
+
+  deleteReview(review){
+    if(confirm("Are you sure?")){
+      this.reviewToDelete = {
+        "text": review.text,
+        "shopId": this.shopId,
+        "userId": this.token,
+        "id": review.id,
+        "reviewId": review.id,
+        "rating": review.rating,
+        "timePosted": moment(),
+        "edited": false,
+        "deleted": true
+      }
+      const url = `${this.reviewsRoute}/${review.id}`;
+      return this.http.put(url, this.reviewToDelete)
+      .toPromise().then(()=> {this.ngOnInit()})}
+    }
 
   ngOnInit() {
     this.getReviews(this.shopId);

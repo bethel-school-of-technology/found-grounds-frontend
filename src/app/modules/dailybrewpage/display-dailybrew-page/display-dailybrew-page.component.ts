@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../../../shared/services/token.service';
 
 @Component({
   selector: 'app-display-dailybrew-page',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class DisplayDailybrewPageComponent implements OnInit {
     // pulls in userId from login token
   // @Input() userId: number;
-  token = 2;
+  public token
   
-  constructor() { }
+  constructor( tokenService: TokenService) { 
+    this.token = tokenService.token;
+  }
+ 
 
   ngOnInit() {
   }
