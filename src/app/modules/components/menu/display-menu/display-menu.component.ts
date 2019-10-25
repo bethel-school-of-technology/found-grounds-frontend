@@ -14,7 +14,7 @@ export class DisplayMenuComponent implements OnInit {
 
   constructor( private http:HttpClient) { }
   getMenus(){
-    this.http.get<Menu[]>(this.menusRoute + "?shopId=" + this.shopId).subscribe(menus => {
+    this.http.get<Menu[]>(this.menusRoute + "?deleted=false&shopId=" + this.shopId).subscribe(menus => {
       this.menus = menus;
     });
   }

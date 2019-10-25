@@ -1,1 +1,56 @@
-<p>addeditdeletemenuitem works!</p>
+<div class="w3-white">
+    <div class="w3-container w3-padding found-grounds-brown">
+        <h3>Menu</h3>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+        <div *ngFor="let menu of menus">
+        <li  class="w3-padding-16">
+            <div class="w3-row">
+                <div class="w3-col s3 vertical-center">
+                    <img src={{menu.imageUrl}} alt="Image" class="w3-left w3-margin-right vertical-center"
+                        style="width:50px">
+                </div>
+                <div class="w3-col s9">
+                    <span class="w3-large">{{menu.name}}</span>
+                    <br>
+                    <span>{{menu.text}}</span>
+                    <button (click)="deleteMenu(menu)" type="button" class="w3-button w3-red w3-right w3-margin-left">DELETE</button>
+                    <button (click)="showBox(menu)" type="button" class="w3-button w3-blue w3-right">EDIT ITEM</button>
+                </div>
+            </div>
+        </li>
+        <div id="{{menu.itemId + editing}}" class="hidden">
+                <li  class="w3-padding-16">
+                        <form id="editMenu" name="editMenu" #editData="ngForm" (ngSubmit)="editMenu(menu, editData.value)">
+                                <label>Name:</label><input type="text" name="name" ngModel={{menu.name}}>
+                                <br>
+                                <label>Description:</label><input type="text" name="text" ngModel={{menu.text}}>
+                                <br>
+                                <label> Image Url: </label><input type="text" name="imageUrl" ngModel={{menu.imageUrl}}>
+                                <br>
+                                <button type="submit" class="w3-button w3-green w3-margin-right"> EDIT</button>
+                                <button (click)="closeBox(menu)" type="button" class="w3-button w3-grey">CANCEL</button>
+                            </form>
+                      
+                    </li>
+        </div>
+    </div>
+    <li class="w3-padding-16">
+        <button (click)="showAddBox()" type="button" class="w3-button w3-blue">ADD ITEM</button>
+        <br>
+            <div id="newMenu" class="hidden">
+        <form name="newMenu" #newData="ngForm" class="w3-margin-top" (ngSubmit)="addMenu( newData.value)">
+                    <label>Name:</label><input type="text" name="name" ngModel> 
+                    <br>
+                    <label>  Description:</label><input type="text" name="text" ngModel>
+                    <br>
+                    <label> Image Url: </label><input type="text" name="imageUrl" ngModel>
+                    <br>
+                    <button type="submit" class="w3-button w3-green w3-margin-right"> ADD</button>
+                    <button (click)="closeAddBox()" type="button" class="w3-button w3-grey">CANCEL</button>
+                </form>
+            </div>
+        </li>
+
+    </ul>
+    <hr>
