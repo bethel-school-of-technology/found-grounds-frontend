@@ -211,6 +211,14 @@
       "timePosted": "2019-10-24T10:05:22.099Z",
       "shopId": "1",
       "deleted": true
+    },
+    {
+      "text": "Mama Cika Cafe is a very beautiful cafe for me",
+      "userId": "1",
+      "id": 30,
+      "timePosted": "2019-10-25T02:01:50.147Z",
+      "shopId": "1",
+      "deleted": true
     }
   ],
   "users": [
@@ -479,46 +487,88 @@
   ],
   "likes": [
     {
-      "postId": 1,
-      "userId": 1,
+      "userId": "3",
+      "postId": "7",
+      "id": "754531",
       "like": true,
-      "id": 1
-    },
-    {
-      "postId": 1,
-      "userId": 2,
-      "like": true,
-      "id": 2
-    },
-    {
-      "postId": 2,
-      "userId": 1,
-      "like": true,
-      "id": 3
-    },
-    {
-      "userId": "4",
-      "postId": "1",
-      "like": true,
-      "id": 4
-    },
-    {
-      "userId": "4",
-      "postId": "2",
-      "like": true,
-      "id": 5
-    },
-    {
-      "userId": "4",
-      "postId": "3",
-      "like": true,
-      "id": 6
+      "likeId": "754533"
     },
     {
       "userId": "1",
+      "postId": "6",
+      "id": "654531",
+      "like": false,
+      "likeId": "654531"
+    },
+    {
+      "userId": "1",
+      "postId": "5",
+      "id": "554531",
+      "like": false,
+      "likeId": "554531"
+    },
+    {
+      "userId": "1",
+      "postId": "2",
+      "id": "254531",
+      "like": false,
+      "likeId": "254531"
+    },
+    {
+      "userId": "1",
+      "postId": "1",
+      "id": "154531",
+      "like": true,
+      "likeId": "154531"
+    },
+    {
+      "userId": "3",
+      "postId": "1",
+      "id": "154533",
+      "like": true,
+      "likeId": "154533"
+    },
+    {
+      "userId": "3",
+      "postId": "2",
+      "like": true,
+      "id": "254533",
+      "likeId": "254533"
+    },
+    {
+      "userId": "2",
       "postId": "7",
       "like": true,
-      "id": 7
+      "id": "754532",
+      "likeId": "754532"
+    },
+    {
+      "userId": "2",
+      "postId": "6",
+      "like": true,
+      "id": "654532",
+      "likeId": "654532"
+    },
+    {
+      "userId": "2",
+      "postId": "5",
+      "id": "554532",
+      "like": false,
+      "likeId": "554532"
+    },
+    {
+      "userId": "2",
+      "postId": "2",
+      "id": "254532",
+      "like": true,
+      "likeId": "254532"
+    },
+    {
+      "userId": "2",
+      "postId": "1",
+      "like": true,
+      "id": "154532",
+      "likeId": "154532"
     }
   ]
 }

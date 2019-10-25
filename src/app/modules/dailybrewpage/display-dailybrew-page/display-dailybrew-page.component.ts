@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisplayDailybrewPageComponent implements OnInit {
     // pulls in userId from login token
   // @Input() userId: number;
-  token = 1;
+  token = 2;
   
   constructor() { }
 
