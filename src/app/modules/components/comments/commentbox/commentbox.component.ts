@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Comment } from '../../../../shared/models/comment';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-commentbox',
@@ -12,10 +13,8 @@ export class CommentboxComponent implements OnInit {
   @Input() postId: number;
   @Input() token: number;
   
-
   private commentsRoute = 'http://localhost:3000/comments';
   public comments : Comment [];
-public token2a: number;
 
   constructor(private http: HttpClient) { }
   // Getting Comments
@@ -25,10 +24,13 @@ public token2a: number;
     })
   }
 
-  refreshToken(token){
-    this.token2a = token
-  }
-
+  private usersRoute = 'http://localhost:3000/users'
+  public user: User;
+  refreshUser(token){
+  this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + token).subscribe(user => {
+    this.user = user;
+  })
+}
   
   // Uploading Comments
   public commentToPost: Comment;
@@ -71,7 +73,7 @@ public token2a: number;
 
   ngOnInit() {
     this.getComments(this.postId);
-    this.refreshToken(this.token)
+    this.refreshUser(this.token);
   };
 
 }

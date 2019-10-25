@@ -23,7 +23,7 @@
       </div>
       <hr>
 
-<div class="w3-white w3-margin w3-margin-bottom">
+<div *ngFor="let use of user" class="w3-white w3-margin w3-margin-bottom">
     <div class="w3-container w3-padding found-grounds-brown">
         <h3>Leave Your Review</h3>
       </div>
@@ -66,7 +66,7 @@
                               </label>
                               </div>
          <!-- Text Goes Here -->
-                    <input class="w3-border w3-padding coffeetext" type="text" name="text" id="text"  placeholder="My time here was.." required ngModel />
+                    <input class="w3-border w3-padding coffeetext" type="text" name="text" id="text"  placeholder="{{use.firstName}}'s time here was.." required ngModel />
           <!-- Photo URL Goes Here -->
           <button type="submit" class="w3-button w3-theme coffeebutton"><i class="fa fa-coffee"></i>  Brew!</button>
         </form> 

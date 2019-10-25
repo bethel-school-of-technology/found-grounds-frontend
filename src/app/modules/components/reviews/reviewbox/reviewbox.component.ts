@@ -3,6 +3,7 @@ import { Shop } from '../../../../shared/models/shop';
 import { Review } from '../../../../shared/models/review';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
+import { User } from '.././../../../shared/models/user';
 
 @Component({
   selector: 'app-reviewbox',
@@ -70,8 +71,19 @@ export class ReviewboxComponent implements OnInit {
       .toPromise().then(()=> {this.ngOnInit()})}
     }
 
+  private usersRoute = 'http://localhost:3000/users'
+  public user: User;
+  refreshUser(token){
+  this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + token).subscribe(user => {
+    this.user = user;
+  })
+}
+
   ngOnInit() {
     this.getReviews(this.shopId);
     this.getCafe()
+    this.refreshUser(this.token);
   };
 }
+
+// a quick video about the features that are in the front end right now.

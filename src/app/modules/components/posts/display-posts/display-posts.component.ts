@@ -95,6 +95,13 @@ getCafe(){
   });
 }
 
+public user: User;
+refreshUser(token){
+  this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + token).subscribe(user => {
+    this.user = user;
+  })
+}
+
 // Delete Posts Component
 deletePost(post){
   if(confirm("Are you sure?")){
@@ -132,5 +139,6 @@ editPost = function(newpost, oldpost){
   ngOnInit() {
     this.getPosts()
     this.getCafe()
+    this.refreshUser(this.token)
   };
 }

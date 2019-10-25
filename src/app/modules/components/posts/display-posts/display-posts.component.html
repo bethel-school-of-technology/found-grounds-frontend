@@ -21,11 +21,11 @@
   <div class="w3-row-padding">
     <div class="w3-col m12">
       <div class="w3-card w3-round w3-white">
-        <div class="w3-container w3-padding">
+        <div *ngFor="let use of user" class="w3-container w3-padding">
           <form id="uploadNewPost" name="uploadNewPost" #postData="ngForm" (ngSubmit)="uploadPost(postData.value)">
             <!-- Text Input -->
             <input class="w3-border w3-padding coffeetext" type="text" name="text" id="text"
-              placeholder="I've had five espressos today.." required ngModel />
+              placeholder="{{use.firstName}} has had five espressos today.." required ngModel />
             <!-- Photos Input -->
             <input style="display:none" type="file" (change)="onFileSelected($event)" #fileInput />
             <div class="w3-row">

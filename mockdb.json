@@ -243,6 +243,70 @@
       "userId": "1",
       "shopId": "1",
       "id": 33
+    },
+    {
+      "text": "Comments and posts now post and immediately display!",
+      "userId": "5",
+      "id": 34,
+      "timePosted": "2019-10-25T19:46:09.977Z",
+      "shopId": "1",
+      "deleted": true
+    },
+    {
+      "text": "Mother's Cafe is back and I am happy.",
+      "timePosted": "2019-10-25T19:50:16.815Z",
+      "deleted": false,
+      "userId": "1",
+      "shopId": "1",
+      "id": 35
+    },
+    {
+      "text": "Testing",
+      "userId": "1",
+      "id": 36,
+      "timePosted": "2019-10-25T19:52:48.934Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "Testing",
+      "userId": "1",
+      "id": 37,
+      "timePosted": "2019-10-25T19:52:54.993Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "Testing",
+      "userId": "1",
+      "id": 38,
+      "timePosted": "2019-10-25T19:53:05.047Z",
+      "shopId": "1",
+      "deleted": true
+    },
+    {
+      "text": "Testing out this new post.",
+      "userId": "1",
+      "id": 39,
+      "timePosted": "2019-10-25T19:58:07.643Z",
+      "shopId": "",
+      "deleted": true
+    },
+    {
+      "text": "I am racking up a lot of data.",
+      "userId": "1",
+      "id": 40,
+      "timePosted": "2019-10-25T19:58:41.214Z",
+      "shopId": "1",
+      "deleted": true
+    },
+    {
+      "text": "I guess I am",
+      "userId": "1",
+      "id": 41,
+      "timePosted": "2019-10-25T19:58:49.782Z",
+      "shopId": "",
+      "deleted": true
     }
   ],
   "users": [
@@ -1168,13 +1232,164 @@
       "id": 95,
       "deleted": true,
       "timePosted": "2019-10-25T09:00:02.418Z"
+    },
+    {
+      "text": "Comments and posts!",
+      "postId": "34",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:46:17.176Z",
+      "id": 96
+    },
+    {
+      "text": "Likes also toggle.",
+      "postId": "34",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:46:26.203Z",
+      "id": 97
+    },
+    {
+      "text": "And if you realize, there are editing and deleting functionalities for posts that are by the user.",
+      "postId": "34",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:46:41.233Z",
+      "id": 98
+    },
+    {
+      "text": "As you can see, it shows that the post has been edited!",
+      "postId": "34",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:47:05.776Z",
+      "id": 99
+    },
+    {
+      "text": "There is this box on your left from Ian's template :) that can toggle open to show where the person has been going recently.",
+      "postId": "5",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:47:42.564Z",
+      "id": 100
+    },
+    {
+      "text": "Hmm!",
+      "postId": "33",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:48:05.063Z",
+      "id": 101
+    },
+    {
+      "text": "It was really good!",
+      "postId": "33",
+      "userId": "1",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:49:23.458Z",
+      "id": 102
+    },
+    {
+      "text": "Yes",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 103,
+      "id": 103,
+      "deleted": true,
+      "timePosted": "2019-10-25T19:50:42.780Z"
+    },
+    {
+      "text": "Comments can be deleted now",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 104,
+      "id": 104,
+      "deleted": true,
+      "timePosted": "2019-10-25T19:50:54.594Z"
+    },
+    {
+      "text": "That's it folks from the front end for now.",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 105,
+      "id": 105,
+      "deleted": true,
+      "timePosted": "2019-10-25T19:51:07.793Z"
+    },
+    {
+      "text": "I am so happy.",
+      "postId": "35",
+      "userId": "1",
+      "deleted": false,
+      "timePosted": "2019-10-25T19:57:50.541Z",
+      "id": 106
+    },
+    {
+      "text": "Check this out",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 107,
+      "id": 107,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:02:29.014Z"
+    },
+    {
+      "text": "Things are different now",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 108,
+      "id": 108,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:02:27.736Z"
+    },
+    {
+      "text": "Things refresh",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 109,
+      "id": 109,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:02:26.595Z"
+    },
+    {
+      "text": "Because we are using a refresh Function",
+      "postId": "35",
+      "userId": "1",
+      "commentId": 110,
+      "id": 110,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:02:25.421Z"
+    },
+    {
+      "text": "I drove her Evan!",
+      "postId": "7",
+      "userId": "1",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:02:50.758Z",
+      "id": 111
+    },
+    {
+      "text": "Gotcha!",
+      "postId": "7",
+      "userId": "3",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:03:32.759Z",
+      "id": 112
+    },
+    {
+      "text": "I love that place John!",
+      "postId": "35",
+      "userId": "3",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:07:09.465Z",
+      "id": 113
     }
   ],
   "cafes": [
     {
       "shopId": 1,
       "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-      "name": "Mama Cika Cafe",
+      "name": "Mother's Cafe",
       "streetAddress1": "Jl. Punawarman 6",
       "city": "Bandung",
       "state": "Indonesia",
@@ -1299,6 +1514,38 @@
       "timePosted": "2019-10-25T09:00:10.227Z",
       "edited": false,
       "deleted": true
+    },
+    {
+      "text": "I always love my time here :) ",
+      "shopId": "1",
+      "userId": "1",
+      "id": 11,
+      "reviewId": 11,
+      "rating": "5",
+      "timePosted": "2019-10-25T19:50:35.897Z",
+      "edited": false,
+      "deleted": true
+    },
+    {
+      "text": "The Flat White is my new favorite hangout spot. Their vibe is super artisan and makes me spur creativity!",
+      "shopId": "2",
+      "userId": "3",
+      "deleted": false,
+      "rating": "5",
+      "timePosted": "2019-10-25T20:03:59.485Z",
+      "edited": false,
+      "id": 12
+    },
+    {
+      "text": "So good brooo",
+      "shopId": "2",
+      "userId": "3",
+      "id": 13,
+      "reviewId": 13,
+      "rating": "5",
+      "timePosted": "2019-10-25T20:06:00.580Z",
+      "edited": false,
+      "deleted": true
     }
   ],
   "photos": [
@@ -1331,7 +1578,7 @@
     {
       "shopId": "1",
       "itemId": 1,
-      "name": "Arabica Frappucino",
+      "name": "Fun Drink",
       "imageUrl": "https://images.summitmedia-digital.com/spotph/images/2018/01/12/Arabica8.jpg",
       "id": 1,
       "text": "Earthy and creamy",
@@ -1344,7 +1591,7 @@
       "imageUrl": "https://images.japancentre.com/recipes/pics/16/main/matcha-latte.jpg?1469572822",
       "id": 2,
       "text": "Zen in a sip",
-      "deleted": false
+      "deleted": true
     },
     {
       "shopId": "1",
@@ -1385,6 +1632,14 @@
       "imageUrl": "",
       "id": 7,
       "text": "",
+      "deleted": true
+    },
+    {
+      "shopId": "1",
+      "name": "Matcha Cupcake",
+      "imageUrl": "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201903/21/00118821000827____19__600x600.jpg",
+      "id": 8,
+      "text": "delicious.",
       "deleted": true
     }
   ],
@@ -1507,6 +1762,41 @@
       "like": true,
       "id": "654535",
       "likeId": "654535"
+    },
+    {
+      "userId": "5",
+      "postId": "34",
+      "id": "3454535",
+      "like": true,
+      "likeId": "3454535"
+    },
+    {
+      "userId": "5",
+      "postId": "32",
+      "like": true,
+      "id": "3254535",
+      "likeId": "3254535"
+    },
+    {
+      "userId": "1",
+      "postId": "33",
+      "like": true,
+      "id": "3354531",
+      "likeId": "3354531"
+    },
+    {
+      "userId": "1",
+      "postId": "35",
+      "id": "3554531",
+      "like": true,
+      "likeId": "3554531"
+    },
+    {
+      "userId": "3",
+      "postId": "35",
+      "like": true,
+      "id": "3554533",
+      "likeId": "3554533"
     }
   ]
 }
