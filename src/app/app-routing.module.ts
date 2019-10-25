@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'admindelete',
     component: DisplayDeletecontentpageComponent
+  },
+  {
+    path: 'signupcafe',
+    component: DisplayDeletecontentpageComponent
   }
 ];
 

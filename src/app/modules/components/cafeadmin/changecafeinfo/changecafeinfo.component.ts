@@ -51,7 +51,7 @@ export class ChangecafeinfoComponent implements OnInit {
         "city": newCafe.city,
         "state": newCafe.state,
         "rating": cafe.rating,
-        "imageUrl": cafe.imageUrl,
+        "imageUrl": newCafe.imageUrl,
         "id": cafe.id,
         "deleted": false,
       }
@@ -74,7 +74,7 @@ export class ChangecafeinfoComponent implements OnInit {
   onSelect(cafe){
     this.router.navigate(['/cafes', cafe.shopId]);
   }
-  
+
   ngOnInit() {
     this.getCafe();
   }
