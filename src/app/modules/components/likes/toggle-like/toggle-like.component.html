@@ -1,1 +1,15 @@
-<button type="button" (click)="onClickLike()" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+<div class="w3-margin-bottom">
+        <b *ngFor="let like of likes">
+        <app-display-comments-profile-picture userId={{like.userId}}></app-display-comments-profile-picture> <b> </b> 
+    </b>
+    <i class="fa fa-coffee"></i> 
+</div>
+    <a *ngIf="!userLike|| userLike.length === 0">
+        <button *ngIf=" userLike " type="button" (click)="onClickPostLike()" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+    </a>
+<a *ngIf="!userLike || userLike.length > 0">
+    <a *ngFor="let userLik of userLike">
+        <button type="button" (click)="onClickToggle(userLik)" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+    </a>
+</a>
+   

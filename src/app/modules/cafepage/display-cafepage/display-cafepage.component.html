@@ -8,51 +8,62 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
-body {font-family: "Open Sans"}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Oswald"
+  }
+
+  body {
+    font-family: "Open Sans"
+  }
 </style>
+
 <body class="">
 
-<!-- w3-content defines a container for fixed size centered content, 
+  <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1600px">
-
-                
-  <!-- Header -->
+  <div class="w3-content" style="max-width:1600px">
 
 
-  <!-- Grid -->
-  <div class="w3-row w3-padding" *ngFor="let caf of cafe">
+    <!-- Header -->
 
-    <!-- Blog entries -->
-    <div class="w3-col l8 s12">
-    
-      <!-- Blog entry -->
-      <app-display-cafeprofile shopId={{caf.shopId}}></app-display-cafeprofile>
-      <!-- to be changed with shopId -->
-      <app-display-cafeposts token={{token}} shopId={{caf.shopId}}></app-display-cafeposts>
-    <!-- END BLOG ENTRIES -->
+
+    <!-- Grid -->
+    <div class="w3-row w3-padding" *ngFor="let caf of cafe">
+
+        <!-- Middle Section -->
+      <div class="w3-col l8 s12">
+        <app-display-cafeprofile shopId={{caf.shopId}}></app-display-cafeprofile>
+        <app-display-cafeposts token={{token}} shopId={{caf.shopId}}></app-display-cafeposts>
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-col l4">
+        <!-- Reviews -->
+        <app-reviewbox token={{token}} shopId={{caf.shopId}}></app-reviewbox>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <!-- Photos & Menu -->
+        <app-photobox shopId={{caf.shopId}}></app-photobox>
+        <hr>
+        <app-display-menu shopId={{caf.shopId}}></app-display-menu>
+      </div>
+
+      <!-- END GRID -->
     </div>
 
-    <!-- About/Information menu -->
-    <div class="w3-col l4">
-
-      <!-- Posts -->
-        <app-reviewbox shopId={{caf.shopId}}></app-reviewbox>
-
-      <!-- Inspiration -->
-      <app-photobox shopId={{caf.shopId}}></app-photobox>
-<hr>
-   <app-display-menu shopId={{caf.shopId}}></app-display-menu>
-      <app-upload-review shopId={{caf.shopId}} token={{token}}></app-upload-review>
-    <!-- END About/Intro Menu -->
-    </div>
-
-  <!-- END GRID -->
+    <!-- END w3-content -->
   </div>
 
-<!-- END w3-content -->
-</div>
-
 </body>
+
 </html>

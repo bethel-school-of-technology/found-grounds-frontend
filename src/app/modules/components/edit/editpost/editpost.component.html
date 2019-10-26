@@ -1,0 +1,21 @@
+<!-- This Code Has Been Moved To The Display Posts' Components, However It Is Here As A Reference -->
+
+<div *ngFor="let pos of post">
+    <h3>Edit This Post </h3>
+
+    <form #editData="ngForm" (ngSubmit)="editPost(editData)">
+         <!-- Text Goes Here -->
+         <textarea class="w3-border w3-padding coffeetext" id="text" required ngModel>{{pos.text}}</textarea>
+         <!-- Photo URL Goes Here -->
+         <img src={{pos.imageUrl}} style="width:100%" class="w3-margin-bottom">
+
+         <select id="cafeId" name="cafeId" class="form-control w3-right" ngModel>
+              <option selected value="pos.cafeId">Select a Different Café</option>
+              <option *ngFor="let cafe of cafes" value={{cafe.cafeId}}>{{cafe.cafeName}}</option>
+         </select>
+
+         <button type="submit" class="w3-button w3-theme w3-padding coffeebutton w3-right"><i class="fa fa-coffee"></i>
+               Rebrew!</button>
+    </form>
+
+</div> 

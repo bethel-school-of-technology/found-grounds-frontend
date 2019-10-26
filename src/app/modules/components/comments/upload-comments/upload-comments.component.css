@@ -1,7 +1,0 @@
-input[type=text], select {
-    width: 70%;
-    display: inline-block;
-    border: 0px solid #ccc;
-    border-radius: 0px;
-    box-sizing: border-box;
-  }

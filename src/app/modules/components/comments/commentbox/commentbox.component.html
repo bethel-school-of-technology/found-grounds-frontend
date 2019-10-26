@@ -1,2 +1,19 @@
-<app-display-comments postId={{postId}}></app-display-comments>
-<app-upload-comments token={{token}} postId={{postId}}></app-upload-comments>
+<div *ngFor="let comment of comments">
+        <app-display-comments-profile-picture userId={{comment.userId}}></app-display-comments-profile-picture>
+   <p><app-display-user userId={{comment.userId}}></app-display-user> {{comment.text}} 
+    <button class="button" *ngIf="comment.userId == token" (click)="deleteComment(comment)">Delete</button>
+</p>
+</div>
+<div *ngFor="let use of user">
+        <div>
+            <app-display-comments-profile-picture userId={{token}}></app-display-comments-profile-picture>
+        </div>
+        <div>
+            <form id="uploadNewComment" name="uploadNewComment" #commentData="ngForm" (ngSubmit)="uploadNewComment(commentData.value)">
+                <input type="text" name="text" id="text" placeholder="What does {{use.firstName}} think about this?" required ngModel /> 
+              <button type="submit" class="w3-button w3-theme w3-padding w3-right w3-margin-bottom "><i class="fa fa-coffee"></i>  Send!</button>
+            </form>         
+        </div>
+    </div>
+    
+    

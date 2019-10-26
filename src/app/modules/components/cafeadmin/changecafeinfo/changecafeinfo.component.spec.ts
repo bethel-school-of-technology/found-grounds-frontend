@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploadCommentsComponent } from './upload-comments.component';
+import { ChangecafeinfoComponent } from './changecafeinfo.component';
 
-describe('UploadCommentsComponent', () => {
-  let component: UploadCommentsComponent;
-  let fixture: ComponentFixture<UploadCommentsComponent>;
+describe('ChangecafeinfoComponent', () => {
+  let component: ChangecafeinfoComponent;
+  let fixture: ComponentFixture<ChangecafeinfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UploadCommentsComponent ]
+      declarations: [ ChangecafeinfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UploadCommentsComponent);
+    fixture = TestBed.createComponent(ChangecafeinfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
