@@ -307,6 +307,22 @@
       "timePosted": "2019-10-25T19:58:49.782Z",
       "shopId": "",
       "deleted": true
+    },
+    {
+      "text": "First of all posts automatically show up after you press enter, and they all display with the most recent being on top!",
+      "userId": "3",
+      "id": 42,
+      "timePosted": "2019-10-25T20:10:56.994Z",
+      "shopId": "2",
+      "deleted": true
+    },
+    {
+      "text": "The posts automatically appear after you post them now.. this post will be edited!",
+      "userId": "5",
+      "id": 43,
+      "timePosted": "2019-10-25T20:12:30.440Z",
+      "shopId": "2",
+      "deleted": true
     }
   ],
   "users": [
@@ -1383,13 +1399,90 @@
       "deleted": false,
       "timePosted": "2019-10-25T20:07:09.465Z",
       "id": 113
+    },
+    {
+      "text": "Same with comments!",
+      "postId": "42",
+      "userId": "3",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:11:01.863Z",
+      "id": 114
+    },
+    {
+      "text": "Also, a user can edit or delete his comment.",
+      "postId": "42",
+      "userId": "3",
+      "commentId": 115,
+      "id": 115,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:11:17.268Z"
+    },
+    {
+      "text": "I meant his post!",
+      "postId": "42",
+      "userId": "3",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:11:21.087Z",
+      "id": 116
+    },
+    {
+      "text": "So does comments!",
+      "postId": "43",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:12:35.423Z",
+      "id": 117
+    },
+    {
+      "text": "As you can see, users can edit and delete their own posts..",
+      "postId": "43",
+      "userId": "5",
+      "deleted": false,
+      "timePosted": "2019-10-25T20:12:45.035Z",
+      "id": 118
+    },
+    {
+      "text": "You can also delete your own comments.",
+      "postId": "35",
+      "userId": "5",
+      "commentId": 119,
+      "id": 119,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:13:11.271Z"
+    },
+    {
+      "text": "Likes also toggle :)",
+      "postId": "35",
+      "userId": "5",
+      "commentId": 120,
+      "id": 120,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:16:37.674Z"
+    },
+    {
+      "text": "I heard they shut down that place.. LOL",
+      "postId": "7",
+      "userId": "1",
+      "commentId": 121,
+      "id": 121,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:15:47.389Z"
+    },
+    {
+      "text": "So that's all the new functionalities in the Front End",
+      "postId": "7",
+      "userId": "1",
+      "commentId": 122,
+      "id": 122,
+      "deleted": true,
+      "timePosted": "2019-10-25T20:15:45.806Z"
     }
   ],
   "cafes": [
     {
       "shopId": 1,
       "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-      "name": "Mother's Cafe",
+      "name": "Mama Cika's Cafe",
       "streetAddress1": "Jl. Punawarman 6",
       "city": "Bandung",
       "state": "Indonesia",
@@ -1408,7 +1501,7 @@
       "rating": 5,
       "imageUrl": "https://cdn.resize.sparkplatform.com/sha/640x480/true/20180801184334499279000000-o.jpg",
       "id": 2,
-      "deleted": false
+      "deleted": true
     }
   ],
   "reviews": [
@@ -1546,6 +1639,17 @@
       "timePosted": "2019-10-25T20:06:00.580Z",
       "edited": false,
       "deleted": true
+    },
+    {
+      "text": "It's the same with reviews as well!",
+      "shopId": "1",
+      "userId": "5",
+      "id": 14,
+      "reviewId": 14,
+      "rating": "5",
+      "timePosted": "2019-10-25T20:13:37.983Z",
+      "edited": false,
+      "deleted": true
     }
   ],
   "photos": [
@@ -1604,7 +1708,7 @@
     },
     {
       "shopId": "1",
-      "name": "Danocinoo",
+      "name": "Yoghurt!",
       "imageUrl": "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201903/21/00118821000827____19__600x600.jpg",
       "id": 4,
       "text": "Coffee-infused yoghurt",
@@ -1640,6 +1744,14 @@
       "imageUrl": "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201903/21/00118821000827____19__600x600.jpg",
       "id": 8,
       "text": "delicious.",
+      "deleted": true
+    },
+    {
+      "shopId": "1",
+      "name": "Chocolate Mocha",
+      "imageUrl": "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201903/21/00118821000827____19__600x600.jpg",
+      "id": 9,
+      "text": "chocolatey goodness",
       "deleted": true
     }
   ],
@@ -1788,7 +1900,7 @@
       "userId": "1",
       "postId": "35",
       "id": "3554531",
-      "like": true,
+      "like": false,
       "likeId": "3554531"
     },
     {
@@ -1797,6 +1909,13 @@
       "like": true,
       "id": "3554533",
       "likeId": "3554533"
+    },
+    {
+      "userId": "5",
+      "postId": "35",
+      "id": "3554535",
+      "like": true,
+      "likeId": "3554535"
     }
   ]
 }
