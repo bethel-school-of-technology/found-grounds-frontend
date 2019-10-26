@@ -1,4 +1,4 @@
-export class Like {
+export class ThumbsUp {
     postId: number;
     userId: number;
     like: boolean;

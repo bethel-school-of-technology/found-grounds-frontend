@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Like } from '../../../../shared/models/like';
+import { ThumbsUp } from '../../../../shared/models/thumbsup';
 import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
@@ -13,23 +13,23 @@ export class ToggleLikeComponent implements OnInit {
   @Input() postId : number;
   @Input() token : number;
   private likesRoute = 'http://localhost:3000/likes';
-  public likes: Like [];
-  public userLike: Like;
+  public likes: ThumbsUp [];
+  public userLike: ThumbsUp;
 
   constructor(private http: HttpClient) { }
-  public likeToPost: Like;
-  public toggleToPost: Like;
+  public likeToPost: ThumbsUp;
+  public toggleToPost: ThumbsUp;
   isAdded: boolean = false;
   confirmationString: string = "New like has been uploaded";
 
   getLikes(postId){
-    this.http.get<Like[]>(this.likesRoute + "?postId=" + postId + "&like=true").subscribe(likes => {
+    this.http.get<ThumbsUp[]>(this.likesRoute + "?postId=" + postId + "&like=true").subscribe(likes => {
       this.likes = likes;
     })
   }
 
   getUserLike(postId){
-    this.http.get<Like>(this.likesRoute + "?postId=" + postId + "&userId=" + this.token).subscribe(userLike => {
+    this.http.get<ThumbsUp>(this.likesRoute + "?postId=" + postId + "&userId=" + this.token).subscribe(userLike => {
       this.userLike = userLike;
     })
   }
@@ -39,8 +39,8 @@ export class ToggleLikeComponent implements OnInit {
       "userId": this.token,
       "postId": this.postId,
       "like": true,
-      "id": this.postId + 5453 + this.token,
-      "likeId": this.postId + 5453 + this.token
+      "id": null,
+      "likeId": null
     }
     this.http.post(this.likesRoute, this.likeToPost).subscribe(res => (this.isAdded = true));
     this.ngOnInit();
@@ -50,9 +50,9 @@ onClickToggle(userLik){
   this.toggleToPost = {
     "userId": this.token,
     "postId": this.postId,
-    "id": this.postId + 5453 + this.token,
+    "id": userLik.id,
     "like": userLik.like = !userLik.like,
-    "likeId": this.postId + 5453 + this.token
+    "likeId": userLik.likeId
   }
   const url = `${this.likesRoute}/${userLik.id}`;
   this.http.put(url, this.toggleToPost).subscribe(res => (this.isAdded = true));

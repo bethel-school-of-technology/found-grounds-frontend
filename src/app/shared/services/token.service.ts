@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TokenService {
-  token = 5
+  token = 1
   constructor() { }
 }
 
