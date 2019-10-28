@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './shared/components/signup/signup.component';
 
 // Header, Footer, Login
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
@@ -12,15 +11,15 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { LoginmodalComponent } from './shared/components/loginmodal/loginmodal.component';
 
 // Pages
-import { AdminpageModule } from './modules/adminpage/adminpage.module';
+import { AdminpageModule } from './modules/adminpages/adminpage.module';
 import { ProfilepagesModule } from './modules/profilepages/profilepages.module';
 import { DailybrewpageModule } from './modules/dailybrewpage/dailybrewpage.module';
-import { CafepageModule } from './modules/cafepage/cafepage.module';
+import { CafepageModule } from './modules/cafepages/cafepage.module';
+import { SignuppagesModule } from './modules/signuppages/signuppages.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
@@ -33,7 +32,8 @@ import { CafepageModule } from './modules/cafepage/cafepage.module';
     DailybrewpageModule,
     CafepageModule,
     AdminpageModule,
-    ProfilepagesModule
+    ProfilepagesModule,
+    SignuppagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

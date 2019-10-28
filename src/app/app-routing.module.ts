@@ -1,16 +1,16 @@
 import { HomeComponent } from './shared/components/home/home.component';
-import { SignupComponent } from './shared/components/signup/signup.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DisplayDailybrewPageComponent } from './modules/dailybrewpage/display-dailybrew-page/display-dailybrew-page.component';
-import { DisplayCafepageComponent } from './modules/cafepage/display-cafepage/display-cafepage.component';
+import { DisplayCafepageComponent } from './modules/cafepages/display-cafepage/display-cafepage.component';
 import { DisplayAllprofilespageComponent } from './modules/profilepages/display-allprofilespage/display-allprofilespage.component';
 import { DisplayProfilepageComponent } from './modules/profilepages/display-profilepage/display-profilepage.component';
-import { DisplayAdminpageComponent } from './modules/adminpage/display-adminpage/display-adminpage.component';
-import { DisplayAllcafespageComponent } from './modules/cafepage/display-allcafespage/display-allcafespage.component';
-import {DisplayRestorecontentpageComponent} from './modules/adminpage/display-restorecontentpage/display-restorecontentpage.component';
-import { DisplayDeletecontentpageComponent } from './modules/adminpage/display-deletecontentpage/display-deletecontentpage.component';
+import { DisplayAdminpageComponent } from './modules/adminpages/display-adminpage/display-adminpage.component';
+import { DisplayAllcafespageComponent } from './modules/cafepages/display-allcafespage/display-allcafespage.component';
+import {DisplayRestorecontentpageComponent} from './modules/adminpages/display-restorecontentpage/display-restorecontentpage.component';
+import { DisplayDeletecontentpageComponent } from './modules/adminpages/display-deletecontentpage/display-deletecontentpage.component';
+import { SignupUserpageComponent } from './modules/signuppages/signup-userpage/signup-userpage.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
      path: 'signup',
-    component: SignupComponent,
+    component: SignupUserpageComponent,
   },
   {
     path: 'dailybrew',
@@ -70,5 +70,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  HomeComponent, SignupComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent,DisplayRestorecontentpageComponent, DisplayDeletecontentpageComponent
+  HomeComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent,DisplayRestorecontentpageComponent, DisplayDeletecontentpageComponent, SignupUserpageComponent
 ]
