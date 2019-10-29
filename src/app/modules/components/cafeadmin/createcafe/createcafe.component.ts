@@ -84,7 +84,15 @@ createNewAdmin(use){
     about: "We are the best café ever"
   };
 
-  
+  showAddBox(){
+    var x = document.getElementById('newMenu')
+    x.style.display = 'block';
+  }
+
+  closeAddBox(){
+    var x = document.getElementById('newMenu')
+    x.style.display = 'none';
+  }
 
   previewName( evt) {
     this.preview.name = evt.target.value;

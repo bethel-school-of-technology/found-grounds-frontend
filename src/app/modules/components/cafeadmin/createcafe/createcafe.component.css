@@ -1,8 +1,14 @@
-.left-align {
-    text-align: left;
-}
+
 
 .found-grounds-brown {
     background-color: #613318;
     color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
 }
