@@ -351,7 +351,8 @@
       "birthday": "May 22, 1994",
       "username": "kdoe22",
       "deleted": false,
-      "id": 1
+      "id": 1,
+      "rolesId":1
     },
     {
       "userId": 3,

@@ -51,6 +51,8 @@ export class CreatecafeComponent implements OnInit {
     }
   }
 
+  
+
 createNewAdmin(use){
   if(confirm(use.firstName + ", you will be made admin over this new café")){
     const adminUser = {
