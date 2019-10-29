@@ -11,6 +11,7 @@ import { DisplayAllcafespageComponent } from './modules/cafepages/display-allcaf
 import {DisplayRestorecontentpageComponent} from './modules/adminpages/display-restorecontentpage/display-restorecontentpage.component';
 import { DisplayDeletecontentpageComponent } from './modules/adminpages/display-deletecontentpage/display-deletecontentpage.component';
 import { SignupUserpageComponent } from './modules/signuppages/signup-userpage/signup-userpage.component';
+import { SignupCafepageComponent } from './modules/signuppages/signup-cafepage/signup-cafepage.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'
@@ -57,7 +58,7 @@ const routes: Routes = [
   },
   {
     path: 'signupcafe',
-    component: DisplayDeletecontentpageComponent
+    component: SignupCafepageComponent
   }
 ];
 
@@ -70,5 +71,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  HomeComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent,DisplayRestorecontentpageComponent, DisplayDeletecontentpageComponent, SignupUserpageComponent
+  HomeComponent, DisplayDailybrewPageComponent, DisplayCafepageComponent,  DisplayAllcafespageComponent, DisplayAllprofilespageComponent, DisplayProfilepageComponent, DisplayAdminpageComponent,DisplayRestorecontentpageComponent, DisplayDeletecontentpageComponent, SignupUserpageComponent, SignupCafepageComponent
 ]

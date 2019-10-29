@@ -338,7 +338,7 @@
       "username": "jsmith4",
       "deleted": false,
       "id": 1,
-      "rolesId": 2
+      "rolesId": 1
     },
     {
       "userId": 2,
@@ -351,7 +351,7 @@
       "birthday": "May 22, 1994",
       "username": "kdoe22",
       "deleted": false,
-      "id": 2
+      "id": 1
     },
     {
       "userId": 3,
@@ -378,7 +378,9 @@
       "birthday": "Feb, 08, 1996",
       "username": "starbucks4eva",
       "deleted": false,
-      "id": 4
+      "id": 4,
+      "rolesId": 3,
+      "shopId": 2
     },
     {
       "userId": 5,
@@ -394,6 +396,20 @@
       "deleted": false,
       "rolesId": 3,
       "shopId": 1
+    },
+    {
+      "userId": 6,
+      "firstName": "Admin",
+      "lastName": "Master",
+      "imageUrl": "https://static.generation-robots.com/6742-large_default/pepper-for-business-edition-humanoid-robot-2-years-warranty.jpg",
+      "city": "Phoenix",
+      "state": "Arizona",
+      "bio": "Master Admin",
+      "birthday": "Oct, 10, 2019",
+      "username": "masteradmin",
+      "deleted": false,
+      "id": 6,
+      "rolesId": 2
     }
   ],
   "comments": [
@@ -1501,7 +1517,7 @@
       "rating": 5,
       "imageUrl": "https://cdn.resize.sparkplatform.com/sha/640x480/true/20180801184334499279000000-o.jpg",
       "id": 2,
-      "deleted": true
+      "deleted": false
     }
   ],
   "reviews": [
@@ -1838,6 +1854,13 @@
       "postId": "33",
       "like": true,
       "id": 12,
+      "likeId": null
+    },
+    {
+      "userId": "1",
+      "postId": "6",
+      "like": true,
+      "id": 13,
       "likeId": null
     }
   ]

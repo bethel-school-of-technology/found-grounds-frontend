@@ -1,0 +1,48 @@
+
+       <div class="w3-container w3-card w3-round w3-white w3-padding left-align">
+            <div class="w3-row">
+                    <div class="w3-col m3 w3-padding">
+                            <img src={{preview.imageUrl}} class="w3-circle w3-left w3-margin-right" style="height:150px;width:150px"
+                                alt="image preview">
+                        </div>
+                        <div class="w3-col m4 w3-margin-left">
+                                <h2><a>{{preview.name}}</a></h2>
+                                <p>{{preview.streetAddress1}}<br>
+                                    {{preview.city}}, {{preview.state}}</p>
+                            </div>
+                            <div class="w3-col m4 w3-margin-left ">
+                                    <h4>About Us</h4>
+                                    <p>{{preview.about}}<br>
+                                        <br>
+                                        <!-- icons to be replaced with links -->
+                                        <i class="fa fa-facebook-official w3-hover-opacity w3"></i>
+                                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                                </div>
+        </div>
+       </div>
+       
+        <br>
+        <div>
+            <div class="w3-container w3-card w3-round w3-white w3-padding left-align w3-margin-bottom">
+                <form  id="createCafe" name="createCafe" #createData="ngForm" (ngSubmit)="uploadCafe(createData.value)" (ngSubmit)="createNewAdmin()">
+                    <label>Name:</label><input type="text" name="name" ngModel (keyup)="previewName($event)">
+                    <br>
+                    <label>About:</label><input type="text" name="about" ngModel (keyup)="previewAbout($event)">
+                    <br>
+                    <label>Address:</label><input type="text" name="streetAddress1" ngModel (keyup)="previewStreetAddress1($event)">
+                    <br>
+                    <label>City:</label><input type="text" name="city" ngModel (keyup)="previewCity($event)">
+                    <br>
+                    <label>State:</label><input type="text" name="state" ngModel (keyup)="previewState($event)">
+                    <br>
+                    <label>Image Url:</label><input type="text" name="imageUrl" ngModel (keyup)="previewImage($event)">
+                    <br>
+                    <button type="submit" class="w3-button w3-green w3-margin-right"> CREATE </button>
+                    <button type="button" (click)="closeBox(caf)" class="w3-button w3-grey">CANCEL</button>
+                </form>
+              
+            </div>
+    
+        </div>
+    

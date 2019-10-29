@@ -1,1 +1,48 @@
-<p>signup-cafepage works!</p>
+<div *ngFor="let use of user" class="signuppage">
+
+<div *ngIf="use.rolesId == 2">
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" >
+    <h2> I'm sorry, admin. You may not use a master admin account to create a café.</h2>
+    </div>
+</div>
+
+<div *ngIf="use.rolesId == 3" class="w3-center" >
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" >
+    <h2> You already have a café or have a café that is pending. Please check the admin tab or contact us at admin@foundgrounds.com</h2>
+    <h4> At our current beta form, one user can only have one café. If you deleted your previous café and would like a new café, please contact the admin through the email above.</h4>
+</div>
+</div>
+
+<div *ngIf="use.rolesId == 1" class="w3-row">
+    <h1>Welcome {{use.firstName}}, create your own cafe!
+    </h1>
+    <div class="w3-col m8">
+        <app-createcafe token={{token}}></app-createcafe>
+       
+        <div class="w3-white">
+                <div class="w3-container w3-padding found-grounds-brown">
+                    <h3>Menu</h3>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                <li class="w3-padding-16">
+                    <button (click)="showAddBox()" type="button" class="w3-button w3-blue">ADD ITEM</button>
+                    <br>
+                        <div id="newMenu" class="hidden">
+                             <p>You will be able to add menu items once your café has been created and approved.</p>
+                                <button (click)="closeAddBox()" type="button" class="w3-button w3-grey">CANCEL</button>
+                        </div>
+                    </li>
+            
+                </ul>
+                </div>
+
+      </div>
+      <div class="w3-col m4">
+          <div class="w3-card w3-round w3-white w3-padding-16 w3-padding w3-center w3-margin-left">
+              <h2>Hi {{use.firstName}}!</h2>
+             <p>Once you have finished signing up your café, our admin will approve your listing and then you will be able to access your café on the admin tab.</p>
+      
+             </div>
+      </div>
+  </div>
+</div>
