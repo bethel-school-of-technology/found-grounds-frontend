@@ -31,11 +31,9 @@
 
     <!-- for Cafe Admin -->
     <div *ngIf="use.rolesId == 3" class="w3-row">
-      <h1>Welcome {{use.firstName}}, you are admin over <app-display-cafe-name-only shopId={{use.shopId}}>
-        </app-display-cafe-name-only>
-      </h1>
+      <h1>Welcome {{use.firstName}} {{use.lastName}},</h1>
       <div class="w3-col m8">
-          <app-changecafeinfo shopId={{use.shopId}}></app-changecafeinfo>
+          <app-changecafeinfo token={{token}}></app-changecafeinfo>
           <app-addeditdeletemenuitem shopId={{use.shopId}}></app-addeditdeletemenuitem>
         </div>
         <div class="w3-col m4">

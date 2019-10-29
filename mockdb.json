@@ -363,9 +363,9 @@
       "bio": "Java Nut",
       "birthday": "March 03, 1965",
       "username": "hotespresso",
-      "id": 3,
       "deleted": false,
-      "rolesId": 1
+      "rolesId": 3,
+      "id": 3
     },
     {
       "userId": 4,
@@ -1498,14 +1498,15 @@
     {
       "shopId": 1,
       "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-      "name": "Mama Cika's Cafe",
+      "name": "Mother's Cafe",
       "streetAddress1": "Jl. Punawarman 6",
       "city": "Bandung",
       "state": "Indonesia",
       "rating": 4.5,
       "imageUrl": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
       "id": 1,
-      "deleted": false
+      "deleted": false,
+      "adminId": 5
     },
     {
       "shopId": 2,
@@ -1517,6 +1518,18 @@
       "rating": 5,
       "imageUrl": "https://cdn.resize.sparkplatform.com/sha/640x480/true/20180801184334499279000000-o.jpg",
       "id": 2,
+      "deleted": false,
+      "adminId": 4
+    },
+    {
+      "about": "Evan has his own café now.",
+      "name": "Evan's Cafe",
+      "streetAddress1": "Evan's Road",
+      "city": "New York",
+      "state": "NY",
+      "rating": null,
+      "imageUrl": "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201903/21/00118821000827____19__600x600.jpg",
+      "id": 3,
       "deleted": false
     }
   ],

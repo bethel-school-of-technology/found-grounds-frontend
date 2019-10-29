@@ -1,36 +1,83 @@
-
-       <div class="w3-container w3-card w3-round w3-white w3-padding left-align">
-            <div class="w3-row">
-                    <div class="w3-col m3 w3-padding">
-                            <img src={{preview.imageUrl}} class="w3-circle w3-left w3-margin-right" style="height:150px;width:150px"
-                                alt="image preview">
-                        </div>
-                        <div class="w3-col m4 w3-margin-left">
-                                <h2><a>{{preview.name}}</a></h2>
-                                <p>{{preview.streetAddress1}}<br>
-                                    {{preview.city}}, {{preview.state}}</p>
-                            </div>
-                            <div class="w3-col m4 w3-margin-left ">
-                                    <h4>About Us</h4>
-                                    <p>{{preview.about}}<br>
-                                        <br>
-                                        <!-- icons to be replaced with links -->
-                                        <i class="fa fa-facebook-official w3-hover-opacity w3"></i>
-                                        <i class="fa fa-instagram w3-hover-opacity"></i>
-                                        <i class="fa fa-twitter w3-hover-opacity"></i>
-                                </div>
+<div *ngFor="let use of user">
+    <div *ngIf="use.rolesId == 2">
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+            <h2> I'm sorry, admin. You may not use a master admin account to create a café.</h2>
         </div>
-       </div>
-       
+    </div>
+
+    <div *ngIf="use.rolesId == 3" class="w3-center">
+        <div  *ngFor="let caf of cafe" class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+            <h2> You already have a café. </h2>
+        <div *ngIf="caf.deleted == true" class="w3-card w3-red">INACTIVE/PENDING APPROVAL</div>
+        <div *ngIf="caf.deleted == false" class="w3-card w3-green">ACTIVE</div>
         <br>
-        <div>
+                <div>
+                        <div class="w3-container w3-card w3-round w3-white w3-padding left-align">
+                                <div class="w3-row">
+                                    <div class="w3-col m3 w3-padding">
+                                        <img src={{preview.imageUrl}} class="w3-circle w3-left w3-margin-right"
+                                            style="height:150px;width:150px" alt="image preview">
+                                    </div>
+                                    <div class="w3-col m4 w3-margin-left">
+                                        <h2><a>{{caf.name}}</a></h2>
+                                        <p>{{caf.streetAddress1}}<br>
+                                            {{caf.city}}, {{caf.state}}</p>
+                                    </div>
+                                    <div class="w3-col m4 w3-margin-left ">
+                                        <h4>About Us</h4>
+                                        <p>{{caf.about}}<br>
+                                            <br>
+                                            <!-- icons to be replaced with links -->
+                                            <i class="fa fa-facebook-official w3-hover-opacity w3"></i>
+                                            <i class="fa fa-instagram w3-hover-opacity"></i>
+                                            <i class="fa fa-twitter w3-hover-opacity"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+            <h4> At our current beta form, one user can only have one café. If you deleted your previous café and would
+                like to create a new café, please contact the admin at admin@foundgrounds.com.</h4>
+        </div>
+    </div>
+
+    <div *ngIf="use.rolesId == 1" class="w3-row">
+        <h1>Welcome {{use.firstName}}, create your own cafe!
+        </h1>
+        <div class="w3-container w3-card w3-round w3-white w3-padding left-align">
+            <div class="w3-row">
+                <div class="w3-col m3 w3-padding">
+                    <img src={{preview.imageUrl}} class="w3-circle w3-left w3-margin-right"
+                        style="height:150px;width:150px" alt="image preview">
+                </div>
+                <div class="w3-col m4 w3-margin-left">
+                    <h2><a>{{preview.name}}</a></h2>
+                    <p>{{preview.streetAddress1}}<br>
+                        {{preview.city}}, {{preview.state}}</p>
+                </div>
+                <div class="w3-col m4 w3-margin-left ">
+                    <h4>About Us</h4>
+                    <p>{{preview.about}}<br>
+                        <br>
+                        <!-- icons to be replaced with links -->
+                        <i class="fa fa-facebook-official w3-hover-opacity w3"></i>
+                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div *ngFor="let use of user">
             <div class="w3-container w3-card w3-round w3-white w3-padding left-align w3-margin-bottom">
-                <form  id="createCafe" name="createCafe" #createData="ngForm" (ngSubmit)="uploadCafe(createData.value)" (ngSubmit)="createNewAdmin()">
+                <form id="createCafe" name="createCafe" #createData="ngForm" (ngSubmit)="uploadCafe(createData.value)"
+                    (ngSubmit)="createNewAdmin(use)">
                     <label>Name:</label><input type="text" name="name" ngModel (keyup)="previewName($event)">
                     <br>
                     <label>About:</label><input type="text" name="about" ngModel (keyup)="previewAbout($event)">
                     <br>
-                    <label>Address:</label><input type="text" name="streetAddress1" ngModel (keyup)="previewStreetAddress1($event)">
+                    <label>Address:</label><input type="text" name="streetAddress1" ngModel
+                        (keyup)="previewStreetAddress1($event)">
                     <br>
                     <label>City:</label><input type="text" name="city" ngModel (keyup)="previewCity($event)">
                     <br>
@@ -38,11 +85,39 @@
                     <br>
                     <label>Image Url:</label><input type="text" name="imageUrl" ngModel (keyup)="previewImage($event)">
                     <br>
+                    <p> Admin: <b>{{use.firstName}} {{use.lastName}}</b></p>
                     <button type="submit" class="w3-button w3-green w3-margin-right"> CREATE </button>
                     <button type="button" (click)="closeBox(caf)" class="w3-button w3-grey">CANCEL</button>
                 </form>
-              
+
             </div>
-    
+
         </div>
-    
+
+        <div class="w3-col m8">
+            <div class="w3-white">
+                <div class="w3-container w3-padding found-grounds-brown">
+                    <h3>Menu</h3>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                    <li class="w3-padding-16">
+                        <button (click)="showAddBox()" type="button" class="w3-button w3-blue">ADD ITEM</button>
+                        <br>
+                        <div id="newMenu" class="hidden">
+                            <p>You will be able to add menu items once your café has been created and approved.</p>
+                            <button (click)="closeAddBox()" type="button" class="w3-button w3-grey">CANCEL</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w3-col m4">
+            <div class="w3-card w3-round w3-white w3-padding-16 w3-padding w3-center w3-margin-left">
+                <h2>Hi {{use.firstName}}!</h2>
+                <p>Once you have finished signing up your café, our admin will approve your listing and then you will be
+                    able to access your café on the admin tab.</p>
+
+            </div>
+        </div>
+    </div>
+</div>

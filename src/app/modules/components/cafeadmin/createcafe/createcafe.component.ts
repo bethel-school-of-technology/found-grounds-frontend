@@ -18,9 +18,17 @@ export class CreatecafeComponent implements OnInit {
 
   constructor( private http: HttpClient, private router: Router) { }
   getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?deleted=false&shopId=" + this.shopId).subscribe(cafe => {
+    this.http.get<Shop>(this.cafesRoute + "?adminId=" + this.token).subscribe(cafe => {
       this.cafe = cafe;
     });
+  }
+
+  public user
+  private usersRoute = 'http://localhost:3000/users'; 
+  getUser(){
+    this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + this.token).subscribe(user => {
+      this.user = user;
+    })
   }
 
   uploadCafe(cafe){
@@ -36,14 +44,32 @@ export class CreatecafeComponent implements OnInit {
         "imageUrl": cafe.imageUrl,
         "id": cafe.id,
         "deleted": true,
+        "adminId": this.token
       }
       return this.http.post(this.cafesRoute, newCafe)
       .toPromise().then(()=>{this.ngOnInit()})
     }
   }
 
-createNewAdmin(){
-  alert("Hey!")
+createNewAdmin(use){
+  if(confirm(use.firstName + ", you will be made admin over this new café")){
+    const adminUser = {
+      "userId": use.userId,
+      "firstName": use.firstName,
+      "lastName": use.lastName,
+      "imageUrl": use.imageUrl,
+      "city": use.city,
+      "state": use.state,
+      "bio": use.bio,
+      "birthday": use.birthday,
+      "username": use.username,
+      "deleted": false,
+      "rolesId": 3
+    }
+    const url = `${this.usersRoute}/${use.id}`;
+    return this.http.put(url, adminUser)
+    .toPromise().then(()=>{this.ngOnInit()})
+  }
 }
 
 
@@ -56,13 +82,7 @@ createNewAdmin(){
     about: "We are the best café ever"
   };
 
-  public user
-  private usersRoute = 'http://localhost:3000/users'; 
-  getUser(){
-    this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + this.token).subscribe(user => {
-      this.user = user;
-    })
-  }
+  
 
   previewName( evt) {
     this.preview.name = evt.target.value;
@@ -83,6 +103,7 @@ createNewAdmin(){
     this.preview.streetAddress1 = evt.target.value;
   }
   ngOnInit() {
+    this.getUser();
     this.getCafe();
   }
 
