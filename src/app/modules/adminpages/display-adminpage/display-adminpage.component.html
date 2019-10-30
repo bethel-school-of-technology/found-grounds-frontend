@@ -25,12 +25,12 @@
   <div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px">
 
     <!-- for Non Admin-->
-    <div *ngIf="use.rolesId == 1" class="w3-row">
+    <div *ngIf="use.roleId == 1" class="w3-row">
       <h1>I'm sorry {{use.firstName}}, you do not have admin access.</h1>
     </div>
 
     <!-- for Cafe Admin -->
-    <div *ngIf="use.rolesId == 3" class="w3-row">
+    <div *ngIf="use.roleId == 3" class="w3-row">
       <h1>Welcome {{use.firstName}} {{use.lastName}},</h1>
       <div class="w3-col m8">
           <app-changecafeinfo token={{token}}></app-changecafeinfo>
@@ -46,7 +46,7 @@
     </div>
 
     <!-- for Master Admins -->
-    <div *ngIf="use.rolesId == 2" class="w3-row">
+    <div *ngIf="use.roleId == 2" class="w3-row">
       <h1>Welcome {{use.firstName}}, you have master admin access</h1>
       <div class="w3-col m8">
         <div class="w3-white">

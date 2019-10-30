@@ -1,13 +1,13 @@
 <div *ngFor="let use of user">
     <!-- User is a Master Admin -->
-    <div *ngIf="use.rolesId == 2">
+    <div *ngIf="use.roleId == 2">
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
             <h2> I'm sorry, admin. You may not use a master admin account to create a café.</h2>
         </div>
     </div>
 
     <!-- User already is a Café Admin -->
-    <div *ngIf="use.rolesId == 3" class="w3-center">
+    <div *ngIf="use.roleId == 3" class="w3-center">
 
         <div *ngFor="let caf of cafe" class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
             <h2> You already have a café. </h2>
@@ -45,7 +45,7 @@
     </div>
 
     <!-- User is a Normal User -->
-    <div *ngIf="use.rolesId == 1" class="w3-row">
+    <div *ngIf="use.roleId == 1" class="w3-row">
         <h1>Welcome {{use.firstName}}, create your own cafe!
         </h1>
         <div class="w3-row w3-padding">

@@ -338,7 +338,7 @@
       "username": "jsmith4",
       "deleted": false,
       "id": 1,
-      "rolesId": 1
+      "roleId": 1
     },
     {
       "userId": 2,
@@ -352,7 +352,7 @@
       "username": "kdoe22",
       "deleted": false,
       "id": 1,
-      "rolesId":1
+      "roleId": 1
     },
     {
       "userId": 3,
@@ -365,7 +365,7 @@
       "birthday": "March 03, 1965",
       "username": "hotespresso",
       "deleted": false,
-      "rolesId": 3,
+      "roleId": 3,
       "id": 3
     },
     {
@@ -380,7 +380,7 @@
       "username": "starbucks4eva",
       "deleted": false,
       "id": 4,
-      "rolesId": 3,
+      "roleId": 3,
       "shopId": 2
     },
     {
@@ -395,7 +395,7 @@
       "username": "jakartamama",
       "id": 5,
       "deleted": false,
-      "rolesId": 3,
+      "roleId": 3,
       "shopId": 1
     },
     {
@@ -410,7 +410,7 @@
       "username": "masteradmin",
       "deleted": false,
       "id": 6,
-      "rolesId": 2
+      "roleId": 2
     }
   ],
   "comments": [
@@ -1275,7 +1275,7 @@
       "id": 96
     },
     {
-      "text": "Likes also toggle.",
+      "text": "thumbsUps also toggle.",
       "postId": "34",
       "userId": "5",
       "deleted": false,
@@ -1468,7 +1468,7 @@
       "timePosted": "2019-10-25T20:13:11.271Z"
     },
     {
-      "text": "Likes also toggle :)",
+      "text": "thumbsUps also toggle :)",
       "postId": "35",
       "userId": "5",
       "commentId": 120,
@@ -1785,97 +1785,104 @@
       "deleted": true
     }
   ],
-  "likes": [
+  "thumbsUps": [
     {
       "userId": "5",
       "postId": "35",
       "id": 1,
-      "like": true,
-      "likeId": null
+      "thumbsUp": true,
+      "thumbsUpId": null
     },
     {
       "userId": "5",
       "postId": "32",
-      "like": true,
+      "thumbsUp": true,
       "id": 2,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "5",
       "postId": "6",
-      "like": true,
+      "thumbsUp": true,
       "id": 3,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "7",
-      "like": true,
       "id": 4,
-      "likeId": null
+      "thumbsUp": true,
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "5",
-      "like": true,
+      "thumbsUp": true,
       "id": 5,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "32",
-      "like": true,
       "id": 6,
-      "likeId": null
+      "thumbsUp": false,
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "35",
-      "like": true,
       "id": 7,
-      "likeId": null
+      "thumbsUp": false,
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "35",
       "id": 8,
-      "like": true,
-      "likeId": null
+      "thumbsUp": true,
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "32",
-      "like": true,
+      "thumbsUp": true,
       "id": 9,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "5",
-      "like": true,
+      "thumbsUp": true,
       "id": 10,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "1",
-      "like": true,
+      "thumbsUp": true,
       "id": 11,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "33",
-      "like": true,
+      "thumbsUp": true,
       "id": 12,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "6",
-      "like": true,
+      "thumbsUp": true,
       "id": 13,
-      "likeId": null
+      "thumbsUpId": null
+    },
+    {
+      "userId": "2",
+      "postId": "6",
+      "id": 14,
+      "thumbsUp": false,
+      "thumbsUpId": null
     }
   ]
 }

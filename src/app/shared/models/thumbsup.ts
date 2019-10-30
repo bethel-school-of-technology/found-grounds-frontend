@@ -1,7 +1,7 @@
 export class ThumbsUp {
     postId: number;
     userId: number;
-    like: boolean;
-    likeId: number;
+    thumbsUp: boolean;
+    thumbsUpId: number;
     id: number;
 }

@@ -12,7 +12,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class ToggleLikeComponent implements OnInit {
   @Input() postId : number;
   @Input() token : number;
-  private likesRoute = 'http://localhost:3000/likes';
+  private likesRoute = 'http://localhost:3000/thumbsUps';
   public likes: ThumbsUp [];
   public userLike: ThumbsUp;
 
@@ -23,7 +23,7 @@ export class ToggleLikeComponent implements OnInit {
   confirmationString: string = "New like has been uploaded";
 
   getLikes(postId){
-    this.http.get<ThumbsUp[]>(this.likesRoute + "?postId=" + postId + "&like=true").subscribe(likes => {
+    this.http.get<ThumbsUp[]>(this.likesRoute + "?postId=" + postId + "&thumbsUp=true").subscribe(likes => {
       this.likes = likes;
     })
   }
@@ -38,9 +38,9 @@ export class ToggleLikeComponent implements OnInit {
     this.likeToPost = {
       "userId": this.token,
       "postId": this.postId,
-      "like": true,
+      "thumbsUp": true,
       "id": null,
-      "likeId": null
+      "thumbsUpId": null
     }
     this.http.post(this.likesRoute, this.likeToPost).subscribe(res => (this.isAdded = true));
     this.ngOnInit();
@@ -51,8 +51,8 @@ onClickToggle(userLik){
     "userId": this.token,
     "postId": this.postId,
     "id": userLik.id,
-    "like": userLik.like = !userLik.like,
-    "likeId": userLik.likeId
+    "thumbsUp": userLik.thumbsUp = !userLik.thumbsUp,
+    "thumbsUpId": userLik.thumbsUpId
   }
   const url = `${this.likesRoute}/${userLik.id}`;
   this.http.put(url, this.toggleToPost).subscribe(res => (this.isAdded = true));
