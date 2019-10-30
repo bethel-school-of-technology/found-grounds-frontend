@@ -13,10 +13,11 @@ export class ChangecafeinfoComponent implements OnInit {
   public cafe: Shop;
   public editing = "editing";
   @Input() shopId: number;
+  @Input() token;
 
   constructor( private http: HttpClient, private router: Router) { }
   getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?deleted=false&shopId=" + this.shopId).subscribe(cafe => {
+    this.http.get<Shop>(this.cafesRoute + "?deleted=false&adminId=" + this.token).subscribe(cafe => {
       this.cafe = cafe;
     });
   }
@@ -54,6 +55,7 @@ export class ChangecafeinfoComponent implements OnInit {
         "imageUrl": newCafe.imageUrl,
         "id": cafe.id,
         "deleted": false,
+        "adminId": cafe.adminId
       }
       const url = `${this.cafesRoute}/${cafe.id}`;
       return this.http.put(url, editedCafe)

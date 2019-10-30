@@ -12,4 +12,5 @@ export class Shop {
     rating: number;
     imageUrl: string;
     id: number;
+    adminId: number;
 }

@@ -338,7 +338,7 @@
       "username": "jsmith4",
       "deleted": false,
       "id": 1,
-      "rolesId": 2
+      "roleId": 1
     },
     {
       "userId": 2,
@@ -351,7 +351,8 @@
       "birthday": "May 22, 1994",
       "username": "kdoe22",
       "deleted": false,
-      "id": 2
+      "id": 1,
+      "roleId": 1
     },
     {
       "userId": 3,
@@ -363,9 +364,9 @@
       "bio": "Java Nut",
       "birthday": "March 03, 1965",
       "username": "hotespresso",
-      "id": 3,
       "deleted": false,
-      "rolesId": 1
+      "roleId": 3,
+      "id": 3
     },
     {
       "userId": 4,
@@ -378,7 +379,9 @@
       "birthday": "Feb, 08, 1996",
       "username": "starbucks4eva",
       "deleted": false,
-      "id": 4
+      "id": 4,
+      "roleId": 3,
+      "shopId": 2
     },
     {
       "userId": 5,
@@ -392,8 +395,22 @@
       "username": "jakartamama",
       "id": 5,
       "deleted": false,
-      "rolesId": 3,
+      "roleId": 3,
       "shopId": 1
+    },
+    {
+      "userId": 6,
+      "firstName": "Admin",
+      "lastName": "Master",
+      "imageUrl": "https://static.generation-robots.com/6742-large_default/pepper-for-business-edition-humanoid-robot-2-years-warranty.jpg",
+      "city": "Phoenix",
+      "state": "Arizona",
+      "bio": "Master Admin",
+      "birthday": "Oct, 10, 2019",
+      "username": "masteradmin",
+      "deleted": false,
+      "id": 6,
+      "roleId": 2
     }
   ],
   "comments": [
@@ -1258,7 +1275,7 @@
       "id": 96
     },
     {
-      "text": "Likes also toggle.",
+      "text": "thumbsUps also toggle.",
       "postId": "34",
       "userId": "5",
       "deleted": false,
@@ -1451,7 +1468,7 @@
       "timePosted": "2019-10-25T20:13:11.271Z"
     },
     {
-      "text": "Likes also toggle :)",
+      "text": "thumbsUps also toggle :)",
       "postId": "35",
       "userId": "5",
       "commentId": 120,
@@ -1482,14 +1499,15 @@
     {
       "shopId": 1,
       "about": "We are a cafe that prides ourself in service and only the best coffee beans sourced from remote villages in Sumatra and Java.",
-      "name": "Mama Cika's Cafe",
+      "name": "Mother's Cafe",
       "streetAddress1": "Jl. Punawarman 6",
       "city": "Bandung",
       "state": "Indonesia",
       "rating": 4.5,
       "imageUrl": "https://www.pegipegi.com/travel/wp-content/uploads/2015/10/Miss-Bee-Providore-.png",
       "id": 1,
-      "deleted": false
+      "deleted": false,
+      "adminId": 5
     },
     {
       "shopId": 2,
@@ -1501,7 +1519,19 @@
       "rating": 5,
       "imageUrl": "https://cdn.resize.sparkplatform.com/sha/640x480/true/20180801184334499279000000-o.jpg",
       "id": 2,
-      "deleted": true
+      "deleted": false,
+      "adminId": 4
+    },
+    {
+      "about": "Evan has his own café now.",
+      "name": "Evan's Cafe",
+      "streetAddress1": "Evan's Road",
+      "city": "New York",
+      "state": "NY",
+      "rating": null,
+      "imageUrl": "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201903/21/00118821000827____19__600x600.jpg",
+      "id": 3,
+      "deleted": false
     }
   ],
   "reviews": [
@@ -1755,90 +1785,104 @@
       "deleted": true
     }
   ],
-  "likes": [
+  "thumbsUps": [
     {
       "userId": "5",
       "postId": "35",
       "id": 1,
-      "like": true,
-      "likeId": null
+      "thumbsUp": true,
+      "thumbsUpId": null
     },
     {
       "userId": "5",
       "postId": "32",
-      "like": true,
+      "thumbsUp": true,
       "id": 2,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "5",
       "postId": "6",
-      "like": true,
+      "thumbsUp": true,
       "id": 3,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "7",
-      "like": true,
       "id": 4,
-      "likeId": null
+      "thumbsUp": true,
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "5",
-      "like": true,
+      "thumbsUp": true,
       "id": 5,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "32",
-      "like": true,
       "id": 6,
-      "likeId": null
+      "thumbsUp": false,
+      "thumbsUpId": null
     },
     {
       "userId": "2",
       "postId": "35",
-      "like": true,
       "id": 7,
-      "likeId": null
+      "thumbsUp": false,
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "35",
-      "like": true,
       "id": 8,
-      "likeId": null
+      "thumbsUp": true,
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "32",
-      "like": true,
+      "thumbsUp": true,
       "id": 9,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "5",
-      "like": true,
+      "thumbsUp": true,
       "id": 10,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "1",
-      "like": true,
+      "thumbsUp": true,
       "id": 11,
-      "likeId": null
+      "thumbsUpId": null
     },
     {
       "userId": "1",
       "postId": "33",
-      "like": true,
+      "thumbsUp": true,
       "id": 12,
-      "likeId": null
+      "thumbsUpId": null
+    },
+    {
+      "userId": "1",
+      "postId": "6",
+      "thumbsUp": true,
+      "id": 13,
+      "thumbsUpId": null
+    },
+    {
+      "userId": "2",
+      "postId": "6",
+      "id": 14,
+      "thumbsUp": false,
+      "thumbsUpId": null
     }
   ]
 }
