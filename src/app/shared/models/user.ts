@@ -18,4 +18,5 @@ export class User {
     imageUrl: string;
     deleted: boolean;
     dateJoined: Date;
+    bio: string;
 }

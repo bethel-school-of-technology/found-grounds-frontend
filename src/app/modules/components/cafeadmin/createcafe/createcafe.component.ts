@@ -33,7 +33,7 @@ export class CreatecafeComponent implements OnInit {
     })
   }
 
-  uploadCafe(cafe, userId){
+  uploadCafe(cafe, use){
     if(confirm("Are you sure?")){
       const newCafe = {
         "shopId": cafe.shopId,
@@ -45,10 +45,11 @@ export class CreatecafeComponent implements OnInit {
         "rating": null,
         "imageUrl": cafe.imageUrl,
         "deleted": true,
-        "adminId": userId
+        "adminId": use.userId
       }
       return this.http.post(this.cafesRoute, newCafe)
-      .toPromise().then(()=>{this.ngOnInit()})
+      .toPromise().then(()=>{this.createNewAdmin(use)})
+      
     }
   }
 
