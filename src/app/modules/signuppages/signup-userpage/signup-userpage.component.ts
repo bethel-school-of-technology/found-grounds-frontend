@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-signup-userpage',
@@ -11,7 +12,7 @@ export class SignupUserpageComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  createUser(use){
+  createUser(use: User){
     if(confirm("Are you ready to find a whole new world of coffee?")){
       const newUser = {
         "userId": use.userId,

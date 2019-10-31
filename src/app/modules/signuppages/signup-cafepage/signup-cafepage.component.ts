@@ -25,12 +25,6 @@ export class SignupCafepageComponent implements OnInit {
   public user: User[]
   private usersRoute = 'http://localhost:8080/api/users'; 
 
-  // + "?deleted=false&userId=" + this.token
-  getUser(){
-    this.http.get<User[]>(this.usersRoute).subscribe(user => {
-      this.user = user.filter(users => users.deleted == false && users.userId == this.token);
-    })
-  }
 
   showAddBox(){
     var x = document.getElementById("newMenu");
@@ -44,7 +38,6 @@ export class SignupCafepageComponent implements OnInit {
 
   ngOnInit() {
     this.getTokenService();
-   this.getUser();
   }
 
 }
