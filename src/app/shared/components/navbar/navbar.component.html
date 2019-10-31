@@ -1,6 +1,7 @@
 
 
 <nav>
+  <div *ngFor="let toke of token">
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" (click)="showBox()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -9,9 +10,12 @@
     <a href="cafes" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CAFÉS</a>
     <a href="users" class="w3-bar-item w3-button w3-padding-large w3-hide-small">COFFEE LOVERS</a>
     <a href="adminaccess" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADMIN</a>
-    <app-loginmodal ></app-loginmodal>
+        <app-loginmodal *ngIf="!toke.token"></app-loginmodal>
+        <app-logoutmodal *ngIf="toke.token"></app-logoutmodal>
+        
+    </div>
   </div>
-</div>
+
 
   <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links)  -->
  <div class="hidden" id="navDemo">
@@ -19,9 +23,10 @@
     <a href="dailybrew" class="w3-bar-item w3-button w3-padding-large ">DAILY BREW</a>
     <a href="cafes" class="w3-bar-item w3-button w3-padding-large">CAFÉS</a>
     <a href="users" class="w3-bar-item w3-button w3-padding-large">COFFEE LOVERS</a>
-    <a (click)="showsmallLogin()" class="w3-bar-item w3-button w3-padding-large">LOGIN</a>
+    <a *ngIf="!toke.token" (click)="showsmallLogin()" class="w3-bar-item w3-button w3-padding-large">LOGIN</a>
+    <a *ngIf="toke.token" (click)="showsmallLogout()" class="w3-bar-item w3-button w3-padding-large">LOGOUT</a>
 </div> 
 </div>
 
-
+</div>
 </nav>

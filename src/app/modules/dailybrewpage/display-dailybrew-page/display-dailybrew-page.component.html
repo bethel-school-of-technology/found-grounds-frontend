@@ -11,7 +11,11 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
 <body class="w3-theme-l5">
 
-
+<div *ngFor="let toke of token">
+  <div *ngIf="!toke.token">
+    <h2 class="w3-center">Please sign in first</h2>
+  </div>
+  <div *ngIf="toke.token">
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px">    
   <!-- The Grid -->
@@ -19,7 +23,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <app-display-user-profile token={{token}}></app-display-user-profile>
+      <app-display-user-profile token={{toke.token}}></app-display-user-profile>
     <!-- End Left Column -->
     </div>
     
@@ -27,7 +31,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-col m7">
     
 
-    <app-display-posts token={{token}}></app-display-posts>
+    <app-display-posts token={{toke.token}}></app-display-posts>
       
   
     <!-- End Middle Column -->
@@ -54,8 +58,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <!-- End Page Container -->
 </div>
 <br>
-
-
+</div>
+</div>
 </body>
 </html> 
 

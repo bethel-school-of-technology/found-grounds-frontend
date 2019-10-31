@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Shop } from '../../../shared/models/shop';
-import { TokenService } from '../../../shared/services/token.service';
+import { FakeJWT } from 'src/app/shared/models/fakeJWT';
 
 @Component({
   selector: 'app-display-cafepage',
@@ -14,10 +14,16 @@ export class DisplayCafepageComponent implements OnInit {
   public cafe: Shop[];
   private cafesRoute = 'http://localhost:8080/api/shops';
 
-  constructor( private route: ActivatedRoute, private http: HttpClient, tokenService: TokenService) { 
-    this.token = tokenService.token
+  constructor( private route: ActivatedRoute, private http: HttpClient) { 
+ 
   }
   
+  getTokenService(){
+    this.http.get<FakeJWT[]>('http://localhost:3000/token').subscribe(token => {
+      this.token = token;
+    })
+  }
+
 //  + "?deleted=false&shopId=" + param
   getCafe(param){
     this.http.get<Shop[]>(this.cafesRoute).subscribe(cafe => {
@@ -25,8 +31,9 @@ export class DisplayCafepageComponent implements OnInit {
     });}
 
   ngOnInit() {
-    let param = parseInt(this.route.snapshot.paramMap.get('id'))
-    this.getCafe(param)
+    this.getTokenService();
+    let param = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.getCafe(param);
   }
 
 }

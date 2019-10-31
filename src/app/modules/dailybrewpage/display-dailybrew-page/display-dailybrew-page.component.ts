@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from '../../../shared/services/token.service';
+import { FakeJWT } from 'src/app/shared/models/fakeJWT';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-display-dailybrew-page',
@@ -11,11 +12,16 @@ export class DisplayDailybrewPageComponent implements OnInit {
   // @Input() userId: number;
   public token
   
-  constructor( tokenService: TokenService) { 
-    this.token = tokenService.token;
-  }
+  constructor( private http: HttpClient) { }
  
+  getTokenService(){
+    this.http.get<FakeJWT[]>('http://localhost:3000/token').subscribe(token => {
+      this.token = token;
+    })
+  }
+
   ngOnInit() {
+    this.getTokenService()
   }
 
 }

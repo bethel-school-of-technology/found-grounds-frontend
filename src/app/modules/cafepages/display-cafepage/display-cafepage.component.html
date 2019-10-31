@@ -4,26 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Oswald"
-  }
-
-  body {
-    font-family: "Open Sans"
-  }
-</style>
 
 <body class="">
-
+<div *ngFor="let toke of token">
+    <div *ngIf="!toke.token">
+        <h2 class="w3-center">Please sign in first</h2>
+      </div>
+      <div *ngIf="toke.token">
   <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
   <div class="w3-content" style="max-width:1600px">
@@ -38,13 +27,13 @@ and is wrapped around the whole page content, except for the footer in this exam
         <!-- Middle Section -->
       <div class="w3-col l8 s12">
         <app-display-cafeprofile shopId={{caf.shopId}}></app-display-cafeprofile>
-        <app-display-cafeposts token={{token}} shopId={{caf.shopId}}></app-display-cafeposts>
+        <app-display-cafeposts token={{toke.token}} shopId={{caf.shopId}}></app-display-cafeposts>
       </div>
 
       <!-- Right Column -->
       <div class="w3-col l4">
         <!-- Reviews -->
-        <app-reviewbox token={{token}} shopId={{caf.shopId}}></app-reviewbox>
+        <app-reviewbox token={{toke.token}} shopId={{caf.shopId}}></app-reviewbox>
         <br>
         <br>
         <br>
@@ -63,7 +52,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 
     <!-- END w3-content -->
   </div>
-
+  </div>
+</div>
 </body>
 
 </html>

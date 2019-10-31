@@ -1,30 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../../../shared/models/user';
-import { Shop } from 'src/app/shared/models/shop';
 import { FakeJWT } from 'src/app/shared/models/fakeJWT';
+import { User } from 'src/app/shared/models/user';
+import { Shop } from 'src/app/shared/models/shop';
 
 @Component({
-  selector: 'app-display-adminpage',
-  templateUrl: './display-adminpage.component.html',
-  styleUrls: ['./display-adminpage.component.css']
+  selector: 'app-masteradminpage',
+  templateUrl: './masteradminpage.component.html',
+  styleUrls: ['./masteradminpage.component.css']
 })
-export class DisplayAdminpageComponent implements OnInit {
-  public token
-  public CurrentDate = moment();
-  public FromNow = moment("2019-10-11 15:00:00").fromNow()
-  
+export class MasteradminpageComponent implements OnInit {
+
   constructor(private http: HttpClient) { 
  
   }
 
-  getTokenService(){
-    this.http.get<FakeJWT[]>('http://localhost:3000/token').subscribe(token => {
-      this.token = token;
-    })
-  }
-
+@Input() token;
   public user: User []
   private usersRoute = 'http://localhost:8080/api/users'; 
   //  + "?deleted=false&userId=" + this.token
@@ -43,7 +34,6 @@ export class DisplayAdminpageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTokenService();
    this.getUser();
    this.getShop();
   }

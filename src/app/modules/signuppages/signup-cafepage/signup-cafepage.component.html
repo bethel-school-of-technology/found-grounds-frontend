@@ -1,5 +1,10 @@
 
-<div class="signuppage">
-        <app-createcafe token={{token}}></app-createcafe>
+<div *ngFor="let toke of token" class="signuppage">
+                <div *ngIf="!toke.token">
+                                <h2 class="w3-center">Please sign in first</h2>
+                              </div>
+                              <div *ngIf="toke.token">
+        <app-createcafe token={{toke.token}}></app-createcafe>
+        </div>
 </div>
 

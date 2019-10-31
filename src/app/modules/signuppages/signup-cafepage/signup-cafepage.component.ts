@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { TokenService } from '../../../shared/services/token.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../../shared/models/user';
+import { FakeJWT } from 'src/app/shared/models/fakeJWT';
 
 @Component({
   selector: 'app-signup-cafepage',
@@ -12,10 +12,16 @@ import { User } from '../../../shared/models/user';
 export class SignupCafepageComponent implements OnInit {
   public token;
 
-  constructor(tokenService: TokenService, private http: HttpClient) { 
-    this.token = tokenService.token
+  constructor(private http: HttpClient) { 
   }
 
+  getTokenService(){
+    this.http.get<FakeJWT[]>('http://localhost:3000/token').subscribe(token => {
+      this.token = token;
+    })
+  }
+  
+  
   public user: User[]
   private usersRoute = 'http://localhost:8080/api/users'; 
 
@@ -37,6 +43,7 @@ export class SignupCafepageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getTokenService();
    this.getUser();
   }
 

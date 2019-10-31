@@ -9,8 +9,11 @@
 
 <body>
 
-
-
+<div *ngFor="let toke of token">
+    <div *ngIf="!toke.token">
+        <h2 class="w3-center">Please sign in first</h2>
+      </div>
+      <div *ngIf="toke.token">
 <!-- Page Container -->
 <div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
   <!-- The Grid -->
@@ -47,7 +50,7 @@
     <!-- Middle Column -->
     <div class="w3-col m7">
 
-      <app-display-profileposts profileId={{use.userId}} token={{token}}></app-display-profileposts>
+      <app-display-profileposts profileId={{use.userId}} token={{toke.token}}></app-display-profileposts>
 
     <!-- End Middle Column -->
     </div>
@@ -63,8 +66,8 @@
 <!-- End Page Container -->
 </div> 
 <br>
-
-
+</div>
+</div>
 </body>
 </html>
 
