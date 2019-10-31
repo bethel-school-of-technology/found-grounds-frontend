@@ -81,7 +81,7 @@
       <!-- Editing Box -->
       <div class="modal" id="{{post.postId + editing}}">
         <div class="formborder modal-content animate w3-card" action="/action_page.php">
-          <span (click)="closeBox(post.id, editing)" class="close" title="Close Modal">&times;</span>
+          <span (click)="closeBox(post.postId, editing)" class="close" title="Close Modal">&times;</span>
           <div class="container">
               <form id="editPost" name="editPost" #editData="ngForm" (ngSubmit)="editPost(editData.value, post)">
                   <!-- Text Input -->
