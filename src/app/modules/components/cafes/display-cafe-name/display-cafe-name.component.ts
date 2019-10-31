@@ -8,19 +8,21 @@ import { Shop } from '../../../../shared/models/shop';
   styleUrls: ['./display-cafe-name.component.css']
 })
 export class DisplayCafeNameComponent implements OnInit {
-  private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Shop;
+  private cafesRoute = 'http://localhost:8080/api/shops';
+  public cafe: Shop[];
   @Input() shopId: number;
 
   constructor(private http: HttpClient) { }
-  getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
-      this.cafe = cafe;
+  // + "?shopId=" + this.shopId
+
+  getShop(){
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafe => {
+      this.cafe = cafe.filter(cafe => cafe.shopId == this.shopId && cafe.deleted == false);
     });
   }
 
   ngOnInit() {
-    this.getCafe();
+    this.getShop();
   }
 
 

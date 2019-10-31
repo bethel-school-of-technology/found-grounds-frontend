@@ -14,11 +14,12 @@ import { DisplaydeletedpostsWithrestoreoptionComponent } from './displaydeletedp
 import { DisplaydeletedusersWithrestoreoptionComponent } from './displaydeletedusers-withrestoreoption/displaydeletedusers-withrestoreoption.component';
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { SimplydisplaypostsComponent } from './simplydisplayposts/simplydisplayposts.component';
+import { TimeModule } from '../time/time.module'
 
 @NgModule({
   declarations: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent, SimplydisplaypostsComponent],
   imports: [
-    CommonModule, UsersModule, CommentsModule, CafesModule, LikesModule
+    CommonModule, UsersModule, CommentsModule, CafesModule, LikesModule, TimeModule
   ],
   exports: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent, SimplydisplaypostsComponent ]
 })

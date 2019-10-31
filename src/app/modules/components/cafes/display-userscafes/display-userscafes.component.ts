@@ -14,7 +14,7 @@ export class DisplayUserscafesComponent implements OnInit {
   @Input() userId: number;
 
   // posts and users
-  private postsRoute = 'http://localhost:3000/posts?deleted=false';
+  private postsRoute = 'http://localhost:8080/api/posts';
   public cafes: Post[];
   postObj = {};
   id: number;
@@ -25,9 +25,10 @@ export class DisplayUserscafesComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  getUserPosts(){
-    this.http.get<Post[]>(this.postsRoute + "&userId=" + this.profileId).subscribe(cafes => {
-      this.cafes = cafes;
+  // ?deleted=false + "&userId=" + this.profileId
+  getUserCheckIns(){
+    this.http.get<Post[]>(this.postsRoute ).subscribe(checkins => {
+      this.cafes = checkins.filter(checkins => checkins.deleted == false && checkins.userId == this.profileId);
     });
   }
   show = false;
@@ -39,7 +40,7 @@ export class DisplayUserscafesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUserPosts();
+    this.getUserCheckIns();
   }
 
   onSelect(post){

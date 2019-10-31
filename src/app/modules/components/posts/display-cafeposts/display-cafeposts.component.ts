@@ -15,8 +15,8 @@ export class DisplayCafepostsComponent implements OnInit {
   @Input() token: number;
   @Input() shopId: number;
 
-  private postsRoute = 'http://localhost:3000/posts';
-  usersRoute = 'http://localhost:3000/users';
+  private postsRoute = 'http://localhost:8080/api/posts';
+  usersRoute = 'http://localhost:8080/api/users';
   public posts: Post[];
   users: User[];
   postObj = {};
@@ -24,9 +24,10 @@ export class DisplayCafepostsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   // Getting Component of Posts
+  // + "?deleted=false&shopId=" + this.shopId
   getCafePosts(){
-    this.http.get<Post[]>(this.postsRoute + "?deleted=false&shopId=" + this.shopId).subscribe(posts => {
-      this.posts = posts.slice().reverse();
+    this.http.get<Post[]>(this.postsRoute).subscribe(posts => {
+      this.posts = posts.filter(posts => posts.deleted == false && posts.shopId == this.shopId).slice().reverse();
     })
     ;
   }
@@ -81,15 +82,17 @@ uploadPost = function(post){
     "userId": this.token,
     "shopId": post.shopId
   }
-  this.http.post("http://localhost:3000/posts", this.post).toPromise().then(()=>{this.ngOnInit()})
+  this.http.post(this.postsRoute, this.post).toPromise().then(()=>{this.ngOnInit()})
 }
 
 // Uploading Cafes Component
-private cafesRoute = 'http://localhost:3000/cafes?deleted=false';
+private cafesRoute = 'http://localhost:8080/api/shops';
 public cafes: Shop[];
+// "?deleted=false" + "&shopId=" + this.shopId 
+
 getSpecificCafe(){
-  this.http.get<Shop[]>(this.cafesRoute + "&shopId=" + this.shopId).subscribe(cafes => {
-    this.cafes = cafes;
+  this.http.get<Shop[]>(this.cafesRoute).subscribe(cafes => {
+    this.cafes = cafes.filter(cafes => cafes.deleted == false && cafes.shopId == this.shopId);
   });
 }
 
@@ -99,13 +102,13 @@ deletePost(post){
     const deletedObj = {
       "text": post.text,
       "userId": post.userId,
-      "id": post.id,
+      "postId": post.postId,
       "imageUrl": post.imageUrl,
       "timePosted": post.timePosted,
       "shopId": post.shopId,
       "deleted": true
     }
-    const url = `${this.postsRoute}/${post.id}`;
+    const url = `${this.postsRoute}/${post.postId}`;
     return this.http.put(url, deletedObj)
     .toPromise().then(()=> {this.getCafePosts()})
   }
@@ -118,11 +121,11 @@ editPost = function(newpost, oldpost){
     "shopId": newpost.shopId,
     "userId": oldpost.userId,
     "timePosted": oldpost.timePosted,
-    "id": oldpost.id,
+    "postId": oldpost.postId,
     "imageUrl": oldpost.imageUrl,
     "deleted": false,
     "edited": true}
-    const url = `${this.postsRoute}/${oldpost.id}`;
+    const url = `${this.postsRoute}/${oldpost.postId}`;
     return this.http.put(url, editedObj)
     .toPromise().then(()=> {this.getCafePosts()})
   }

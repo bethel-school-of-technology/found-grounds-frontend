@@ -11,17 +11,17 @@ import { TokenService } from '../../../shared/services/token.service';
 })
 export class DisplayCafepageComponent implements OnInit {
   public token;
-  public cafe;
-  private cafesRoute = 'http://localhost:3000/cafes';
+  public cafe: Shop[];
+  private cafesRoute = 'http://localhost:8080/api/shops';
 
   constructor( private route: ActivatedRoute, private http: HttpClient, tokenService: TokenService) { 
     this.token = tokenService.token
   }
   
-
+//  + "?deleted=false&shopId=" + param
   getCafe(param){
-    this.http.get<Shop>(this.cafesRoute + "?deleted=false&shopId=" + param).subscribe(cafe => {
-      this.cafe = cafe
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafe => {
+      this.cafe = cafe.filter(cafe => cafe.deleted == false && cafe.shopId == param)
     });}
 
   ngOnInit() {

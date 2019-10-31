@@ -15,20 +15,19 @@ export class ReviewboxComponent implements OnInit {
   @Input() userId: number;
   @Input() token: number;
 
-  private reviewsRoute = 'http://localhost:3000/reviews';
+  private reviewsRoute = 'http://localhost:8080/api/reviews';
   public reviews : Review [];
 
   constructor(private http: HttpClient) { }
+  // + "?deleted=false&shopId=" + shopId
   getReviews(shopId){
-    this.http.get<Review[]>(this.reviewsRoute + "?deleted=false&shopId=" + shopId).subscribe(reviews => {
-      this.reviews = reviews;
+    this.http.get<Review[]>(this.reviewsRoute).subscribe(reviews => {
+      this.reviews = reviews.filter(reviews => reviews.deleted == false && reviews.shopId == shopId);
     })
   }
  
   public reviewToPost: Review;
   public reviewToDelete: Review;
-  private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Shop;
 
   isAdded: boolean = false;
   confirmationString: string = "New comment has been uploaded";
@@ -37,7 +36,6 @@ export class ReviewboxComponent implements OnInit {
       "text": review.text,
       "shopId": this.shopId,
       "userId": this.token,
-      "id": review.id,
       "deleted": false,
       "reviewId": review.id,
       "rating": review.rating,
@@ -47,9 +45,13 @@ export class ReviewboxComponent implements OnInit {
     this.http.post(this.reviewsRoute, this.reviewToPost)
       .toPromise().then(()=> {this.ngOnInit()});}
 
+      private cafesRoute = 'http://localhost:8080/api/shops';
+      public cafe: Shop[];
+
+      // + "?shopId=" + this.shopId
   getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
-      this.cafe = cafe;
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafe => {
+      this.cafe = cafe.filter(cafe => cafe.shopId == this.shopId && cafe.deleted == false);
     });
   }
 
@@ -59,23 +61,24 @@ export class ReviewboxComponent implements OnInit {
         "text": review.text,
         "shopId": this.shopId,
         "userId": this.token,
-        "id": review.id,
-        "reviewId": review.id,
+        "reviewId": review.reviewId,
         "rating": review.rating,
         "timePosted": moment(),
         "edited": false,
         "deleted": true
       }
-      const url = `${this.reviewsRoute}/${review.id}`;
+      const url = `${this.reviewsRoute}/${review.reviewId}`;
       return this.http.put(url, this.reviewToDelete)
       .toPromise().then(()=> {this.ngOnInit()})}
     }
 
-  private usersRoute = 'http://localhost:3000/users'
-  public user: User;
+  private usersRoute = 'http://localhost:8080/api/users'
+  public user: User[];
+
+  // "?deleted=false&userId=" + token
   refreshUser(token){
-  this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + token).subscribe(user => {
-    this.user = user;
+  this.http.get<User[]>(this.usersRoute).subscribe(user => {
+    this.user = user.filter(user => user.deleted == false && user.userId == token);
   })
 }
 

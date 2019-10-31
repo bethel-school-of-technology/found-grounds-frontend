@@ -9,12 +9,13 @@ import { Photo } from '../../../../shared/models/photo';
 })
 export class PhotoboxComponent implements OnInit {
   @Input() shopId: number;
-  private photosRoute = 'http://localhost:3000/photos';
+  private photosRoute = 'http://localhost:8080/api/photos';
   public images: Photo [];
   constructor( private http: HttpClient) { }
+  // + "?shopId=" + this.shopId
   getPhotos(){
-    this.http.get<Photo[]>(this.photosRoute + "?shopId=" + this.shopId).subscribe(images => {
-      this.images = images;
+    this.http.get<Photo[]>(this.photosRoute).subscribe(images => {
+      this.images = images.filter(images => images.shopId == this.shopId);
     });
   }
 

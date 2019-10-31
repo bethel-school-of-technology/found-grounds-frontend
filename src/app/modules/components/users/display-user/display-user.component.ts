@@ -10,17 +10,20 @@ import { Router } from '@angular/router';
 })
 export class DisplayUserComponent implements OnInit {
   @Input() userId: number;
-  private usersRoute = 'http://localhost:3000/users'; 
-  public user: User;
+  private usersRoute = 'http://localhost:8080/api/users'; 
+  public user: User[];
 
   constructor(private http: HttpClient, private router: Router) { }
-  getUser(userId){
-    this.http.get<User>(this.usersRoute + "?userId=" + userId).subscribe(user => {
-      this.user = user;
+  
+  getPostUser(userId){
+    this.http.get<User[]>(this.usersRoute).subscribe(user => {
+      this.user = user.filter(user => user.userId == userId && user.deleted == false);
     })
   }
+// user has to be User [] because getPostUser has to filter through users to get the user who Posted
+
   ngOnInit() {
-    this.getUser(this.userId);
+    this.getPostUser(this.userId);
   };
 
   onSelect(use){

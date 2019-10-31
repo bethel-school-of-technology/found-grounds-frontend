@@ -16,11 +16,13 @@ export class SignupCafepageComponent implements OnInit {
     this.token = tokenService.token
   }
 
-  public user
-  private usersRoute = 'http://localhost:3000/users'; 
+  public user: User[]
+  private usersRoute = 'http://localhost:8080/api/users'; 
+
+  // + "?deleted=false&userId=" + this.token
   getUser(){
-    this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + this.token).subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.usersRoute).subscribe(user => {
+      this.user = user.filter(users => users.deleted == false && users.userId == this.token);
     })
   }
 

@@ -12,9 +12,9 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class ToggleLikeComponent implements OnInit {
   @Input() postId : number;
   @Input() token : number;
-  private likesRoute = 'http://localhost:3000/thumbsUps';
+  private likesRoute = 'http://localhost:8080/api/thumbsup';
   public likes: ThumbsUp [];
-  public userLike: ThumbsUp;
+  public userLike: ThumbsUp[];
 
   constructor(private http: HttpClient) { }
   public likeToPost: ThumbsUp;
@@ -22,15 +22,17 @@ export class ToggleLikeComponent implements OnInit {
   isAdded: boolean = false;
   confirmationString: string = "New like has been uploaded";
 
+  // + "?postId=" + postId + "&thumbsUp=true"
   getLikes(postId){
-    this.http.get<ThumbsUp[]>(this.likesRoute + "?postId=" + postId + "&thumbsUp=true").subscribe(likes => {
-      this.likes = likes;
+    this.http.get<ThumbsUp[]>(this.likesRoute).subscribe(likes => {
+      this.likes = likes.filter(likes => likes.postId == postId && likes.thumbsUp == true);
     })
   }
 
+  //  + "?postId=" + postId + "&userId=" + this.token
   getUserLike(postId){
-    this.http.get<ThumbsUp>(this.likesRoute + "?postId=" + postId + "&userId=" + this.token).subscribe(userLike => {
-      this.userLike = userLike;
+    this.http.get<ThumbsUp[]>(this.likesRoute).subscribe(userLike => {
+      this.userLike = userLike.filter(userLike => userLike.postId == postId && userLike.userId == this.token);
     })
   }
 
@@ -39,29 +41,25 @@ export class ToggleLikeComponent implements OnInit {
       "userId": this.token,
       "postId": this.postId,
       "thumbsUp": true,
-      "id": null,
       "thumbsUpId": null
     }
-    this.http.post(this.likesRoute, this.likeToPost).subscribe(res => (this.isAdded = true));
-    this.ngOnInit();
+    this.http.post(this.likesRoute, this.likeToPost).toPromise().then(()=>{this.ngOnInit()})
 ; }
 
 onClickToggle(userLik){
   this.toggleToPost = {
     "userId": this.token,
     "postId": this.postId,
-    "id": userLik.id,
     "thumbsUp": userLik.thumbsUp = !userLik.thumbsUp,
     "thumbsUpId": userLik.thumbsUpId
   }
-  const url = `${this.likesRoute}/${userLik.id}`;
-  this.http.put(url, this.toggleToPost).subscribe(res => (this.isAdded = true));
-  this.ngOnInit();
+  const url = `${this.likesRoute}/${userLik.thumbsUpId}`;
+  this.http.put(url, this.toggleToPost).toPromise().then(()=>{this.ngOnInit()})
 ; }
 
   ngOnInit() {
-    this.getLikes(this.postId);
     this.getUserLike(this.postId);
+    this.getLikes(this.postId);
   }
 
 }

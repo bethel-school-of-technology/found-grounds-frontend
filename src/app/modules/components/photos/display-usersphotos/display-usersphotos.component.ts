@@ -13,7 +13,7 @@ export class DisplayUsersphotosComponent implements OnInit {
     @Input() userId: number;
 
     // posts and users
-  private postsRoute = 'http://localhost:3000/posts';
+  private postsRoute = 'http://localhost:8080/api/posts';
   public images: Post[];
   id: number;
 
@@ -23,10 +23,10 @@ export class DisplayUsersphotosComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-
+// + "?userId=" + this.profileId
   getUserPhotos(){
-    this.http.get<Post[]>(this.postsRoute + "?userId=" + this.profileId).subscribe(images => {
-      this.images = images;
+    this.http.get<Post[]>(this.postsRoute ).subscribe(images => {
+      this.images = images.filter(images=> images.userId == this.profileId);
     });
   }
   show = false;

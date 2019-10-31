@@ -4,6 +4,5 @@ export class Comment {
     commentId: number;
     text: string;
     deleted: boolean;
-    id: number;
     timePosted;
 }

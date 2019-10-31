@@ -12,15 +12,16 @@ import { TokenService } from '../../../shared/services/token.service';
 export class DisplayProfilepageComponent implements OnInit {
   public token
   public param;
-  public user: User;
-  private userRoute = 'http://localhost:3000/users';
+  public user: User[];
+  private userRoute = 'http://localhost:8080/api/users';
 
   constructor(private route: ActivatedRoute, private http: HttpClient, tokenService: TokenService) {
     this.token = tokenService.token
   }
+  // + "?deleted=false&username=" + username
   getUser(username) {
-    this.http.get<User>(this.userRoute + "?deleted=false&username=" + username).subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.userRoute).subscribe(user => {
+      this.user = user.filter(user => user.deleted == false && user.username == username);
     });
   }
 

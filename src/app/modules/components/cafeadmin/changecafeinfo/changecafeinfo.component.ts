@@ -9,16 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./changecafeinfo.component.css']
 })
 export class ChangecafeinfoComponent implements OnInit {
-  private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Shop;
+  private cafesRoute = 'http://localhost:8080/api/shops';
+  public cafe: Shop[];
   public editing = "editing";
   @Input() shopId: number;
   @Input() token;
 
   constructor( private http: HttpClient, private router: Router) { }
+  // + "?deleted=false&adminId=" + this.token
   getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?deleted=false&adminId=" + this.token).subscribe(cafe => {
-      this.cafe = cafe;
+    this.http.get<Shop[]>(this.cafesRoute ).subscribe(cafe => {
+      this.cafe = cafe.filter(cafe => cafe.deleted == false && cafe.adminId == this.token);
     });
   }
 
@@ -34,9 +35,10 @@ export class ChangecafeinfoComponent implements OnInit {
         "rating": cafe.rating,
         "imageUrl": cafe.imageUrl,
         "id": cafe.id,
-        "deleted": true
+        "deleted": true,
+        "adminId": cafe.adminId
       }
-      const url = `${this.cafesRoute}/${cafe.id}`;
+      const url = `${this.cafesRoute}/${cafe.shopId}`;
       return this.http.put(url, deletedCafe)
       .toPromise().then(()=>{this.ngOnInit()})
     }
@@ -53,11 +55,10 @@ export class ChangecafeinfoComponent implements OnInit {
         "state": newCafe.state,
         "rating": cafe.rating,
         "imageUrl": newCafe.imageUrl,
-        "id": cafe.id,
         "deleted": false,
         "adminId": cafe.adminId
       }
-      const url = `${this.cafesRoute}/${cafe.id}`;
+      const url = `${this.cafesRoute}/${cafe.shopId}`;
       return this.http.put(url, editedCafe)
       .toPromise().then(()=>{this.ngOnInit()})
     }

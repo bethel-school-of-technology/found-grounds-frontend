@@ -15,7 +15,6 @@ export class DisplayDailybrewPageComponent implements OnInit {
     this.token = tokenService.token;
   }
  
-
   ngOnInit() {
   }
 

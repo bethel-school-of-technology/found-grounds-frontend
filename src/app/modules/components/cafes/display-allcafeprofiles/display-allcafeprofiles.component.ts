@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./display-allcafeprofiles.component.css']
 })
 export class DisplayAllcafeprofilesComponent implements OnInit {
-  private cafesRoute = 'http://localhost:3000/cafes';
+  private cafesRoute = 'http://localhost:8080/api/shops';
   public cafes: Shop[];
 
   constructor(private http: HttpClient, private router: Router) { }
+  // + "?deleted=false"
   getCafes(){
-    this.http.get<Shop[]>(this.cafesRoute + "?deleted=false").subscribe(cafes => {
-      this.cafes = cafes;
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafes => {
+      this.cafes = cafes.filter(cafes => cafes.deleted == false);
     });
   }
   ngOnInit() {

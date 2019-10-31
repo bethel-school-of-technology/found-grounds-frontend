@@ -13,22 +13,25 @@ export class CommentboxComponent implements OnInit {
   @Input() postId: number;
   @Input() token: number;
   
-  private commentsRoute = 'http://localhost:3000/comments';
+  private commentsRoute = 'http://localhost:8080/api/comments';
   public comments : Comment [];
 
   constructor(private http: HttpClient) { }
-  // Getting Comments
+
+  // + "?deleted=false&postId=" + postId
   getComments(postId){
-    this.http.get<Comment[]>(this.commentsRoute + "?deleted=false&postId=" + postId).subscribe(comments => {
-      this.comments = comments;
+    this.http.get<Comment[]>(this.commentsRoute).subscribe(comments => {
+      this.comments = comments.filter(comments => comments.deleted == false && comments.postId == postId);
     })
   }
 
-  private usersRoute = 'http://localhost:3000/users'
-  public user: User;
+  private usersRoute = 'http://localhost:8080/api/users'
+  public user: User[];
+
+  //  + "?deleted=false&userId=" + token
   refreshUser(token){
-  this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + token).subscribe(user => {
-    this.user = user;
+  this.http.get<User[]>(this.usersRoute).subscribe(user => {
+    this.user = user.filter(user => user.deleted == false && user.userId == token);
   })
 }
   
@@ -44,7 +47,6 @@ export class CommentboxComponent implements OnInit {
       "postId": this.postId,
       "userId": this.token,
       "commentId": comment.id,
-      "id": comment.id,
       "deleted": false,
       "timePosted": moment()
     }
@@ -60,12 +62,11 @@ export class CommentboxComponent implements OnInit {
         "text": comment.text,
         "postId": this.postId,
         "userId": this.token,
-        "commentId": comment.id,
-        "id": comment.id,
+        "commentId": comment.commentId,
         "deleted": true,
         "timePosted": moment()
       }
-      const url = `${this.commentsRoute}/${comment.id}`;
+      const url = `${this.commentsRoute}/${comment.commentId}`;
         return this.http.put(url, this.commentToDelete)
         .toPromise().then(()=> { this.ngOnInit()})
     }

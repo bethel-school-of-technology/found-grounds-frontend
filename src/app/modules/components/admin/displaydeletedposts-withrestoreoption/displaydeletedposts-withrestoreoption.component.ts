@@ -12,27 +12,34 @@ import { User } from '../../../../shared/models/user';
 export class DisplaydeletedpostsWithrestoreoptionComponent implements OnInit {
   @Input() token: number;
 
-  private postsRoute = 'http://localhost:3000/posts';
-  usersRoute = 'http://localhost:3000/users';
+  private postsRoute = 'http://localhost:8080/api/posts';
+  usersRoute = 'http://localhost:8080/api/users';
   public posts: Post[];
   users: User[];
   postObj = {};
   id: number;
 
   constructor(private http: HttpClient) { }
+  // +"?deleted=true"
   getDeletedPosts() {
-    this.http.get<Post[]>(this.postsRoute + "?deleted=true").subscribe(posts => {
-      this.posts = posts;
+    this.http.get<Post[]>(this.postsRoute).subscribe(posts => {
+      this.posts = posts.filter(posts => posts.deleted == true);
     })
       ;
   }
 
   show = false;
 
-  
-  showComments(id) {
-    console.log(id);
-    document.getElementById(id).style.display = 'block';
+  showComments(id){
+    var x = document.getElementById(id);
+    if (x.className.indexOf("show") == -1) {
+      x.className += " show";
+      x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+      x.className = x.className.replace("show", "");
+      x.previousElementSibling.className =
+      x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
   }
 
   restorePost(post){
@@ -40,13 +47,13 @@ export class DisplaydeletedpostsWithrestoreoptionComponent implements OnInit {
       const restoredObj = {
         "text": post.text,
         "userId": post.userId,
-        "id": post.id,
+        "postId": post.postId,
         "imageUrl": post.imageUrl,
         "timePosted": post.timePosted,
         "shopId": post.shopId,
         "deleted": false
       }
-      const url = `${this.postsRoute}/${post.id}`;
+      const url = `${this.postsRoute}/${post.postId}`;
       return this.http.put(url, restoredObj)
       .toPromise().then(()=> {this.getDeletedPosts()})
     }

@@ -5,7 +5,6 @@ export class Review {
     text: string;
     rating: number;
     deleted: boolean;
-    id: number;
     timePosted;
     edited: boolean;
 }

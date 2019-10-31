@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 })
 export class DisplaydeletedcafesWithrestoreoptionComponent implements OnInit {
 
-  private cafesRoute = 'http://localhost:3000/cafes';
+  private cafesRoute = 'http://localhost:8080/api/shops';
   public cafes: Shop[];
 
   constructor(private http: HttpClient, private router: Router) { }
+  // +"?deleted=true"
   getDeletedCafes(){
-    this.http.get<Shop[]>(this.cafesRoute +"?deleted=true").subscribe(cafes => {
-      this.cafes = cafes;
+    this.http.get<Shop[]>(this.cafesRoute ).subscribe(cafes => {
+      this.cafes = cafes.filter(cafes => cafes.deleted == true);
     });
   }
 
@@ -31,10 +32,10 @@ export class DisplaydeletedcafesWithrestoreoptionComponent implements OnInit {
         "state": cafe.state,
         "rating": cafe.rating,
         "imageUrl": cafe.imageUrl,
-        "id": cafe.id,
-        "deleted": false
+        "deleted": false,
+        "adminId": cafe.adminId
       }
-      const url = `${this.cafesRoute}/${cafe.id}`;
+      const url = `${this.cafesRoute}/${cafe.shopId}`;
       return this.http.put(url, restoredCafe)
       .toPromise().then(()=>{this.getDeletedCafes()})
     }

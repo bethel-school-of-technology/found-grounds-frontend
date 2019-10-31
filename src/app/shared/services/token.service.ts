@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TokenService {
-  token = 2
+  token = 3
   constructor() { }
 }
-
-// Hey team, a quick video to display all the new functionalities in the Front End!

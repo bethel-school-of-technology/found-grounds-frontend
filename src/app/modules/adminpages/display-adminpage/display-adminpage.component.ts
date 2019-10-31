@@ -3,6 +3,7 @@ import * as moment from 'moment';
 import { TokenService } from '../../../shared/services/token.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../../shared/models/user';
+import { Shop } from 'src/app/shared/models/shop';
 
 @Component({
   selector: 'app-display-adminpage',
@@ -18,16 +19,26 @@ export class DisplayAdminpageComponent implements OnInit {
     this.token = tokenService.token
   }
 
-  public user
-  private usersRoute = 'http://localhost:3000/users'; 
+  public user: User []
+  private usersRoute = 'http://localhost:8080/api/users'; 
+  //  + "?deleted=false&userId=" + this.token
   getUser(){
-    this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + this.token).subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.usersRoute).subscribe(user => {
+      this.user = user.filter(user => user.deleted == false && user.userId == this.token);
+    })
+  }
+
+  public shop: Shop []
+  private shopsRoute = 'http://localhost:8080/api/shops'; 
+  getShop(){
+    this.http.get<Shop[]>(this.shopsRoute).subscribe(shop => {
+      this.shop = shop.filter(shop => shop.deleted == false && shop.adminId == this.token);
     })
   }
 
   ngOnInit() {
    this.getUser();
+   this.getShop();
   }
 
 }

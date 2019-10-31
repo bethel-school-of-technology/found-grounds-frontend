@@ -32,9 +32,9 @@
     <!-- for Cafe Admin -->
     <div *ngIf="use.roleId == 3" class="w3-row">
       <h1>Welcome {{use.firstName}} {{use.lastName}},</h1>
-      <div class="w3-col m8">
+      <div *ngFor="let sho of shop" class="w3-col m8">
           <app-changecafeinfo token={{token}}></app-changecafeinfo>
-          <app-addeditdeletemenuitem shopId={{use.shopId}}></app-addeditdeletemenuitem>
+          <app-addeditdeletemenuitem shopId={{sho.shopId}}></app-addeditdeletemenuitem>
         </div>
         <div class="w3-col m4">
             <div class="w3-card w3-round w3-white w3-padding-16 w3-padding w3-center w3-margin-left">
