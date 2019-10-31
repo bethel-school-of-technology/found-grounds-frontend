@@ -14,16 +14,14 @@ export class LoginmodalComponent implements OnInit {
   constructor( private http: HttpClient , private router: Router) { }
 
   login = function(loginData){
-    this.loggedon = {
-      "username": loginData.username,
-      "password": loginData.password
+    const loggedon = {
+      "token": loginData.token,
     }
-    console.log(this.loggedon)
-  }
-
-  goToPage(pageName:string){
-    this.router.navigate([`${pageName}`]);
-    
+    const url = "http://localhost:3000/token/1";
+    return this.http.put(url, loggedon)
+    .toPromise().then(()=> {this.router.navigate(['dailybrew']);
+    document.getElementById('id01').style.display='none';
+  })
   }
 
   ngOnInit() {

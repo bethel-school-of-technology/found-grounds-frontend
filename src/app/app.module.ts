@@ -16,6 +16,7 @@ import { ProfilepagesModule } from './modules/profilepages/profilepages.module';
 import { DailybrewpageModule } from './modules/dailybrewpage/dailybrewpage.module';
 import { CafepageModule } from './modules/cafepages/cafepage.module';
 import { SignuppagesModule } from './modules/signuppages/signuppages.module';
+import { LogoutmodalComponent } from './shared/components/logoutmodal/logoutmodal.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SignuppagesModule } from './modules/signuppages/signuppages.module';
     FooterComponent,
     HomeComponent,
     LoginmodalComponent,
+    LogoutmodalComponent,
   ],
   imports: [
     BrowserModule,

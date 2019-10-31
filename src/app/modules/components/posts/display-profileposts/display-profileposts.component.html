@@ -17,6 +17,38 @@
       }
     </style>
   
+    <!-- Uploading Post -->
+    <div class="w3-row-padding">
+      <div class="w3-col m12">
+        <div class="w3-card w3-round w3-white">
+          <div *ngFor="let use of user" class="w3-container w3-padding">
+            <form id="uploadNewPost" name="uploadNewPost" #postData="ngForm" (ngSubmit)="uploadPost(postData.value)">
+              <!-- Text Input -->
+              <input class="w3-border w3-padding coffeetext" type="text" name="text" id="text"
+                placeholder="{{use.firstName}} has had five espressos today.." required ngModel />
+              <!-- Photos Input -->
+              <input style="display:none" type="file" (change)="onFileSelected($event)" #fileInput />
+              <div class="w3-row">
+                <div class="w3-col l7">
+                  <button type="button" class="w3-button w3-theme w3-padding w3-margin-right coffeebutton"
+                    (click)="fileInput.click()"><i class="fa fa-photo"></i>  Upload Photo</button>
+                  <button type="submit" class="w3-button w3-theme w3-padding coffeebutton"><i class="fa fa-coffee"></i>
+                     Brew!</button>
+                </div>
+                <!-- Cafe Input -->
+                <div class="w3-col l5 w3-right">
+                  <select id="shopId" name="shopId" class="form-control w3-right w3-margin-left" ngModel>
+                    <option value="">Give the Café a Shout Out</option>
+                    <option *ngFor="let cafe of cafes" value={{cafe.shopId}}>{{cafe.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
     <!-- Main Posts -->
     <div *ngFor="let post of posts" class="w3-container w3-card w3-white w3-round w3-margin left-align"><br>
       <app-display-profile-picture userId={{post.userId}}></app-display-profile-picture>
@@ -33,21 +65,21 @@
       <img src={{post.imageUrl}} style="width:100%" class="w3-margin-bottom">
   
       <!-- Likes -->
-      <app-toggle-like postId={{post.id}} token={{token}}></app-toggle-like>
+      <app-toggle-like postId={{post.postId}} token={{token}}></app-toggle-like>
   
       <!-- Comment Button -->
-      <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i
+      <button type="button" (click)="showComments(post.postId)" class="w3-button w3-theme-d2 w3-margin-bottom"><i
           class="fa fa-comment"></i>  Comment</button>
   
       <!-- Edit Box/Delete Button -->
       <div class="w3-right" *ngIf="token == post.userId">
-        <button type="button" (click)="showBox(post.id, editing)" class="w3-button w3-theme-d2 w3-margin-bottom">
+        <button type="button" (click)="showBox(post.postId, editing)" class="w3-button w3-theme-d2 w3-margin-bottom">
           <i class="fa fa-pencil"></i></button>
          <button type="button" (click)="deletePost(post)" class="w3-button w3-theme-d2 w3-margin-bottom">
           <i class="fa fa-trash"></i></button>
   
         <!-- Editing Box -->
-        <div class="modal" id="{{post.id + editing}}">
+        <div class="modal" id="{{post.postId + editing}}">
           <div class="formborder modal-content animate w3-card" action="/action_page.php">
             <span (click)="closeBox(post.id, editing)" class="close" title="Close Modal">&times;</span>
             <div class="container">
@@ -78,7 +110,7 @@
   
   
       <!-- Comment Box -->
-      <p class="hidden" id={{post.id}}>
-        <app-commentbox token={{token}} postId={{post.id}}></app-commentbox>
+      <p class="hidden" id={{post.postId}}>
+        <app-commentbox token={{token}} postId={{post.postId}}></app-commentbox>
       </p>
     </div>

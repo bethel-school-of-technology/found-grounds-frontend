@@ -66,21 +66,21 @@
       <img src={{post.imageUrl}} style="width:100%" class="w3-margin-bottom">
   
       <!-- Likes -->
-      <app-toggle-like postId={{post.id}} token={{token}}></app-toggle-like>
+      <app-toggle-like postId={{post.postId}} token={{token}}></app-toggle-like>
   
       <!-- Comment Button -->
-      <button type="button" (click)="showComments(post.id)" class="w3-button w3-theme-d2 w3-margin-bottom"><i
+      <button type="button" (click)="showComments(post.postId)" class="w3-button w3-theme-d2 w3-margin-bottom"><i
           class="fa fa-comment"></i>  Comment</button>
   
       <!-- Edit Box/Delete Button -->
       <div class="w3-right" *ngIf="token == post.userId">
-        <button type="button" (click)="showBox(post.id, editing)" class="w3-button w3-theme-d2 w3-margin-bottom">
+        <button type="button" (click)="showBox(post.postId, editing)" class="w3-button w3-theme-d2 w3-margin-bottom">
           <i class="fa fa-pencil"></i></button>
          <button type="button" (click)="deletePost(post)" class="w3-button w3-theme-d2 w3-margin-bottom">
           <i class="fa fa-trash"></i></button>
   
         <!-- Editing Box -->
-        <div class="modal" id="{{post.id + editing}}">
+        <div class="modal" id="{{post.postId + editing}}">
           <div class="formborder modal-content animate w3-card" action="/action_page.php">
             <span (click)="closeBox(post.id, editing)" class="close" title="Close Modal">&times;</span>
             <div class="container">
@@ -110,7 +110,7 @@
   
   
       <!-- Comment Box -->
-      <p class="hidden" id={{post.id}}>
-        <app-commentbox token={{token}} postId={{post.id}}></app-commentbox>
+      <p class="hidden" id={{post.postId}}>
+        <app-commentbox token={{token}} postId={{post.postId}}></app-commentbox>
       </p>
     </div>

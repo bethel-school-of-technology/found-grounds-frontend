@@ -1,0 +1,16 @@
+<a onclick="document.getElementById('x02').style.display='block'" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGOUT</a>
+ <!-- The Modal For Sign Up -->
+ <div class="modal"  id="x02">
+    
+  
+    <!-- Modal Content For Sign Up -->
+    <form id="logmodal" name="loginmodal" #loginData="ngForm" (ngSubmit)="login(loginData.value)" class="modal-content animate w3-card" action="/action_page.php">
+        <span onclick="document.getElementById('x02').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
+      
+  
+      <div class="container">
+        <button (click)="logout()" type="submit">Logout</button>
+      </div>
+    </form>
+  </div>

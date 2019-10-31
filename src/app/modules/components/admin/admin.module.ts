@@ -14,12 +14,18 @@ import { DisplaydeletedpostsWithrestoreoptionComponent } from './displaydeletedp
 import { DisplaydeletedusersWithrestoreoptionComponent } from './displaydeletedusers-withrestoreoption/displaydeletedusers-withrestoreoption.component';
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { SimplydisplaypostsComponent } from './simplydisplayposts/simplydisplayposts.component';
+import { TimeModule } from '../time/time.module';
+import { MasteradminpageComponent } from './masteradminpage/masteradminpage.component'
+import { CafeadminModule } from '../cafeadmin/cafeadmin.module';
+import { ProfilesModule } from '../profile/profiles.module';
+import { DeleteadminpageComponent } from './deleteadminpage/deleteadminpage.component';
+import { RestoreadminpageComponent } from './restoreadminpage/restoreadminpage.component';
 
 @NgModule({
-  declarations: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent, SimplydisplaypostsComponent],
+  declarations: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent, SimplydisplaypostsComponent, MasteradminpageComponent, DeleteadminpageComponent, RestoreadminpageComponent],
   imports: [
-    CommonModule, UsersModule, CommentsModule, CafesModule, LikesModule
+    CommonModule, UsersModule, CommentsModule, CafesModule, LikesModule, TimeModule, CafeadminModule, ProfilesModule
   ],
-  exports: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent, SimplydisplaypostsComponent ]
+  exports: [DisplayallpostsWithdeleteoptionComponent, DisplayallusersWithdeleteoptionComponent, DisplayallcafesWithdeleteoptionComponent, DisplaydeletedcafesWithrestoreoptionComponent, DisplaydeletedpostsWithrestoreoptionComponent, DisplaydeletedusersWithrestoreoptionComponent, AdminnavbarComponent, SimplydisplaypostsComponent, MasteradminpageComponent, DeleteadminpageComponent, RestoreadminpageComponent]
 })
 export class AdminModule { }

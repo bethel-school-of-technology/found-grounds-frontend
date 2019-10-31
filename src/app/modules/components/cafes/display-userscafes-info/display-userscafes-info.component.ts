@@ -8,14 +8,15 @@ import { Shop } from '../../../../shared/models/shop';
   styleUrls: ['./display-userscafes-info.component.css']
 })
 export class DisplayUserscafesInfoComponent implements OnInit {
-  private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Shop;
+  private cafesRoute = 'http://localhost:8080/api/shops';
+  public cafe: Shop[];
   @Input() shopId: number;
 
   constructor( private http: HttpClient) { }
+  // + "?shopId=" + this.shopId
   getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?shopId=" + this.shopId).subscribe(cafe => {
-      this.cafe = cafe;
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafe => {
+      this.cafe = cafe.filter(cafe => cafe.shopId == this.shopId);
     });
   }
 

@@ -1,10 +1,7 @@
-*:focus {
-    outline: none;
-  }
-  
+
   .signuppage {
     margin: 0;
-    padding-top: 100px;
+    padding: 100px;
     background-color: #b99c6b;
     font-size: 16px;
     color: #222;

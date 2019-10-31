@@ -9,14 +9,15 @@ import { Menu } from '../../../../shared/models/menu';
 })
 export class AddeditdeletemenuitemComponent implements OnInit {
   @Input() shopId: number;
-  private menusRoute = 'http://localhost:3000/menu';
+  private menusRoute = 'http://localhost:8080/api/menu';
   public menus: Menu [];
   public editing = "editmenu";
 
   constructor( private http:HttpClient) { }
+  // + "?deleted=false&shopId=" + this.shopId
   getMenus(){
-    this.http.get<Menu[]>(this.menusRoute + "?deleted=false&shopId=" + this.shopId).subscribe(menus => {
-      this.menus = menus;
+    this.http.get<Menu[]>(this.menusRoute).subscribe(menus => {
+      this.menus = menus.filter(menus => menus.deleted == false && menus.shopId == this.shopId);
     });
   }
 
@@ -26,11 +27,10 @@ export class AddeditdeletemenuitemComponent implements OnInit {
         "itemId": menu.itemId,
         "name": menu.name,
         "imageUrl": menu.imageUrl,
-        "id": menu.id,
         "text": menu.text,
         "deleted": true
       }
-      const url = `${this.menusRoute}/${menu.id}`;
+      const url = `${this.menusRoute}/${menu.itemId}`;
       return this.http.put(url, deletedMenu)
       .toPromise().then(()=>{this.ngOnInit()})
   }
@@ -41,11 +41,10 @@ export class AddeditdeletemenuitemComponent implements OnInit {
       "itemId": menu.itemId,
       "name": newMenu.name,
       "imageUrl": newMenu.imageUrl,
-      "id": menu.id,
       "text": newMenu.text,
       "deleted": false
     }
-    const url = `${this.menusRoute}/${menu.id}`;
+    const url = `${this.menusRoute}/${menu.itemId}`;
     return this.http.put(url, editedMenu)
     .toPromise().then(()=>{this.ngOnInit()})
 }

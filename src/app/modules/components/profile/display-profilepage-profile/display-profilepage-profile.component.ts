@@ -8,19 +8,19 @@ import { User } from '../../../../shared/models/user';
   styleUrls: ['./display-profilepage-profile.component.css']
 })
 export class DisplayProfilepageProfileComponent implements OnInit {
-  private userRoute = 'http://localhost:3000/users';
+  private userRoute = 'http://localhost:8080/api/users';
   public user: User[];
   @Input() username: string;
 
   constructor(private http: HttpClient) { }
+  // + "?username=" + this.username
   getUser(){
-    this.http.get<User[]>(this.userRoute + "?username=" + this.username).subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.userRoute).subscribe(user => {
+      this.user = user.filter(user => user.username == this.username && user.deleted == false);
     });
   }
   ngOnInit() {
     this.getUser();
-    console.log(this.username);
   }
 
 }

@@ -9,19 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./displaydeletedusers-withrestoreoption.component.css']
 })
 export class DisplaydeletedusersWithrestoreoptionComponent implements OnInit {
-  private userRoute = 'http://localhost:3000/users';
+  private userRoute = 'http://localhost:8080/api/users';
   public user: User[];
   
   constructor(private http: HttpClient, private router: Router) { }
 
+  // + "?deleted=true"
   getDeletedUsers(){
-    this.http.get<User[]>(this.userRoute + "?deleted=true").subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.userRoute ).subscribe(user => {
+      this.user = user.filter(user => user.deleted == true);
     });
   }
 
   restoreUser(use){
-    if(confirm("Are you sure? You will be deleting user " + use.id)){
+    if(confirm("Are you sure? You will be deleting user " + use.userId)){
       const restoredUser = {
         "userId": use.userId,
         "firstName": use.firstName,
@@ -34,7 +35,7 @@ export class DisplaydeletedusersWithrestoreoptionComponent implements OnInit {
         "username": use.username,
         "deleted": false
       }
-      const url = `${this.userRoute}/${use.id}`;
+      const url = `${this.userRoute}/${use.userId}`;
       return this.http.put(url, restoredUser)
       .toPromise().then(()=>{this.getDeletedUsers()})
     }

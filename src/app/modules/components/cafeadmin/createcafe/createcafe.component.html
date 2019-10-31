@@ -9,8 +9,9 @@
     <!-- User already is a Café Admin -->
     <div *ngIf="use.roleId == 3" class="w3-center">
 
-        <div *ngFor="let caf of cafe" class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+        <div  class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
             <h2> You already have a café. </h2>
+            <div *ngFor="let caf of cafe">
             <div *ngIf="caf.deleted == true" class="w3-card w3-red">INACTIVE/PENDING APPROVAL</div>
             <div *ngIf="caf.deleted == false" class="w3-card w3-green">ACTIVE</div>
             <br>
@@ -18,7 +19,7 @@
                 <div class="w3-container w3-card w3-round w3-white w3-padding left-align">
                     <div class="w3-row">
                         <div class="w3-col m3 w3-padding">
-                            <img src={{preview.imageUrl}} class="w3-circle w3-left w3-margin-right"
+                            <img src={{caf.imageUrl}} class="w3-circle w3-left w3-margin-right"
                                 style="height:150px;width:150px" alt="image preview">
                         </div>
                         <div class="w3-col m4 w3-margin-left">
@@ -38,6 +39,7 @@
                     </div>
                 </div>
             </div>
+        </div>
             <br>
             <h4> At our current beta form, one user can only have one café. If you deleted your previous café and would
                 like to create a new café, please contact the admin at admin@foundgrounds.com.</h4>
@@ -77,7 +79,7 @@
                 <div *ngFor="let use of user" class="w3-padding">
                     <div class="w3-container w3-card w3-round w3-white left-align w3-margin-bottom w3-padding">
                         <form id="createCafe" name="createCafe" #createData="ngForm"
-                            (ngSubmit)="uploadCafe(createData.value)" (ngSubmit)="createNewAdmin(use)">
+                            (ngSubmit)="uploadCafe(createData.value, use.userId)" (ngSubmit)="createNewAdmin(use)">
                             <label>Name:</label><input type="text" name="name" ngModel (keyup)="previewName($event)">
                             <br>
                             <label>About:</label><input type="text" name="about" ngModel (keyup)="previewAbout($event)">

@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 })
 export class DisplayallcafesWithdeleteoptionComponent implements OnInit {
 
-  private cafesRoute = 'http://localhost:3000/cafes';
+  private cafesRoute = 'http://localhost:8080/api/shops';
   public cafes: Shop[];
 
   constructor(private http: HttpClient, private router: Router) { }
+  // +"?deleted=false
   getCafes(){
-    this.http.get<Shop[]>(this.cafesRoute +"?deleted=false").subscribe(cafes => {
-      this.cafes = cafes;
+    this.http.get<Shop[]>(this.cafesRoute).subscribe(cafes => {
+      this.cafes = cafes.filter(cafes => cafes.deleted == false);
     });
   }
 
@@ -31,12 +32,12 @@ export class DisplayallcafesWithdeleteoptionComponent implements OnInit {
         "state": cafe.state,
         "rating": cafe.rating,
         "imageUrl": cafe.imageUrl,
-        "id": cafe.id,
-        "deleted": true
+        "deleted": true,
+        "adminId": cafe.adminId
       }
-      const url = `${this.cafesRoute}/${cafe.id}`;
+      const url = `${this.cafesRoute}/${cafe.shopId}`;
       return this.http.put(url, deletedCafe)
-      .toPromise().then(()=>{this.getCafes()})
+      .toPromise().then(()=>{this.ngOnInit()})
     }
   }
   ngOnInit() {

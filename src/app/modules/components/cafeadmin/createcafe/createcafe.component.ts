@@ -10,29 +10,31 @@ import { User } from '../../../../shared/models/user';
   styleUrls: ['./createcafe.component.css']
 })
 export class CreatecafeComponent implements OnInit {
-  private cafesRoute = 'http://localhost:3000/cafes';
-  public cafe: Shop;
+  private cafesRoute = 'http://localhost:8080/api/shops';
+  public cafe: Shop[];
   public editing = "editing";
   @Input() shopId: number;
   @Input() token: number;
 
   constructor( private http: HttpClient, private router: Router) { }
+  // + "?adminId=" + this.token
   getCafe(){
-    this.http.get<Shop>(this.cafesRoute + "?adminId=" + this.token).subscribe(cafe => {
-      this.cafe = cafe;
+    this.http.get<Shop[]>(this.cafesRoute ).subscribe(cafe => {
+      this.cafe = cafe.filter(cafe => cafe.adminId == this.token);
     });
   }
 
   public user
-  private usersRoute = 'http://localhost:3000/users'; 
+  private usersRoute = 'http://localhost:8080/api/users'; 
+  // + "?deleted=false&userId=" + this.token
   getUser(){
-    this.http.get<User>(this.usersRoute + "?deleted=false&userId=" + this.token).subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.usersRoute ).subscribe(user => {
+      this.user = user.filter(user => user.deleted == false && user.userId == this.token );
     })
   }
 
-  uploadCafe(cafe){
-    if(confirm("Is all your information correct?")){
+  uploadCafe(cafe, userId){
+    if(confirm("Are you sure?")){
       const newCafe = {
         "shopId": cafe.shopId,
         "about": cafe.about,
@@ -42,16 +44,13 @@ export class CreatecafeComponent implements OnInit {
         "state": cafe.state,
         "rating": null,
         "imageUrl": cafe.imageUrl,
-        "id": cafe.id,
         "deleted": true,
-        "adminId": this.token
+        "adminId": userId
       }
       return this.http.post(this.cafesRoute, newCafe)
       .toPromise().then(()=>{this.ngOnInit()})
     }
   }
-
-  
 
 createNewAdmin(use){
   if(confirm(use.firstName + ", you will be made admin over this new café")){
@@ -68,7 +67,7 @@ createNewAdmin(use){
       "deleted": false,
       "roleId": 3
     }
-    const url = `${this.usersRoute}/${use.id}`;
+    const url = `${this.usersRoute}/${use.userId}`;
     return this.http.put(url, adminUser)
     .toPromise().then(()=>{this.ngOnInit()})
   }

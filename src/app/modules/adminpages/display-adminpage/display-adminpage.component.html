@@ -20,64 +20,16 @@
 
 <body class="w3-theme-l5">
 
-
+<div *ngFor="let toke of token">
+    <div *ngIf="!toke.token">
+        <h2 class="w3-center">Please sign in first</h2>
+      </div>
+      <div *ngIf="toke.token">
   <!-- Page Container -->
-  <div *ngFor="let use of user" class="w3-container w3-content" style="max-width:1400px">
+  <app-masteradminpage token={{toke.token}}></app-masteradminpage>
 
-    <!-- for Non Admin-->
-    <div *ngIf="use.roleId == 1" class="w3-row">
-      <h1>I'm sorry {{use.firstName}}, you do not have admin access.</h1>
-    </div>
-
-    <!-- for Cafe Admin -->
-    <div *ngIf="use.roleId == 3" class="w3-row">
-      <h1>Welcome {{use.firstName}} {{use.lastName}},</h1>
-      <div class="w3-col m8">
-          <app-changecafeinfo token={{token}}></app-changecafeinfo>
-          <app-addeditdeletemenuitem shopId={{use.shopId}}></app-addeditdeletemenuitem>
-        </div>
-        <div class="w3-col m4">
-            <div class="w3-card w3-round w3-white w3-padding-16 w3-padding w3-center w3-margin-left">
-                <h2>Cafe Admin Home Page</h2>
-               <p>As a café admin, you can change your café's information and update its menu. In future versions of Found Grounds, you will be able to own multiple cafe pages and flag any inappropriate reviews for removal.</p>
-        
-               </div>
-        </div>
-    </div>
-
-    <!-- for Master Admins -->
-    <div *ngIf="use.roleId == 2" class="w3-row">
-      <h1>Welcome {{use.firstName}}, you have master admin access</h1>
-      <div class="w3-col m8">
-        <div class="w3-white">
-          <div class="w3-container w3-padding found-grounds-brown">
-            <h3>All Our Cafes</h3>
-          </div>
-        </div>
-        <app-display-allcafeprofiles></app-display-allcafeprofiles>
-        <div class="w3-white">
-          <div class="w3-container w3-padding found-grounds-brown">
-            <h3>All Our Users</h3>
-          </div>
-        </div>
-        <app-display-allprofiles></app-display-allprofiles>
-        <div class="w3-white">
-          <div class="w3-container w3-padding found-grounds-brown">
-            <h3>All Our Users' Posts</h3>
-          </div>
-        </div>
-        <app-simplydisplayposts token={{token}}></app-simplydisplayposts>
-      </div>
-      <div class="w3-col m4">
-        <app-adminnavbar></app-adminnavbar>
-      </div>
-    </div>
-
-    <!-- End Page Container -->
-  </div>
-  <br>
-
-
+</div>
+</div>
 </body>
 
 </html>

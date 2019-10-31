@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../../shared/models/user';
-import { TokenService } from '../../../shared/services/token.service';
+import { FakeJWT } from 'src/app/shared/models/fakeJWT';
 
 @Component({
   selector: 'app-display-profilepage',
@@ -12,15 +12,23 @@ import { TokenService } from '../../../shared/services/token.service';
 export class DisplayProfilepageComponent implements OnInit {
   public token
   public param;
-  public user: User;
-  private userRoute = 'http://localhost:3000/users';
+  public user: User[];
+  private userRoute = 'http://localhost:8080/api/users';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, tokenService: TokenService) {
-    this.token = tokenService.token
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
+
   }
+
+  getTokenService(){
+    this.http.get<FakeJWT[]>('http://localhost:3000/token').subscribe(token => {
+      this.token = token;
+    })
+  }
+
+  // + "?deleted=false&username=" + username
   getUser(username) {
-    this.http.get<User>(this.userRoute + "?deleted=false&username=" + username).subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.userRoute).subscribe(user => {
+      this.user = user.filter(user => user.deleted == false && user.username == username);
     });
   }
 
@@ -37,6 +45,7 @@ export class DisplayProfilepageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getTokenService();
     let param = this.route.snapshot.paramMap.get('username')
     this.getUser(param);
   }

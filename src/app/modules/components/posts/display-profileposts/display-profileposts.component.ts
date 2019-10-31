@@ -4,7 +4,6 @@ import { Post } from '../../../../shared/models/post';
 import { } from 'rxjs';
 import { User } from '../../../../shared/models/user';
 import { Shop } from '../../../../shared/models/shop';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-display-profileposts',
@@ -15,8 +14,8 @@ export class DisplayProfilepostsComponent implements OnInit {
   @Input() token: number;
   @Input() profileId: number;
 
-  private postsRoute = 'http://localhost:3000/posts';
-  usersRoute = 'http://localhost:3000/users';
+  private postsRoute = 'http://localhost:8080/api/posts';
+  usersRoute = 'http://localhost:8080/api/users';
   public posts: Post[];
   users: User[];
   postObj = {};
@@ -25,9 +24,10 @@ export class DisplayProfilepostsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   // Getting Component of Posts
+  // + "?deleted=false&userId=" + this.profileId
   getPosts(){
-    this.http.get<Post[]>(this.postsRoute + "?deleted=false&userId=" + this.profileId).subscribe(posts => {
-      this.posts = posts.slice().reverse();
+    this.http.get<Post[]>(this.postsRoute ).subscribe(posts => {
+      this.posts = posts.filter(posts => posts.userId == this.profileId && posts.deleted == false).slice().reverse();
     })
     ;
   }
@@ -58,11 +58,13 @@ closeBox(id,unique){
 }
 
 // Selecting Cafes Component
-private cafesRoute = 'http://localhost:3000/cafes?deleted=false';
+private cafesRoute = 'http://localhost:3000/';
 public cafes: Shop[];
+
+// cafes?deleted=false
 getCafe(){
   this.http.get<Shop[]>(this.cafesRoute).subscribe(cafes => {
-    this.cafes = cafes;
+    this.cafes = cafes.filter(cafes => cafes.deleted == false);
   });
 }
 
@@ -72,13 +74,13 @@ deletePost(post){
     const deletedObj = {
       "text": post.text,
       "userId": post.userId,
-      "id": post.id,
+      "postId": post.postId,
       "imageUrl": post.imageUrl,
       "timePosted": post.timePosted,
       "shopId": post.shopId,
       "deleted": true
     }
-    const url = `${this.postsRoute}/${post.id}`;
+    const url = `${this.postsRoute}/${post.postId}`;
     return this.http.put(url, deletedObj)
     .toPromise().then(()=> {this.getPosts()})
   }
@@ -91,11 +93,11 @@ editPost = function(newpost, oldpost){
     "shopId": newpost.shopId,
     "userId": oldpost.userId,
     "timePosted": oldpost.timePosted,
-    "id": oldpost.id,
+    "postId": oldpost.postId,
     "imageUrl": oldpost.imageUrl,
     "deleted": false,
     "edited": true}
-    const url = `${this.postsRoute}/${oldpost.id}`;
+    const url = `${this.postsRoute}/${oldpost.postId}`;
     return this.http.put(url, editedObj)
     .toPromise().then(()=> {this.getPosts()})
   }

@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./display-allprofiles.component.css']
 })
 export class DisplayAllprofilesComponent implements OnInit {
-  private userRoute = 'http://localhost:3000/users';
+  private userRoute = 'http://localhost:8080/api/users';
   public user: User[];
   
   constructor(private http: HttpClient, private router: Router) { }
 
+  //  + "?deleted=false"
   getUser(){
-    this.http.get<User[]>(this.userRoute + "?deleted=false").subscribe(user => {
-      this.user = user;
+    this.http.get<User[]>(this.userRoute).subscribe(user => {
+      this.user = user.filter(user=> user.deleted == false);
     });
   }
   ngOnInit() {

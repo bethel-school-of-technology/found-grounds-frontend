@@ -3,5 +3,4 @@ export class ThumbsUp {
     userId: number;
     thumbsUp: boolean;
     thumbsUpId: number;
-    id: number;
 }
