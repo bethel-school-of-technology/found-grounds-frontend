@@ -1,25 +1,27 @@
-
+<div class="signuppage">
     <div id="login-box">
+        <form #UserData="ngForm" (ngSubmit)="createUser(UserData.value)">
         <div class="left">
           <h1 class="signup">Sign up</h1>
-          <form (ngSubmit)="onSubmit()">
+        
               <!-- method="POST" action="/users/signup"  -->
               <!-- I'm unsure to put ngModel or method if I'm working on it in the front end -->
-          <input type="text" name="username" placeholder="Username" required [(ngModel)]="model.username"/>
-          <input type="text" name="firstname" placeholder="First Name" required [(ngModel)]="model.firstname"/>
-          <input type="text" name="lastname" placeholder="Last Name" required [(ngModel)]="model.lastname"/>
-          <input type="text" name="email" placeholder="E-mail" required [(ngModel)]="model.email" />
-          <input type="password" name="password" placeholder="Password" required [(ngModel)]="model.password" />
+          <input type="text" name="username" placeholder="Username" required ngModel/>
+          <input type="text" name="firstName" placeholder="First Name" required ngModel/>
+          <input type="text" name="lastName" placeholder="Last Name" required ngModel/>
+          <input type="text" name="email" placeholder="E-mail" required ngModel />
+          <input type="password" name="password" placeholder="Password" required ngModel />
           
-          <input type="submit" name="signup_submit" value="Sign me up" />
-        </form>
+     
         </div>
         
         <div class="right">
-        <span class="loginwith1">Sign in</span>
-        <button class="social-signin local">Log in to Found Grounds</button>
-          <span class="loginwith">Sign in with<br />social network</span>
-          <button class="social-signin facebook">Log in with facebook</button>
-          <button class="social-signin twitter">Log in with Twitter</button>
-          <button class="social-signin google">Log in with Google+</button>
-    </div>
+            <input type="text" name="city" placeholder="City" required ngModel/>
+            <input type="text" name="state" placeholder="State" required ngModel/>
+            <input type="text" name="birthday" placeholder="1996-02-07 Birthday" required ngModel/>
+            <input type="text" name="bio" placeholder="About" required ngModel />
+            <input type="password" name="imageUrl" placeholder="ImageUrl" required ngModel />
+            <input type="submit" name="signup_submit" value="Sign me up" />
+          </div>
+        </form>
+  </div>
