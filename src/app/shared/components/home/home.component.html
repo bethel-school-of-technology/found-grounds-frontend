@@ -9,13 +9,15 @@
 <style>
 body {font-family: "Lato", sans-serif}
 
+
+
 </style>
 <body>
 
 
 <app-navbar></app-navbar>
 
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content" style="max-width:100%;margin-top:46px">
 
 
   <div class="w3-display-container w3-center ">
@@ -28,23 +30,35 @@ body {font-family: "Lato", sans-serif}
 
   <!-- The app Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">THE APP</h2>
+    <h1 class="w3-wide">THE APP</h1>
     <p class="w3-opacity"><i>We love good coffee</i></p>
-    <p class="w3-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <div class="w3-row w3-padding-32">
+    <h4 class="w3-justify">Found Grounds is an interactive experience for coffee lovers. Social media for everything coffee. Have
+      ever been traveling or have been out in the town and just craved a good cup of coffee? So like anyone these day you pull out
+      phone and search for the nearest coffee shop and a less than exciting gas station chain or fast food restaurants
+      populate your feed. Found Grounds wants to change that. Coffee lovers can rate and submit their favorite coffee shops
+      so other people can see what others have had and what they recommend from their favorite shops. This app is brewed to perfection!
+    </h4>
+
+  <div class="w3-row w3-padding-32">
       <div class="w3-third">
-        <p>Daliy Brew</p>
-        <img src="../../../../assets/images/card1-caffeine-coffee-cup-6347.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        <p>DAILY BREW</p>
+        <a href="dailybrew">
+          <img src="https://images.pexels.com/photos/6347/coffee-cup-working-happy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w3-round w3-margin-bottom" target="_self" alt="daily brew" style="width:60%">
+        </a>
       </div>
       <div class="w3-third">
-        <p>Log In</p>
-        <img src="../../../../assets/images/card2-art-blur-cappuccino-302899.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        <p>LOGIN</p>
+        <a onclick="document.getElementById('id01').style.display='block'"> <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w3-round w3-margin-bottom" alt="login" style="width:60%">
+        </a>
       </div>
+
       <div class="w3-third">
-        <p>Profile</p>
-        <img src="../../../../assets/images/card3-beverage-coffee-desk-877695.jpg" class="w3-round" alt="Random Name" style="width:60%">
+        <p>PROFILE</p>
+        <a href="users/:username">
+          <img src="../../../../assets/images/card3-beverage-coffee-desk-877695.jpg" class="w3-round" alt="Random Name" style="width:60%">
+        </a>
+
+
       </div>
     </div>
   </div>
@@ -54,22 +68,9 @@ body {font-family: "Lato", sans-serif}
 
 </div>
 
-<img src="../../../../assets/images/aerial-architecture-buildings-1398003.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+<img src="../../../../assets/images/aerial-architecture-buildings-1398003.jpg" class="w3-image w3-greyscale-min" style="width: 100%;height:1%;">
 
-<!-- <app-footer></app-footer> -->
-<script>
-  function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-  </script>
+
 </body>
 </html>
-
-
-
 
